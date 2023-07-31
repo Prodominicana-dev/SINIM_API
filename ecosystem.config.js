@@ -3,7 +3,7 @@ module.exports = {
   apps: [
     {
       name: 'SINIM_API',
-      script: 'nest',
+      script: 'npm',
       args: 'start',
       cwd: '/var/www/SINIM_API', // Ruta del directorio del proyecto en el servidor
       instances: 1, // Número de instancias que deseas ejecutar
