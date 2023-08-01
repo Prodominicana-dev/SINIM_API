@@ -20,3 +20,24 @@ model Users {
   password  String
 }
 
+model Ramis{
+  id     String   @id @default(auto()) @map("_id") @db.ObjectId
+  sector  String
+  product product
+  country Country @relation(fields: [countryId], references: [id])
+  countryId String @db.ObjectId
+}
+
+type product{
+  name String
+  description String
+  subHeading String
+}
+
+model Country{
+  id   String   @id @default(auto()) @map("_id") @db.ObjectId
+  name String
+  flag String
+  ramis Ramis[]  // Relación opuesta a través del campo `country`
+
+}
