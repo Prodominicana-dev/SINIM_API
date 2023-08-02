@@ -13,7 +13,7 @@ export class RamisController {
   }
 
   @Get(':id')
-  async getRamisById(@Param('id') id: string) {
+  async getRamisById(@Param('id') id: number) {
     return this.ramiService.getRamisById(id);
   }
 
@@ -25,13 +25,13 @@ export class RamisController {
 
   @Put(':id')
   @UseGuards(JwtAuthGuard)
-  async editRamis(@Param('id') id: string, @Body() data: any) {
+  async editRamis(@Param('id') id: number, @Body() data: any) {
     return this.ramiService.editRamis(id, data);
   }
 
   @Delete(':id')
   @UseGuards(JwtAuthGuard)
-  async deleteRamiById(@Param('id') id: string) {
+  async deleteRamiById(@Param('id') id: number) {
     return this.ramiService.deleteRamiById(id);
   }
 }

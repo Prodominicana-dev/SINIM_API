@@ -29,20 +29,20 @@ export class UsersController {
 
   @Get(':id')
   @UseGuards(JwtAuthGuard)
-  getUserById(@Param('id') id: string): Promise<Users | null> {
+  getUserById(@Param('id') id: number): Promise<Users | null> {
     return this.usersService.getUserById(id);
   }
 
   @Put(':id')
   updateUser(
-    @Param('id') id: string,
+    @Param('id') id: number,
     @Body() data: Prisma.UsersUpdateInput,
   ): Promise<Users> {
     return this.usersService.updateUser(id, data);
   }
 
   @Delete(':id')
-  deleteUser(@Param('id') id: string): Promise<Users> {
+  deleteUser(@Param('id') id: number): Promise<Users> {
     return this.usersService.deleteUser(id);
   }
 }
