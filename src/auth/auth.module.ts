@@ -15,7 +15,7 @@ import { PrismaService } from '../prisma/prisma.service';
     UsersModule,
     PassportModule,
     JwtModule.register({
-      secret: process.env.JWT_SECRET_KEY,
+      secret: process.env.SINIM_SECRET_KEY,
       signOptions: { expiresIn: '1d' }, // Cambia el tiempo de expiración según tus necesidades
     }),
   ],

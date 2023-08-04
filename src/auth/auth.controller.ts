@@ -22,4 +22,9 @@ export class AuthController {
   createUser(@Body() registerDto: Prisma.UsersCreateInput): Promise<Users> {
     return this.authService.createUser(registerDto);
   }
+
+  @Post('apple')
+  async appleAuth(@Body() data: any) {
+    return this.authService.appleAuth(data);
+  }
 }

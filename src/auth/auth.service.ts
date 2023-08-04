@@ -72,4 +72,23 @@ export class AuthService {
       },
     });
   }
+
+  async appleAuth(data: any) {
+    const decodedToken = this.verifyAppleIdToken(data.idToken);
+    const user = this.prismaService.users.findUnique({
+      where: {
+        email: decodedToken.email,
+      },
+    });
+    return decodedToken;
+  }
+
+  private verifyAppleIdToken(idToken: string): any {
+    const applePrivateKey = process.env.APPLE_SECRET_KEY;
+    return this.jwtService.verify(idToken, { secret: applePrivateKey });
+  }
+
+  private findOrCreateUser(decodedToken: any): string {
+    return 'user123';
+  }
 }
