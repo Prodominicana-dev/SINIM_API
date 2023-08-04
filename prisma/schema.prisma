@@ -12,23 +12,48 @@ model Users {
   name     String
   lastname String
   email    String  @unique
-  roleId   Role[]  
+  roleId   RoleByUsers[]
   status   String  @default("pending")
   password String
 }
 
+model RoleByUsers {
+  userId   Int
+  roleId   Int
+  user     Users  @relation(fields: [userId], references: [id])
+  role     Role  @relation(fields: [roleId], references: [id])
+  @@id([userId, roleId])
+}
+
 model Role{
   id            Int    @id @default(autoincrement())
-  name          String
-  permissions   Permissions[]
-  users         Users[]
-  reservedDomain reservedDomains[]
+  name          String @unique
+  status        String @default("active")
+  permissions   PermissionsByRoles[]
+  users         RoleByUsers[]
+  reservedDomain RolesByDomain[]
+}
+
+model PermissionsByRoles{
+  roleId        Int
+  permissionId  Int
+  role          Role        @relation(fields: [roleId], references: [id])
+  permissions    Permissions @relation(fields: [permissionId], references: [id])
+  @@id([roleId, permissionId])
+}
+
+model RolesByDomain{
+  roleId        Int
+  reservedDomainId  Int
+  role          Role        @relation(fields: [roleId], references: [id])
+  reservedDomain    reservedDomains @relation(fields: [reservedDomainId], references: [id])
+  @@id([roleId, reservedDomainId])
 }
 
 model Permissions{
   id            Int    @id @default(autoincrement())
   name          String
-  roles         Role[]
+  roles         PermissionsByRoles[]
 }
 
 model Ramis {
@@ -55,9 +80,11 @@ model Product {
   ramis       Ramis[]
 }
 
+
+
 model reservedDomains{
   id              Int     @id @default(autoincrement())
   name            String
   platform        String
-  role            Role[]
+  role            RolesByDomain[]
 }

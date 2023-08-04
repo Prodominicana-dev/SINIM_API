@@ -1,114 +1,115 @@
+import { create } from 'domain';
+
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
+const getUserRole = async (role) => {
+  const userRole = await prisma.roles.findFirst({
+    where: {
+      role: role,
+    },
+  });
+  return userRole;
+};
+
 async function seedDatabase() {
-  // Roles y Permisos
-  const adminRole = await prisma.role.create({
-    data: {
-      name: 'Admin',
-      permissions: {
-        create: [
-          { name: 'Crear Usuarios' },
-          { name: 'Eliminar Usuarios' },
-          { name: 'Editar Usuarios' },
-        ],
+  // Crear roles basicos (admin y usuario)
+  const roles = ['admin', 'user', 'saim', 'sied'];
+  for (const role of roles) {
+    await prisma.role.create({
+      data: {
+        name: role,
       },
-      users: {
-        create: [
-          {
-            name: 'John',
-            lastname: 'Doe',
-            email: 'john.doe@example.com',
-            password: 'hashedPassword1',
-            status: 'active',
-          },
-          {
-            name: 'Jane',
-            lastname: 'Smith',
-            email: 'jane.smith@example.com',
-            password: 'hashedPassword2',
-            status: 'active',
-          },
-        ],
+    });
+  }
+
+  // Dominios reservados
+  const domains = [
+    {
+      name: 'gob.do',
+      platform: 'saim',
+      role: { create: { role: { connect: { id: 3 } } } },
+    },
+    {
+      name: 'gov.do',
+      platform: 'saim',
+      role: { create: { role: { connect: { id: 3 } } } },
+    },
+    {
+      name: 'adoexpo.org',
+      platform: 'saim',
+      role: { create: { role: { connect: { id: 3 } } } },
+    },
+    {
+      name: 'jad.org.do',
+      platform: 'saim',
+      role: { create: { role: { connect: { id: 3 } } } },
+    },
+    {
+      name: 'asiex.org',
+      platform: 'saim',
+      role: { create: { role: { connect: { id: 3 } } } },
+    },
+    {
+      name: 'amcham.org.do',
+      platform: 'saim',
+      role: { create: { role: { connect: { id: 3 } } } },
+    },
+    {
+      name: 'camarasantodomingo.do',
+      platform: 'saim',
+      role: { create: { role: { connect: { id: 3 } } } },
+    },
+    {
+      name: 'camarasantiago.com',
+      platform: 'saim',
+      role: { create: { role: { connect: { id: 3 } } } },
+    },
+    {
+      name: 'gov.do',
+      platform: 'sied',
+      role: { create: { role: { connect: { id: 4 } } } },
+    },
+    {
+      name: 'gob.do',
+      platform: 'sied',
+      role: { create: { role: { connect: { id: 4 } } } },
+    },
+    {
+      name: 'asiex.org',
+      platform: 'sied',
+      role: { create: { role: { connect: { id: 4 } } } },
+    },
+    {
+      name: 'adoexpo.org',
+      platform: 'sied',
+      role: { create: { role: { connect: { id: 4 } } } },
+    },
+    {
+      name: 'amcham.org.do ',
+      platform: 'sied',
+      role: { create: { role: { connect: { id: 4 } } } },
+    },
+  ];
+
+  for (const domain of domains) {
+    await prisma.reservedDomains.create({
+      data: {
+        name: domain.name,
+        platform: domain.platform,
+        role: domain.role,
       },
-    },
-  });
-
-  const userRole = await prisma.role.create({
-    data: {
-      name: 'User',
-      permissions: {
-        create: [{ name: 'Ver Usuarios' }],
-      },
-      users: {
-        create: [
-          {
-            name: 'Alice',
-            lastname: 'Johnson',
-            email: 'alice.johnson@example.com',
-            password: 'hashedPassword3',
-            status: 'active',
-          },
-        ],
-      },
-    },
-  });
-
-  // Países y Productos
-  const usa = await prisma.country.create({
-    data: {
-      name: 'United States',
-      flag: 'usa.png',
-    },
-  });
-
-  const canada = await prisma.country.create({
-    data: {
-      name: 'Canada',
-      flag: 'canada.png',
-    },
-  });
-
-  const product1 = await prisma.product.create({
-    data: {
-      name: 'Product 1',
-      description: 'Description for Product 1',
-      subHeading: 'Subheading for Product 1',
-    },
-  });
-
-  const product2 = await prisma.product.create({
-    data: {
-      name: 'Product 2',
-      description: 'Description for Product 2',
-      subHeading: 'Subheading for Product 2',
-    },
-  });
-
-  // Ramis
-  await prisma.ramis.create({
-    data: {
-      sector: 'Sector 1',
-      countryId: usa.id,
-      productId: product1.id,
-    },
-  });
-
-  await prisma.ramis.create({
-    data: {
-      sector: 'Sector 2',
-      countryId: canada.id,
-      productId: product2.id,
-    },
-  });
+    });
+  }
 }
 
-seedDatabase()
-  .then(() => {
-    console.log('Datos insertados correctamente.');
-    prisma.$disconnect();
-  })
-  .catch((error) => {
-    console.error('Error al insertar datos:', error);
-    prisma.$disconnect();
-  });
+async function main() {
+  await prisma.$connect();
+  await seedDatabase();
+  await prisma.$disconnect();
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});
