@@ -13,7 +13,7 @@ model Users {
   lastname String
   email    String  @unique
   roleId   RoleByUsers[]
-  status   String  @default("pending")
+  status   String?  @default("pending")
   password String
 }
 
