@@ -16,11 +16,6 @@ import { JwtAuthGuard } from '../auth/guard/jwt-auth.guard';
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
-  @Post()
-  createUser(@Body() data: Prisma.UsersCreateInput): Promise<Users> {
-    return this.usersService.createUser(data);
-  }
-
   @Get()
   @UseGuards(JwtAuthGuard)
   getAllUsers(): Promise<Users[]> {
@@ -29,20 +24,20 @@ export class UsersController {
 
   @Get(':id')
   @UseGuards(JwtAuthGuard)
-  getUserById(@Param('id') id: string): Promise<Users | null> {
+  getUserById(@Param('id') id: number): Promise<Users | null> {
     return this.usersService.getUserById(id);
   }
 
   @Put(':id')
   updateUser(
-    @Param('id') id: string,
+    @Param('id') id: number,
     @Body() data: Prisma.UsersUpdateInput,
   ): Promise<Users> {
     return this.usersService.updateUser(id, data);
   }
 
   @Delete(':id')
-  deleteUser(@Param('id') id: string): Promise<Users> {
+  deleteUser(@Param('id') id: number): Promise<Users> {
     return this.usersService.deleteUser(id);
   }
 }

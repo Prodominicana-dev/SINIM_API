@@ -14,13 +14,13 @@ export class RamisService {
     });
   }
 
-  async getRamisById(id: string): Promise<Ramis | null> {
+  async getRamisById(id: number): Promise<Ramis | null> {
     return this.prisma.ramis.findUnique({
       where: { id },
     });
   }
 
-  async editRamis(id: string, data: Prisma.RamisUpdateInput): Promise<Ramis> {
+  async editRamis(id: number, data: Prisma.RamisUpdateInput): Promise<Ramis> {
     return this.prisma.ramis.update({
       where: { id },
       data,
@@ -31,7 +31,7 @@ export class RamisService {
     return this.prisma.ramis.findMany();
   }
 
-  async deleteRamiById(id: string): Promise<Ramis> {
+  async deleteRamiById(id: number): Promise<Ramis> {
     return this.prisma.ramis.delete({
       where: { id },
     });
