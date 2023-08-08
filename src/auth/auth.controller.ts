@@ -1,4 +1,4 @@
-import { Controller, Post, Body, UseGuards } from '@nestjs/common';
+import { Controller, Post, Get, Body, UseGuards } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { AuthGuard } from '@nestjs/passport';
 import { LoginDto } from './dto/login.dto';
@@ -21,5 +21,9 @@ export class AuthController {
   @Post('register')
   createUser(@Body() registerDto: Prisma.UsersCreateInput): Promise<Users> {
     return this.authService.createUser(registerDto);
+  }
+  @Get('appleclientsecret')
+  async appleclientsecret() {
+    return this.authService.appleClientSecret();
   }
 }

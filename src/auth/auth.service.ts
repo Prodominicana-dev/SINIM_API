@@ -4,6 +4,7 @@ import { JwtService } from '@nestjs/jwt';
 import { PrismaService } from '../prisma/prisma.service';
 import { Prisma, Users } from '@prisma/client';
 import * as bcrypt from 'bcrypt';
+import * as fs from 'fs';
 
 @Injectable()
 export class AuthService {
@@ -70,6 +71,33 @@ export class AuthService {
           create: roles.map((role) => ({ role: { connect: { id: role } } })),
         },
       },
+    });
+  }
+
+  async appleClientSecret(): Promise<string> {
+    const teamId = 'HJ3K4WVGBG';
+    const clientId = 'do.gob.prodominicana.sinim';
+    const keyId = 'C9Q3ULW542';
+
+    const now = Math.floor(Date.now() / 1000);
+
+    const payload = {
+      iss: teamId,
+      iat: now,
+      aud: 'https://appleid.apple.com',
+      sub: clientId,
+    };
+
+    const privateKey = fs.readFileSync(
+      './src/key/AuthKey_C9Q3ULW542.p8',
+      'utf8',
+    );
+
+    return this.jwtService.sign(payload, {
+      algorithm: 'ES256',
+      keyid: keyId,
+      privateKey: privateKey,
+      expiresIn: '30d',
     });
   }
 }
