@@ -7,55 +7,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Users {
-  id       Int    @id @default(autoincrement())
-  name     String
-  lastname String
-  email    String  @unique
-  roleId   RoleByUsers[]
-  status   String?  @default("pending")
-  password String
-}
-
-model RoleByUsers {
-  userId   Int
-  roleId   Int
-  user     Users  @relation(fields: [userId], references: [id])
-  role     Role  @relation(fields: [roleId], references: [id])
-  @@id([userId, roleId])
-}
-
-model Role{
-  id            Int    @id @default(autoincrement())
-  name          String @unique
-  status        String @default("active")
-  permissions   PermissionsByRoles[]
-  users         RoleByUsers[]
-  reservedDomain RolesByDomain[]
-}
-
-model PermissionsByRoles{
-  roleId        Int
-  permissionId  Int
-  role          Role        @relation(fields: [roleId], references: [id])
-  permissions    Permissions @relation(fields: [permissionId], references: [id])
-  @@id([roleId, permissionId])
-}
-
-model RolesByDomain{
-  roleId        Int
-  reservedDomainId  Int
-  role          Role        @relation(fields: [roleId], references: [id])
-  reservedDomain    reservedDomains @relation(fields: [reservedDomainId], references: [id])
-  @@id([roleId, reservedDomainId])
-}
-
-model Permissions{
-  id            Int    @id @default(autoincrement())
-  name          String
-  roles         PermissionsByRoles[]
-}
-
 model Ramis {
   id        Int     @id @default(autoincrement())
   sector    String
@@ -80,11 +31,8 @@ model Product {
   ramis       Ramis[]
 }
 
-
-
 model reservedDomains{
   id              Int     @id @default(autoincrement())
   name            String
   platform        String
-  role            RolesByDomain[]
 }
