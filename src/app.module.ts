@@ -5,10 +5,11 @@ import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { PrismaService } from './prisma/prisma.service';
 import { RamisModule } from './ramis/ramis.module';
+import { DatamarketModule } from './datamarket/datamarket.module';
 
 @Module({
   controllers: [AppController],
   providers: [AppService, PrismaService],
-  imports: [AuthModule, UsersModule, RamisModule],
+  imports: [AuthModule, UsersModule, RamisModule, DatamarketModule],
 })
 export class AppModule {}

@@ -80,11 +80,16 @@ model Product {
   ramis       Ramis[]
 }
 
-
-
 model reservedDomains{
   id              Int     @id @default(autoincrement())
   name            String
   platform        String
   role            RolesByDomain[]
+}
+
+model Datamarket{
+  id             Int     @id @default(autoincrement())
+  idBi           Int
+  description   String
+  url           String
 }
