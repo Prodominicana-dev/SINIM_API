@@ -1,15 +1,15 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { AuthModule } from './auth/auth.module';
-import { UsersModule } from './users/users.module';
 import { PrismaService } from './prisma/prisma.service';
 import { RamisModule } from './ramis/ramis.module';
+import { ReservedDomainsModule } from './reserved-domains/reserved-domains.module';
 import { DatamarketModule } from './datamarket/datamarket.module';
+
 
 @Module({
   controllers: [AppController],
   providers: [AppService, PrismaService],
-  imports: [AuthModule, UsersModule, RamisModule, DatamarketModule],
+  imports: [RamisModule, DatamarketModule, ReservedDomainsModule],
 })
 export class AppModule {}

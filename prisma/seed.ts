@@ -3,26 +3,7 @@ import { create } from 'domain';
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
-const getUserRole = async (role) => {
-  const userRole = await prisma.roles.findFirst({
-    where: {
-      role: role,
-    },
-  });
-  return userRole;
-};
-
 async function seedDatabase() {
-  // Crear roles basicos (admin y usuario)
-  const roles = ['admin', 'user', 'saim', 'sied'];
-  for (const role of roles) {
-    await prisma.role.create({
-      data: {
-        name: role,
-      },
-    });
-  }
-
   // Dominios reservados
   const domains = [
     {
@@ -97,7 +78,6 @@ async function seedDatabase() {
       data: {
         name: domain.name,
         platform: domain.platform,
-        role: domain.role,
       },
     });
   }
