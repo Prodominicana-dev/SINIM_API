@@ -43,3 +43,16 @@ model Datamarket{
   description   String
   url           String
 }
+
+model Tools{
+  id             Int     @id @default(autoincrement())
+  title          String @unique
+  description   String?
+  color         String?
+  background    String?
+  root          String?
+  icon          String?
+  logo          String?
+  boxColor      String?
+  visible       Boolean?
+}
