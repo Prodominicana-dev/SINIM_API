@@ -36,3 +36,10 @@ model reservedDomains{
   name            String
   platform        String
 }
+
+model Datamarket{
+  id             Int     @id @default(autoincrement())
+  idBi           Int
+  description   String
+  url           String
+}
