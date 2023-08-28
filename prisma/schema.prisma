@@ -19,16 +19,28 @@ model Ramis {
 model Country {
   id    Int     @id @default(autoincrement())
   name  String
-  flag  String
+  abbreviation String @unique
+  continent String?
+  group String?
   ramis Ramis[]
+  saim  SAIM[]
+}
+
+model Sector{
+  id          Int     @id @default(autoincrement())
+  name        String
+  products    Product[]
 }
 
 model Product {
   id          Int     @id @default(autoincrement())
   name        String
+  code        String
   description String
-  subHeading  String
+  sectorID    Int
+  sector      Sector @relation(fields: [sectorID], references: [id])
   ramis       Ramis[]
+  
 }
 
 model reservedDomains{
@@ -55,4 +67,18 @@ model Tools{
   logo          String?
   boxColor      String?
   visible       Boolean?
+}
+
+
+model SAIM{
+  id             Int     @id @default(autoincrement())
+  title          String 
+  description    String?
+  source        String?
+  link          String?
+  image         String?
+  date          DateTime?
+  products       Json?
+  countryAbbr    String
+  country        Country @relation(fields: [countryAbbr], references: [abbreviation])
 }
