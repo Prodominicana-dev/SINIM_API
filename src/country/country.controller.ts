@@ -1,4 +1,12 @@
-import { Controller } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
+import { CountryService } from './country.service';
 
-@Controller('country')
-export class CountryController {}
+@Controller()
+export class CountryController {
+    constructor(private countryService : CountryService) {}
+
+    @Get('countries')
+    async getCountry(){
+        return this.countryService.getCountries();
+    }
+}

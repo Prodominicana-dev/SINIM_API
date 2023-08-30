@@ -10,6 +10,11 @@ const sectors = require('../src/data/Sector.json');
 const tradeAgreement = require('../src/data/AcuerdoComercial.json');
 const axios = require('axios');
 
+//Links
+const sectorURL = 'https://sinim-api-git-tools-prodominicanadev.vercel.app/sector';
+const productURL = 'https://sinim-api-git-tools-prodominicanadev.vercel.app/products';
+const countryURL = 'https://sinim-api-git-tools-prodominicanadev.vercel.app/countries';
+
 async function seedDatabase() {
   // Dominios reservados
 
@@ -51,7 +56,7 @@ async function seedDatabase() {
   // Buscar los sectores registrados para asignarle a los productos al momento de migrar los datos a la nueva BD y de esta
   // manera se actualicen los id de los sectores en la tabla de productos
   let sector;
-  await axios.get('https://sinim-hj1vdpfcl-prodominicanadev.vercel.app/sector').then((response) => {
+  await axios.get(sectorURL).then((response) => {
     sector = response.data;
   });
 
