@@ -30,4 +30,9 @@ export class RamisController {
   async deleteRamiById(@Param('id') id: number) {
     return this.ramiService.deleteRamiById(id);
   }
+
+  @Get('product/:idProduct/country/:idCountry')
+  async getRamiByProductIDAndCountryID(@Param('idProduct') idProduct: number, @Param('idCountry') idCountry: number) {
+    return this.ramiService.getRamiByProductIDAndCountryID(idProduct, idCountry);
+  }
 }
