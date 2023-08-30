@@ -9,4 +9,10 @@ export class CountryService {
     async getCountries(): Promise< Country[]> {
         return this.prisma.country.findMany();
     }
+
+    async getCountryById(id: number): Promise<Country | null> {
+        return this.prisma.country.findUnique({
+            where: { id },
+        });
+    }
 }

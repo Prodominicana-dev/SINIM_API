@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { CountryService } from './country.service';
 
 @Controller()
@@ -8,5 +8,10 @@ export class CountryController {
     @Get('countries')
     async getCountry(){
         return this.countryService.getCountries();
+    }
+
+    @Get('country/:id')
+    async getCountryById(@Param() id: number){
+        return this.countryService.getCountryById(id);
     }
 }
