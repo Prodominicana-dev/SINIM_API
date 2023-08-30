@@ -7,84 +7,89 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Users {
-  id       Int    @id @default(autoincrement())
-  name     String
-  lastname String
-  email    String  @unique
-  roleId   RoleByUsers[]
-  status   String?  @default("pending")
-  password String
-}
-
-model RoleByUsers {
-  userId   Int
-  roleId   Int
-  user     Users  @relation(fields: [userId], references: [id])
-  role     Role  @relation(fields: [roleId], references: [id])
-  @@id([userId, roleId])
-}
-
-model Role{
-  id            Int    @id @default(autoincrement())
-  name          String @unique
-  status        String @default("active")
-  permissions   PermissionsByRoles[]
-  users         RoleByUsers[]
-  reservedDomain RolesByDomain[]
-}
-
-model PermissionsByRoles{
-  roleId        Int
-  permissionId  Int
-  role          Role        @relation(fields: [roleId], references: [id])
-  permissions    Permissions @relation(fields: [permissionId], references: [id])
-  @@id([roleId, permissionId])
-}
-
-model RolesByDomain{
-  roleId        Int
-  reservedDomainId  Int
-  role          Role        @relation(fields: [roleId], references: [id])
-  reservedDomain    reservedDomains @relation(fields: [reservedDomainId], references: [id])
-  @@id([roleId, reservedDomainId])
-}
-
-model Permissions{
-  id            Int    @id @default(autoincrement())
-  name          String
-  roles         PermissionsByRoles[]
-}
-
 model Ramis {
-  id        Int     @id @default(autoincrement())
-  sector    String
-  countryId Int
-  productId Int
-  country   Country @relation(fields: [countryId], references: [id])
-  product   Product @relation(fields: [productId], references: [id])
+  id          Int     @id @default(autoincrement())
+  countryId   Int
+  productId   Int
+  tradeAgreement String? // Acuerdo comercial
+  tariffsImposed String? // Aranceles impuestos
+  webResource String? // Recurso web
+  technicalRequirements String? // Requisitos técnicos
+  permitsCertifications String? // Permisos y certificaciones
+  labelingCertifications String? // Etiquetado y certificaciones
+  outputRequirement String? // Requisitos de salida
+  importRequirement String? // Requisitos de importación
+  date       DateTime? @default(now())
+  country     Country @relation(fields: [countryId], references: [id])
+  product     Product @relation(fields: [productId], references: [id])
 }
 
 model Country {
   id    Int     @id @default(autoincrement())
   name  String
-  flag  String
+  abbreviation String @unique
+  continent String?
+  group String?
   ramis Ramis[]
+  saim  SAIM[]
+}
+
+model Sector{
+  id          Int     @id @default(autoincrement())
+  name        String  @unique
+  oldID       Int     
+  products    Product[]
 }
 
 model Product {
   id          Int     @id @default(autoincrement())
   name        String
+  code        String
   description String
-  subHeading  String
+  sectorID    Int
+  date        DateTime? @default(now())
+  oldID       Int
+  sector      Sector @relation(fields: [sectorID], references: [id])
   ramis       Ramis[]
+  
 }
-
-
 
 model reservedDomains{
   id              Int     @id @default(autoincrement())
   name            String
   platform        String
-  role            RolesByDomain[]
+}
+
+model Datamarket{
+  id             Int     @id @default(autoincrement())
+  idBi           Int
+  description   String
+  url           String
+}
+
+model Tools{
+  id             Int     @id @default(autoincrement())
+  title          String @unique
+  description   String?
+  color         String?
+  background    String?
+  root          String?
+  icon          String?
+  logo          String?
+  boxColor      String?
+  visible       Boolean?
+}
+
+
+model SAIM{
+  id             Int     @id @default(autoincrement())
+  title          String 
+  description    String?
+  source        String?
+  link          String?
+  image         String?
+  date          DateTime?
+  products       Json?
+  countryAbbr    String
+  country        Country @relation(fields: [countryAbbr], references: [abbreviation])
 }
