@@ -28,7 +28,8 @@ model Country {
 
 model Sector{
   id          Int     @id @default(autoincrement())
-  name        String
+  name        String  @unique
+  oldID       Int     
   products    Product[]
 }
 
@@ -38,6 +39,7 @@ model Product {
   code        String
   description String
   sectorID    Int
+  date        DateTime? @default(now())
   sector      Sector @relation(fields: [sectorID], references: [id])
   ramis       Ramis[]
   

@@ -1,8 +1,8 @@
-import { create } from 'domain';
-import axios from 'axios';
+
 
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
+const products = require('../src/Products1.json');
 
 async function seedDatabase() {
   // Dominios reservados
@@ -158,6 +158,41 @@ async function seedDatabase() {
       },
     });
   }
+
+  const sectors = [
+    {name:"Agropecuario", oldID: 15},
+    {name:"Cosmética y preparaciones capilares", oldID: 17},
+    {name:"Bebidas, líquidos alcohólicos y vinagre", oldID: 18},
+    {name:"Industria química, plásticos y cauchos", oldID: 19},
+    {name:"Agroindustriales", oldID: 21},
+    {name:"Mobiliarios y mercancías diversas", oldID: 22},
+    {name:"Textiles, calzados y pieles", oldID: 23},
+    {name:"Maquinarias, transporte, aparatos e instrumentos", oldID: 25},
+    {name:"Productos minerales", oldID: 26},
+    {name:"Joyería, piedras, metales", oldID: 27}
+  ]
+
+  for(const sector of sectors){
+    await prisma.sector.create({
+      data: {
+        name: sector.name,
+      }
+    })
+  }
+
+  // Crear productos
+  for(const product of products){
+    await prisma.product.create({
+      data: {
+        name: product.Producto,
+        code: product.SubPartida,
+        description: product.Descripcion,
+        sectorID: product.Id_Sector
+      }
+    })
+  }
+  
+
 
   const countries = [{
     "name": "Canadá",
