@@ -14,6 +14,7 @@ const axios = require('axios');
 const sectorURL = 'https://sinim-api-git-tools-prodominicanadev.vercel.app/sector';
 const productURL = 'https://sinim-api-git-tools-prodominicanadev.vercel.app/products';
 const countryURL = 'https://sinim-api-git-tools-prodominicanadev.vercel.app/countries';
+const ramisURL = 'https://sinim-api-git-tools-prodominicanadev.vercel.app/ramis';
 
 async function seedDatabase() {
   // Dominios reservados
@@ -91,9 +92,35 @@ for(const country of countries){
 
 // Acuerdo comercial en rami
 let productsRami;
-let countriesRami;
+await axios.get(productURL).then((response) => {
+  productsRami = response.data;
+});
 
-   
+const getProductId = async (id) => {
+  for(const product of productsRami){
+    if(product.oldID == id){
+      return product.id;
+    }
+  }
+}
+
+
+for(const trade of tradeAgreement){
+  const productID = await getProductId(trade.Id_Producto);
+  await prisma.ramis.create({
+    data: {
+      productId: productID,
+      countryId: trade.IdPais,
+      tradeAgreement: trade.AcuerdoComercial,
+    }
+  })
+}
+
+
+const getRAMIId = async (id) => {
+
+}
+
 }
 
 async function main() {

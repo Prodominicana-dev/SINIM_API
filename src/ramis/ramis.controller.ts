@@ -1,6 +1,6 @@
 import { Controller } from '@nestjs/common';
 import { RamisService } from './ramis.service';
-import { Get, Post, Put, Delete, Param, Body, UseGuards } from '@nestjs/common';
+import { Get, Post, Put, Delete, Param, Body } from '@nestjs/common';
 
 @Controller('ramis')
 export class RamisController {

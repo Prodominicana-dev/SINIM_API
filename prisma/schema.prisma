@@ -9,7 +9,6 @@ datasource db {
 
 model Ramis {
   id          Int     @id @default(autoincrement())
-  sectorId    Int
   countryId   Int
   productId   Int
   tradeAgreement String? // Acuerdo comercial
@@ -21,7 +20,6 @@ model Ramis {
   outputRequirement String? // Requisitos de salida
   importRequirement String? // Requisitos de importación
   date       DateTime? @default(now())
-  sector      Sector @relation(fields: [sectorId], references: [id])
   country     Country @relation(fields: [countryId], references: [id])
   product     Product @relation(fields: [productId], references: [id])
 }
@@ -41,7 +39,6 @@ model Sector{
   name        String  @unique
   oldID       Int     
   products    Product[]
-  ramis       Ramis[]
 }
 
 model Product {
