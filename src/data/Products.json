@@ -3,7 +3,7 @@
     "SubPartida" : "0804.40",
     "Date" : "2021-07-05 00:00:00 +0000",
     "Descripcion" : "El aguacate, palta o persea americana, es nativo de américa tropical, perteneciente a la familia lauraceae",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Aguacates (paltas)",
     "Id" : 13
   },
@@ -11,7 +11,7 @@
     "SubPartida" : "0709.93",
     "Date" : "2021-07-16 00:00:00 +0000",
     "Descripcion" : "Fruto de las cucurbitáceas (del género de cucurbita).",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Auyama (Calabaza) ",
     "Id" : 15
   },
@@ -19,7 +19,7 @@
     "SubPartida" : "0702.00",
     "Date" : "2021-07-16 00:00:00 +0000",
     "Descripcion" : "Solanum lycopersicum",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Tomates",
     "Id" : 16
   },
@@ -27,7 +27,7 @@
     "SubPartida" : "0804.30",
     "Date" : "2021-07-16 00:00:00 +0000",
     "Descripcion" : "Ananas comosus (ananá, ananás, matzatli o piña) es una especie de la familia de las bromeliáceas, nativa de América del Sur. ",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Piña (Ananá)",
     "Id" : 17
   },
@@ -35,7 +35,7 @@
     "SubPartida" : "0901.21",
     "Date" : "2021-07-16 00:00:00 +0000",
     "Descripcion" : "Coffea arábica",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Café tostado",
     "Id" : 18
   },
@@ -43,7 +43,7 @@
     "SubPartida" : "3305.10",
     "Date" : "2021-07-19 00:00:00 +0000",
     "Descripcion" : "Preparación capilar utilizada para la limpieza y cuidado del cabello",
-    "Id_Sector" : 2,
+    "Id_Sector" : 17,
     "Producto" : "Champúes",
     "Id" : 19
   },
@@ -51,7 +51,7 @@
     "SubPartida" : "2203.00",
     "Date" : "2021-07-19 00:00:00 +0000",
     "Descripcion" : "Cerveza de malta",
-    "Id_Sector" : 3,
+    "Id_Sector" : 18,
     "Producto" : "Cerveza malta ",
     "Id" : 20
   },
@@ -59,7 +59,7 @@
     "SubPartida" : "0102.21",
     "Date" : "2021-07-21 00:00:00 +0000",
     "Descripcion" : "Animales de la especie bovina que dan descendientes que presentan el mismo carácter.",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Ganado Bovino ",
     "Id" : 21
   },
@@ -67,7 +67,7 @@
     "SubPartida" : "3924.10",
     "Date" : "2021-07-21 00:00:00 +0000",
     "Descripcion" : "Utensilios que se utilizan para el servicio de mesa o cocina ",
-    "Id_Sector" : 4,
+    "Id_Sector" : 19,
     "Producto" : "Vajillas y demás artículos plásticos",
     "Id" : 22
   },
@@ -75,7 +75,7 @@
     "SubPartida" : "0511.99",
     "Date" : "2021-07-21 00:00:00 +0000",
     "Descripcion" : "Ser vivo de la especie bovina en las primeras etapas de su desarrollo, desde la fecundación hasta que el organismo adquiere las características morfológicas de la especie.",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Embriones de animales de la especie bovina",
     "Id" : 24
   },
@@ -83,7 +83,7 @@
     "SubPartida" : "0803.10",
     "Date" : "2021-07-22 00:00:00 +0000",
     "Descripcion" : "Es un fruto comestible, de varios tipos de grandes plantas herbáceas del género Musa, se las denomina plataneras, bananeros, bananeras, plátanos o bananos.",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Plátanos",
     "Id" : 25
   },
@@ -91,7 +91,7 @@
     "SubPartida" : "3004.90",
     "Date" : "2021-07-22 00:00:00 +0000",
     "Descripcion" : "Medicamentos constituidos por productos mezclados o sin mezclar ",
-    "Id_Sector" : 4,
+    "Id_Sector" : 19,
     "Producto" : "Medicamentos",
     "Id" : 26
   },
@@ -99,7 +99,7 @@
     "SubPartida" : "0804.50",
     "Date" : "2021-07-22 00:00:00 +0000",
     "Descripcion" : "Es el nombre de las frutas de varias especies de árboles del género Mangifera, especialmente de Mangifera indica, y sus numerosos cultivares.",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Mango",
     "Id" : 27
   },
@@ -107,7 +107,7 @@
     "SubPartida" : "2402.10",
     "Date" : "2021-07-22 00:00:00 +0000",
     "Descripcion" : "Cigarros (puros) (incluso despuntados) y cigarritos (puritos), que contengan tabaco ",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Cigarros puros",
     "Id" : 30
   },
@@ -115,7 +115,7 @@
     "SubPartida" : "1801.00",
     "Date" : "2021-07-26 00:00:00 +0000",
     "Descripcion" : "Theobroma cacao",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Cacao en grano",
     "Id" : 34
   },
@@ -123,7 +123,7 @@
     "SubPartida" : "3305.90",
     "Date" : "2021-07-28 00:00:00 +0000",
     "Descripcion" : "Preparaciones capilares",
-    "Id_Sector" : 2,
+    "Id_Sector" : 17,
     "Producto" : "Cremas Acondicionadoras para el cabello",
     "Id" : 35
   },
@@ -131,7 +131,7 @@
     "SubPartida" : "0810.90",
     "Date" : "2021-07-28 00:00:00 +0000",
     "Descripcion" : "Es un fruto comestible muy apreciados en diversos países",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Tamarindo Fresco",
     "Id" : 36
   },
@@ -139,7 +139,7 @@
     "SubPartida" : "0803.90",
     "Date" : "2021-07-28 00:00:00 +0000",
     "Descripcion" : "\tEs un fruto comestible, de varios tipos de grandes plantas herbáceas del género Musa, se las denomina plataneras, bananeros, bananeras, plátanos o bananos.",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Bananos",
     "Id" : 37
   },
@@ -147,7 +147,7 @@
     "SubPartida" : "0807.19",
     "Date" : "2021-07-29 00:00:00 +0000",
     "Descripcion" : "Es una especie de la familia de las cucurbitáceas, domesticada hace más de cuatro mil años en la región mediterránea oriental y Asia occidental",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Melones",
     "Id" : 38
   },
@@ -155,7 +155,7 @@
     "SubPartida" : "0708.20",
     "Date" : "2021-07-29 00:00:00 +0000",
     "Descripcion" : "Frescos o Refrigerados (Judías o porotos) ",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Frijoles",
     "Id" : 39
   },
@@ -163,7 +163,7 @@
     "SubPartida" : "0709.30",
     "Date" : "2021-07-29 00:00:00 +0000",
     "Descripcion" : "Es una planta de fruto comestible, generalmente anual, del género Solanum dentro de la familia de las solanáceas",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Berenjenas",
     "Id" : 40
   },
@@ -171,7 +171,7 @@
     "SubPartida" : "0709.70",
     "Date" : "2021-07-30 00:00:00 +0000",
     "Descripcion" : "Es una planta anual, dioica, de la familia de las amarantáceas, cultivada como verdura por sus hojas comestibles, grandes y de color verde muy oscuro.",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Espinacas",
     "Id" : 41
   },
@@ -179,7 +179,7 @@
     "SubPartida" : "0901.11",
     "Date" : "2021-07-30 00:00:00 +0000",
     "Descripcion" : "Granos sin tostar ni descafeinar de la planta del café.",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Café sin tostar",
     "Id" : 42
   },
@@ -187,7 +187,7 @@
     "SubPartida" : "0709.60",
     "Date" : "2021-07-30 00:00:00 +0000",
     "Descripcion" : "Frutos de los Géneros Capsicum o Pimenta  ",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Pimientos y Ajies",
     "Id" : 43
   },
@@ -195,7 +195,7 @@
     "SubPartida" : "0807.19",
     "Date" : "2021-08-02 00:00:00 +0000",
     "Descripcion" : "- - Los demás: \r\n- - - Melones: ",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Melones",
     "Id" : 45
   },
@@ -203,7 +203,7 @@
     "SubPartida" : "0707.00",
     "Date" : "2021-08-02 00:00:00 +0000",
     "Descripcion" : "Pepinos y Pepinillos Frescos o Refrigerados",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Pepinos",
     "Id" : 47
   },
@@ -211,7 +211,7 @@
     "SubPartida" : "0813.20 ",
     "Date" : "2021-08-03 00:00:00 +0000",
     "Descripcion" : "Fruto carnoso con una única semilla rodeada de un endocarpo leñoso.",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Ciruelas secas",
     "Id" : 49
   },
@@ -219,7 +219,7 @@
     "SubPartida" : "2208.40",
     "Date" : "2021-08-03 00:00:00 +0000",
     "Descripcion" : "Ron y demás aguardientes procedentes de la destilación, previa fermentación, de productos de la caña de azúcar",
-    "Id_Sector" : 3,
+    "Id_Sector" : 18,
     "Producto" : "Ron",
     "Id" : 50
   },
@@ -227,7 +227,7 @@
     "SubPartida" : "2009.90",
     "Date" : "2021-08-03 00:00:00 +0000",
     "Descripcion" : "Mezclas de jugos de frutas u otros frutos, incl. el mosto, o de hortalizas, incl. \"silvestres\", sin fermentar y sin adición de alcohol, incl. con adición de azúcar u otro edulcorante ",
-    "Id_Sector" : 3,
+    "Id_Sector" : 18,
     "Producto" : "Mezclas de jugos de frutas u otros frutos",
     "Id" : 51
   },
@@ -235,7 +235,7 @@
     "SubPartida" : "2401.10",
     "Date" : "2021-08-03 00:00:00 +0000",
     "Descripcion" : "Tabaco en rama sin elaborar; desperdicios de tabaco.",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Tabaco sin desvenar",
     "Id" : 52
   },
@@ -243,7 +243,7 @@
     "SubPartida" : "2403.99",
     "Date" : "2021-08-03 00:00:00 +0000",
     "Descripcion" : "Los demás tabacos y sucedáneos del tabaco.",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Tabaco de mascar, rapé y demás tabacos y sucedáneos ",
     "Id" : 53
   },
@@ -251,7 +251,7 @@
     "SubPartida" : "0812.90",
     "Date" : "2021-08-03 00:00:00 +0000",
     "Descripcion" : "Frutas y otros frutos, conservados provisionalmente (por ejemplo: con gas sulfuroso o con agua salada, sulfurosa o adicionada de otras sustancias para dicha conservación), pero todavía impropios para consumo inmediato",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Frutas y otros frutos conservados ",
     "Id" : 55
   },
@@ -259,7 +259,7 @@
     "SubPartida" : "1905.90",
     "Date" : "2021-08-10 00:00:00 +0000",
     "Descripcion" : "Fina masa de pan rellena con una preparación salada o dulce y cocida al horno o frita. ",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Empanadas congeladas",
     "Id" : 56
   },
@@ -267,7 +267,7 @@
     "SubPartida" : "0901.21",
     "Date" : "2021-08-23 00:00:00 +0000",
     "Descripcion" : "Grano de café tostado sin descafeinar y molido",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Café Molido",
     "Id" : 58
   },
@@ -275,7 +275,7 @@
     "SubPartida" : "2004.10",
     "Date" : "2021-09-01 00:00:00 +0000",
     "Descripcion" : "Producto preparado con tubérculos de la especie Solanum tuberosum L. ",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Papas fritas congeladas",
     "Id" : 59
   },
@@ -283,7 +283,7 @@
     "SubPartida" : "0602.10",
     "Date" : "2021-09-02 00:00:00 +0000",
     "Descripcion" : "Las orquídeas u orquidáceas (nombre científico Orchidaceae) son una familia de plantas monocotiledóneas ",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Orquídeas",
     "Id" : 60
   },
@@ -291,7 +291,7 @@
     "SubPartida" : "9403.60",
     "Date" : "2021-09-20 00:00:00 +0000",
     "Descripcion" : "Los demás muebles de madera ",
-    "Id_Sector" : 6,
+    "Id_Sector" : 22,
     "Producto" : "Muebles de madera",
     "Id" : 61
   },
@@ -299,7 +299,7 @@
     "SubPartida" : "4202.21",
     "Date" : "2021-09-30 00:00:00 +0000",
     "Descripcion" : "Bolsos de mano (carteras) en piel ",
-    "Id_Sector" : 7,
+    "Id_Sector" : 23,
     "Producto" : "Carteras de piel ",
     "Id" : 62
   },
@@ -307,7 +307,7 @@
     "SubPartida" : "1704.90",
     "Date" : "2021-10-01 00:00:00 +0000",
     "Descripcion" : "Productos alimenticios a base de azúcar y otros ingredientes con exclusión de chocolate",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Artículos de Confitería sin cacao",
     "Id" : 63
   },
@@ -315,7 +315,7 @@
     "SubPartida" : "2105.00",
     "Date" : "2021-10-13 00:00:00 +0000",
     "Descripcion" : "Helados, incluso con cacao.",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Helados ",
     "Id" : 65
   },
@@ -323,7 +323,7 @@
     "SubPartida" : "0714.10",
     "Date" : "2021-10-20 00:00:00 +0000",
     "Descripcion" : "Manihot esculenta, llamada comúnmente yuca, mandioca. Tubérculo de raíz comestible.",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Yuca congelada (mandioca)",
     "Id" : 66
   },
@@ -331,7 +331,7 @@
     "SubPartida" : "0811.90",
     "Date" : "2021-10-20 00:00:00 +0000",
     "Descripcion" : "Fruto comestible de plantas herbáceas del género Musa, denominada plataneras, bananeros, bananeras, plátanos o bananos.",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Plátanos congelados",
     "Id" : 67
   },
@@ -339,7 +339,7 @@
     "SubPartida" : "2204.21",
     "Date" : "2022-02-08 00:00:00 +0000",
     "Descripcion" : "Bebida hecha de uva (especie Vitis vinifera), mediante la fermentación alcohólica de su mosto o zumo.",
-    "Id_Sector" : 3,
+    "Id_Sector" : 18,
     "Producto" : "Vino",
     "Id" : 68
   },
@@ -347,7 +347,7 @@
     "SubPartida" : "2309.90",
     "Date" : "2022-03-15 00:00:00 +0000",
     "Descripcion" : "Piensos y forrajes destinados para su alimentación",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Las demás preparaciones para la alimentación de los animales",
     "Id" : 69
   },
@@ -355,7 +355,7 @@
     "SubPartida" : "2201.10",
     "Date" : "2022-03-23 00:00:00 +0000",
     "Descripcion" : "Agua apta para el consumo humano y sellada en recipientes",
-    "Id_Sector" : 3,
+    "Id_Sector" : 18,
     "Producto" : "Agua envasada",
     "Id" : 70
   },
@@ -363,7 +363,7 @@
     "SubPartida" : "0703.10",
     "Date" : "2022-06-06 00:00:00 +0000",
     "Descripcion" : "Allium cepa",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Cebolla",
     "Id" : 71
   },
@@ -371,7 +371,7 @@
     "SubPartida" : "0714.30",
     "Date" : "2022-06-06 00:00:00 +0000",
     "Descripcion" : " Tubérculo comestible del género Dioscorea",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Ñame",
     "Id" : 72
   },
@@ -379,7 +379,7 @@
     "SubPartida" : "0709.40",
     "Date" : "2022-06-09 00:00:00 +0000",
     "Descripcion" : "Apium graveolens",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Apio",
     "Id" : 73
   },
@@ -387,7 +387,7 @@
     "SubPartida" : "0714.20",
     "Date" : "2022-06-23 00:00:00 +0000",
     "Descripcion" : "Ipomoea batatas ",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Batata",
     "Id" : 74
   },
@@ -395,7 +395,7 @@
     "SubPartida" : "0703.20",
     "Date" : "2022-06-23 00:00:00 +0000",
     "Descripcion" : "Allium sativum",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Ajo",
     "Id" : 75
   },
@@ -403,7 +403,7 @@
     "SubPartida" : "3304.20",
     "Date" : "2022-06-28 00:00:00 +0000",
     "Descripcion" : "Productos de maquillaje",
-    "Id_Sector" : 2,
+    "Id_Sector" : 17,
     "Producto" : "Preparaciones para el maquillaje de los ojos",
     "Id" : 76
   },
@@ -411,7 +411,7 @@
     "SubPartida" : "3304.91",
     "Date" : "2022-06-28 00:00:00 +0000",
     "Descripcion" : "Productos de maquillaje",
-    "Id_Sector" : 2,
+    "Id_Sector" : 17,
     "Producto" : "Polvos, incluidos los compactos",
     "Id" : 77
   },
@@ -419,7 +419,7 @@
     "SubPartida" : "0801.11",
     "Date" : "2022-07-12 00:00:00 +0000",
     "Descripcion" : "Fruta de la especie tropical cocotero (Cocos nucifera)",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Coco seco",
     "Id" : 78
   },
@@ -427,7 +427,7 @@
     "SubPartida" : "0714.50",
     "Date" : "2022-07-12 00:00:00 +0000",
     "Descripcion" : "Malanga (Xanthosoma spp.) ",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Yautía",
     "Id" : 79
   },
@@ -435,7 +435,7 @@
     "SubPartida" : "0807.20",
     "Date" : "2022-08-11 00:00:00 +0000",
     "Descripcion" : "Carica papaya. Fruto conocido comúnmente como papaya o lechosa.",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Papaya (lechosa)",
     "Id" : 80
   },
@@ -443,7 +443,7 @@
     "SubPartida" : "1211.90",
     "Date" : "2022-08-23 00:00:00 +0000",
     "Descripcion" : "Origanum vulgare es una especie de la familia Lamiaceae",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Orégano",
     "Id" : 81
   },
@@ -451,7 +451,7 @@
     "SubPartida" : "1905.31",
     "Date" : "2022-09-13 00:00:00 +0000",
     "Descripcion" : "Producto alimenticio horneado a base de harina ",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Galletas dulces",
     "Id" : 82
   },
@@ -459,7 +459,7 @@
     "SubPartida" : "0401.20",
     "Date" : "2022-09-28 00:00:00 +0000",
     "Descripcion" : "Leche y nata (crema), sin concentrar, sin adición de azúcar ni otro edulcorante, con un contenido de materias grasas inferior o igual al 1 %\r\nen peso. ",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Leche y nata (crema), sin concentrar, sin adición de azúcar ",
     "Id" : 83
   },
@@ -467,7 +467,7 @@
     "SubPartida" : "2202.99",
     "Date" : "2022-09-30 00:00:00 +0000",
     "Descripcion" : "Bebidas sin contenido de alcohol, con adición de azúcar u otro edulcorante",
-    "Id_Sector" : 3,
+    "Id_Sector" : 18,
     "Producto" : "Las demás bebidas no alcohólicas con adición de azúcar",
     "Id" : 84
   },
@@ -475,7 +475,7 @@
     "SubPartida" : "0407.21",
     "Date" : "2022-10-25 00:00:00 +0000",
     "Descripcion" : "Huevo de gallina de la especie Gallus domesticus que constituye un alimento para consumo humano",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Huevos frescos de gallina",
     "Id" : 85
   },
@@ -483,7 +483,7 @@
     "SubPartida" : "1511.90",
     "Date" : "2022-10-31 00:00:00 +0000",
     "Descripcion" : "Aceite de origen vegetal que se obtiene del mesocarpio de la fruta de la palma de la especies Elaeis guineensis y Elaeis oleifera",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Aceite de palma",
     "Id" : 86
   },
@@ -491,7 +491,7 @@
     "SubPartida" : "1507.90",
     "Date" : "2022-11-11 00:00:00 +0000",
     "Descripcion" : " Aceite vegetal que procede del prensado de la soja (Glycine max). ",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Aceite de soya",
     "Id" : 87
   },
@@ -499,7 +499,7 @@
     "SubPartida" : "0201.10",
     "Date" : "2022-11-15 00:00:00 +0000",
     "Descripcion" : "Carne de animales de la especie bovina, fresca o refrigerada,  en canales o medias canales",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Carne de la especie bovina, fresca o refrigerada     ",
     "Id" : 88
   },
@@ -507,7 +507,7 @@
     "SubPartida" : "1905.90",
     "Date" : "2022-11-25 00:00:00 +0000",
     "Descripcion" : "Masa de plátano, de yuca u otro tubérculo, envuelta en una hoja de plátano y rellena con carne de cerdo, res o pollo y otros ingredientes. ",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Pastel en hojas congelado",
     "Id" : 89
   },
@@ -515,7 +515,7 @@
     "SubPartida" : "8537.20",
     "Date" : "2022-12-14 00:00:00 +0000",
     "Descripcion" : "Para una tensión superior a 1.000 V",
-    "Id_Sector" : 8,
+    "Id_Sector" : 25,
     "Producto" : "Paneles para distribución de electricidad ",
     "Id" : 90
   },
@@ -523,7 +523,7 @@
     "SubPartida" : "2517.10",
     "Date" : "2023-02-10 00:00:00 +0000",
     "Descripcion" : "Material que se origina por fragmentación de las distintas rocas de la corteza terrestre, ya sea en forma natural o artificial ",
-    "Id_Sector" : 9,
+    "Id_Sector" : 26,
     "Producto" : "Grava",
     "Id" : 91
   },
@@ -531,7 +531,7 @@
     "SubPartida" : "61",
     "Date" : "2023-02-24 00:00:00 +0000",
     "Descripcion" : "Prendas y complementos (accesorios), de vestir, excepto los de punto",
-    "Id_Sector" : 7,
+    "Id_Sector" : 23,
     "Producto" : "Prendas de vestir (de punto) ",
     "Id" : 94
   },
@@ -539,7 +539,7 @@
     "SubPartida" : "62",
     "Date" : "2023-02-24 00:00:00 +0000",
     "Descripcion" : "Prendas y complementos (accesorios), de vestir, excepto los de punto",
-    "Id_Sector" : 7,
+    "Id_Sector" : 23,
     "Producto" : "Prendas de vestir (excepto los de punto) ",
     "Id" : 95
   },
@@ -547,7 +547,7 @@
     "SubPartida" : "31 ",
     "Date" : "2023-02-24 00:00:00 +0000",
     "Descripcion" : "Abonos, minerales o químicos (fertilizantes)",
-    "Id_Sector" : 4,
+    "Id_Sector" : 19,
     "Producto" : "Abonos",
     "Id" : 96
   },
@@ -555,7 +555,7 @@
     "SubPartida" : "33",
     "Date" : "2023-02-28 00:00:00 +0000",
     "Descripcion" : "Aceites esenciales y resinoides: preparaciones de perfumería, de tocador o de cosmética",
-    "Id_Sector" : 2,
+    "Id_Sector" : 17,
     "Producto" : "Cosmética",
     "Id" : 97
   },
@@ -563,7 +563,7 @@
     "SubPartida" : "1902",
     "Date" : "2023-02-28 00:00:00 +0000",
     "Descripcion" : "Pastas alimenticia, incluso cocidas o rellenas (de carne u otras sustancias) o preparadas de otra forma, tales como espaguetis, fideos, macarrones, tallarines, lasañas, ñoquis, ravioles, canelones,; cuscús, incluso preparado",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Pastas alimenticias",
     "Id" : 98
   },
@@ -571,7 +571,7 @@
     "SubPartida" : "8543.90",
     "Date" : "2023-02-28 00:00:00 +0000",
     "Descripcion" : "- Partes",
-    "Id_Sector" : 8,
+    "Id_Sector" : 25,
     "Producto" : "Productos de tabaco para calentar y dispositivos electrónicos de calentamiento de tabaco",
     "Id" : 99
   },
@@ -579,7 +579,7 @@
     "SubPartida" : "2402",
     "Date" : "2023-02-28 00:00:00 +0000",
     "Descripcion" : "Cigarros (puros) (incluso despuntados), cigarritos (puritos) y cigarrillos, de tabaco o de sucedáneos del tabaco.",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Cigarros (puros), cigarritos (puritos) y cigarrillos",
     "Id" : 100
   },
@@ -587,7 +587,7 @@
     "SubPartida" : "0409.00",
     "Date" : "2023-02-28 00:00:00 +0000",
     "Descripcion" : "Miel natural",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Miel",
     "Id" : 101
   },
@@ -595,7 +595,7 @@
     "SubPartida" : "1601.00",
     "Date" : "2023-03-01 00:00:00 +0000",
     "Descripcion" : "Embutidos y productos similares de carne, despojos, sangre o de insectos; preparaciones alimenticias a base de estos productos.",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Embutidos",
     "Id" : 102
   },
@@ -603,7 +603,7 @@
     "SubPartida" : "1006",
     "Date" : "2023-03-01 00:00:00 +0000",
     "Descripcion" : "Arroz (incluido con cáscara, descacarillado, semiblanqueado y partido)",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Arroz",
     "Id" : 103
   },
@@ -611,7 +611,7 @@
     "SubPartida" : "1211.90",
     "Date" : "2023-03-10 00:00:00 +0000",
     "Descripcion" : "Los demás",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Hierbas aromáticas ",
     "Id" : 104
   },
@@ -619,7 +619,7 @@
     "SubPartida" : "0705",
     "Date" : "2023-03-10 00:00:00 +0000",
     "Descripcion" : "Lechugas (Lactuca sativa) y achicorias, comprendidas la escarola y la endibia (Cichorium spp.), frescas o refrigeradas. ",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Lechugas",
     "Id" : 105
   },
@@ -627,7 +627,7 @@
     "SubPartida" : "7308.40",
     "Date" : "2023-03-16 00:00:00 +0000",
     "Descripcion" : "Conjunto de estructuras provisionales, móviles o fijas fabricadas de diferentes materiales, utilizados  en limpieza, reparación o creación de obras residenciales o industriales. ",
-    "Id_Sector" : 10,
+    "Id_Sector" : 27,
     "Producto" : "Material de andamiaje",
     "Id" : 106
   },
@@ -635,7 +635,7 @@
     "SubPartida" : "7318.15",
     "Date" : "2023-03-17 00:00:00 +0000",
     "Descripcion" : "Pieza de material metálico o de otro material utilizado para la sujeción de un objeto. ",
-    "Id_Sector" : 10,
+    "Id_Sector" : 27,
     "Producto" : "Los demás tornillos ",
     "Id" : 108
   },
@@ -643,7 +643,7 @@
     "SubPartida" : "0202",
     "Date" : "2023-03-17 00:00:00 +0000",
     "Descripcion" : "Carne de animales de la especie bovina, congelada.",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Carne bovina congelada",
     "Id" : 109
   },
@@ -651,7 +651,7 @@
     "SubPartida" : "64",
     "Date" : "2023-03-31 00:00:00 +0000",
     "Descripcion" : "Calzado, polainas y artículos análogos; partes de estos artículos",
-    "Id_Sector" : 7,
+    "Id_Sector" : 23,
     "Producto" : "Calzado",
     "Id" : 110
   },
@@ -659,7 +659,7 @@
     "SubPartida" : "0402.10",
     "Date" : "2023-03-31 00:00:00 +0000",
     "Descripcion" : "En polvo, gránulos o demás formas sólidas, con un contenido  de materias grasas inferior   o igual al  1,5 %, en peso",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Leche en polvo",
     "Id" : 111
   },
@@ -667,7 +667,7 @@
     "SubPartida" : "1006.30",
     "Date" : "2023-04-05 00:00:00 +0000",
     "Descripcion" : "Cereal. Semilla de la planta Oryza Sativa, pertenece a la familia de las Poáceas (gramíneas). ",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Arroz semiblanqueado o blanqueado",
     "Id" : 112
   },
@@ -675,7 +675,7 @@
     "SubPartida" : "2711.11",
     "Date" : "2023-04-05 00:00:00 +0000",
     "Descripcion" : " - - Gas natural",
-    "Id_Sector" : 9,
+    "Id_Sector" : 26,
     "Producto" : "Gas Natural",
     "Id" : 113
   },
@@ -683,7 +683,7 @@
     "SubPartida" : "0710.40",
     "Date" : "2023-04-05 00:00:00 +0000",
     "Descripcion" : " - Maíz dulce",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Maíz dulce",
     "Id" : 114
   },
@@ -691,7 +691,7 @@
     "SubPartida" : "1209.91",
     "Date" : "2023-04-14 00:00:00 +0000",
     "Descripcion" : "- - Semillas de hortalizas\r\n",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Semillas de hortalizas (para siembra)",
     "Id" : 115
   },
@@ -699,7 +699,7 @@
     "SubPartida" : "0709.91",
     "Date" : "2023-04-14 00:00:00 +0000",
     "Descripcion" : "- - Alcachofas (alcauciles) ",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Alcachofas",
     "Id" : 116
   },
@@ -707,7 +707,7 @@
     "SubPartida" : "0801.12",
     "Date" : "2023-04-14 00:00:00 +0000",
     "Descripcion" : "- - Con la cáscara interna (endocarpio)",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Coco fresco",
     "Id" : 117
   },
@@ -715,7 +715,7 @@
     "SubPartida" : "0810.90",
     "Date" : "2023-04-14 00:00:00 +0000",
     "Descripcion" : "- Los demás",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "   Chinolas, granadillas («maracuyá») parchas, (Passiflora spp.), Limoncillos, Guanabanas, Mameyes, Zapotes y zapotillos, Tamarindos, Jobos (Spondias), Nísperos, Pitahaya ",
     "Id" : 118
   },
@@ -723,7 +723,7 @@
     "SubPartida" : "0802.11",
     "Date" : "2023-04-14 00:00:00 +0000",
     "Descripcion" : "- - Con cáscara",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Almendras (con cáscara)",
     "Id" : 119
   },
@@ -731,7 +731,7 @@
     "SubPartida" : "90",
     "Date" : "2023-04-17 00:00:00 +0000",
     "Descripcion" : "Instrumentos y aparatos; partes y accesorios ",
-    "Id_Sector" : 8,
+    "Id_Sector" : 25,
     "Producto" : "Instrumentos y aparatos, partes y accesorios ",
     "Id" : 121
   },
@@ -739,7 +739,7 @@
     "SubPartida" : "9018",
     "Date" : "2023-04-17 00:00:00 +0000",
     "Descripcion" : "Instrumentos y aparatos de medicina, cirugía, odontología o veterinaria",
-    "Id_Sector" : 8,
+    "Id_Sector" : 25,
     "Producto" : "Instrumentos y aparatos medicoquirúrgicos",
     "Id" : 122
   },
@@ -747,7 +747,7 @@
     "SubPartida" : "9018.90",
     "Date" : "2023-04-17 00:00:00 +0000",
     "Descripcion" : "Los demás instrumentos y aparatos de medicina, cirugía o veterinaria, n.c.o.p.",
-    "Id_Sector" : 8,
+    "Id_Sector" : 25,
     "Producto" : "Los demás instrumentos y aparatos",
     "Id" : 123
   },
@@ -755,7 +755,7 @@
     "SubPartida" : "72",
     "Date" : "2023-04-17 00:00:00 +0000",
     "Descripcion" : "Fundición, hierro y acero",
-    "Id_Sector" : 10,
+    "Id_Sector" : 27,
     "Producto" : "Fundición, hierro y acero",
     "Id" : 124
   },
@@ -763,7 +763,7 @@
     "SubPartida" : "7202",
     "Date" : "2023-04-17 00:00:00 +0000",
     "Descripcion" : "Ferroaleaciones",
-    "Id_Sector" : 10,
+    "Id_Sector" : 27,
     "Producto" : "Ferroaleaciones",
     "Id" : 125
   },
@@ -771,7 +771,7 @@
     "SubPartida" : "7202.60",
     "Date" : "2023-04-17 00:00:00 +0000",
     "Descripcion" : "Ferroniquel",
-    "Id_Sector" : 10,
+    "Id_Sector" : 27,
     "Producto" : "Ferroniquel",
     "Id" : 126
   },
@@ -779,7 +779,7 @@
     "SubPartida" : "39",
     "Date" : "2023-04-17 00:00:00 +0000",
     "Descripcion" : "Plástico y sus manufacturas",
-    "Id_Sector" : 4,
+    "Id_Sector" : 19,
     "Producto" : "Plástico y sus manufacturas",
     "Id" : 127
   },
@@ -787,7 +787,7 @@
     "SubPartida" : "3924",
     "Date" : "2023-04-17 00:00:00 +0000",
     "Descripcion" : " Vajilla, artículos de cocina o de uso doméstico y artículos de higiene o tocador, de plástico",
-    "Id_Sector" : 4,
+    "Id_Sector" : 19,
     "Producto" : " Vajilla, artículos de cocina y de higiene, de plástico",
     "Id" : 128
   },
@@ -795,7 +795,7 @@
     "SubPartida" : "3924.10",
     "Date" : "2023-04-17 00:00:00 +0000",
     "Descripcion" : "Vajilla y demás artículos para servicio de mesa o de cocina, de plástico",
-    "Id_Sector" : 4,
+    "Id_Sector" : 19,
     "Producto" : "Vajilla y demás artículos para servicio de mesa, de plástico",
     "Id" : 129
   },
@@ -803,7 +803,7 @@
     "SubPartida" : "96",
     "Date" : "2023-04-17 00:00:00 +0000",
     "Descripcion" : "Manufacturas diversas",
-    "Id_Sector" : 6,
+    "Id_Sector" : 22,
     "Producto" : "Manufacturas diversas",
     "Id" : 130
   },
@@ -811,7 +811,7 @@
     "SubPartida" : "9603",
     "Date" : "2023-04-17 00:00:00 +0000",
     "Descripcion" : "Escobas y escobillas, cepillos, brochas y pinceles (incluso si son partes de máquinas, aparatos o vehículos), escobas mecánicas, sin motor,  de uso manual, fregonas o mopas y plumeros; cabezas preparadas para artículos de cepillería; almohadillas o muñequilla y rodillos, para pintar; rasquetas de caucho o materia flexible análoga. ",
-    "Id_Sector" : 6,
+    "Id_Sector" : 22,
     "Producto" : "Escobas, cepillos, brochas y pinceles, escobas mecánicas, sin motor, fregonas y plumeros, cabezas preparadas para artículos de cepillería; almohadillas y rodillos, para pintar, rasquetas",
     "Id" : 131
   },
@@ -819,7 +819,7 @@
     "SubPartida" : "9603.90",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Los demás plumeros; cabezas preparadas para artículos de cepillería; rasquetas de caucho o material flexible análoga",
-    "Id_Sector" : 6,
+    "Id_Sector" : 22,
     "Producto" : "Los demás plumeros; cabezas preparadas para artículos de cepillería; rasquetas.",
     "Id" : 132
   },
@@ -827,7 +827,7 @@
     "SubPartida" : "3926",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Las demás manufacturas de plástico y manufacturas de las demás materias de las partidas 39.01 a 39.14",
-    "Id_Sector" : 4,
+    "Id_Sector" : 19,
     "Producto" : "Las demás manufacturas de plástico y manufacturas de las demás materias de las partidas 39.01 a 39.14",
     "Id" : 133
   },
@@ -835,7 +835,7 @@
     "SubPartida" : "3926.90",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Las demás manufacturas de  las partidas 3901 a 3914.",
-    "Id_Sector" : 4,
+    "Id_Sector" : 19,
     "Producto" : "Las demás manufacturas de  las partidas 3901 a 3914.",
     "Id" : 134
   },
@@ -843,7 +843,7 @@
     "SubPartida" : "2401",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Tabaco en rama o sin elaborar; desperdicios de tabaco",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Tabaco en rama o sin elaborar; desperdicios de tabaco",
     "Id" : 135
   },
@@ -851,7 +851,7 @@
     "SubPartida" : "24",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Tabaco y sucedáneos del tabaco elaborados; productos, incluso con nicotina.",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Tabaco y sucedáneos del tabaco elaborados; productos, incluso con nicotina.",
     "Id" : 136
   },
@@ -859,7 +859,7 @@
     "SubPartida" : "6109",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "«T-shirts» y camisetas, de punto",
-    "Id_Sector" : 7,
+    "Id_Sector" : 23,
     "Producto" : "«T-shirts» y camisetas, de punto",
     "Id" : 137
   },
@@ -867,7 +867,7 @@
     "SubPartida" : "6109.10",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "T-shirts y camisetas de algodón",
-    "Id_Sector" : 7,
+    "Id_Sector" : 23,
     "Producto" : "T-shirts y camisetas de algodón",
     "Id" : 138
   },
@@ -875,7 +875,7 @@
     "SubPartida" : "7214",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : " Barras de hierro o acero sin alear, simplemente forjadas, laminadas o extrudidas, en caliente, así como las sometidas a torsión después del laminado",
-    "Id_Sector" : 10,
+    "Id_Sector" : 27,
     "Producto" : " Barras de hierro o acero sin alear, forjadas, laminadas o extrudidas, en caliente",
     "Id" : 139
   },
@@ -883,7 +883,7 @@
     "SubPartida" : "7214.20",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Barras de hierro o acero sin alear, con muescas, cordones, huecos o relieves",
-    "Id_Sector" : 10,
+    "Id_Sector" : 27,
     "Producto" : "Barras de hierro o acero sin alear, con muescas, cordones, huecos o relieves.",
     "Id" : 140
   },
@@ -891,7 +891,7 @@
     "SubPartida" : "71",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Perlas, piedras preciosas o semipreciosas, metales preciosos y manufacturas; bisutería; monedas",
-    "Id_Sector" : 10,
+    "Id_Sector" : 27,
     "Producto" : "Perlas, piedras preciosas o semipreciosas, metales preciosos y manufacturas; bisutería; monedas",
     "Id" : 141
   },
@@ -899,7 +899,7 @@
     "SubPartida" : "7113",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Artículos de joyería y sus partes, de metal precioso o de chapado de metal precioso (plaqué)",
-    "Id_Sector" : 10,
+    "Id_Sector" : 27,
     "Producto" : "Artículos de joyería y sus partes",
     "Id" : 142
   },
@@ -907,7 +907,7 @@
     "SubPartida" : "7113.19",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Artículos de joyería y sus partes, de los demás metales preciosos distintos de la plata,  incluso revestidos o chapados de metal precioso (plaqué)",
-    "Id_Sector" : 10,
+    "Id_Sector" : 27,
     "Producto" : "Artículos de joyería y sus partes, de los demás metales preciosos distintos de la plata",
     "Id" : 143
   },
@@ -915,7 +915,7 @@
     "SubPartida" : "85",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Máquinas, aparatos y material eléctrico; aparatos de reproducción de sonido, imagen; y las partes y accesorios de estos aparatos",
-    "Id_Sector" : 8,
+    "Id_Sector" : 25,
     "Producto" : "Máquinas, aparatos y material eléctrico; aparatos de reproducción de sonido, imagen; y las partes y accesorios de estos aparatos",
     "Id" : 144
   },
@@ -923,7 +923,7 @@
     "SubPartida" : "8536",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Aparatos para corte, seccionamiento, protección, derivación, empalme o conexión de circuitos eléctricos para una tensión inferior o igual a 1.000 voltios",
-    "Id_Sector" : 8,
+    "Id_Sector" : 25,
     "Producto" : "Aparatos para corte, seccionamiento, protección, derivación, empalme o conexión de circuitos eléctricos para una tensión inferior o igual a 1.000 voltios",
     "Id" : 145
   },
@@ -931,7 +931,7 @@
     "SubPartida" : "8536.20",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Disyuntores",
-    "Id_Sector" : 8,
+    "Id_Sector" : 25,
     "Producto" : "Disyuntores",
     "Id" : 146
   },
@@ -939,7 +939,7 @@
     "SubPartida" : "84",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Reactores nucleares, calderas, máquinas, aparatos y artefactos mecánicos; partes",
-    "Id_Sector" : 8,
+    "Id_Sector" : 25,
     "Producto" : "Reactores nucleares, calderas, máquinas, aparatos y artefactos mecánicos; partes",
     "Id" : 147
   },
@@ -947,7 +947,7 @@
     "SubPartida" : "8481",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Artículos de grifería y órganos similares",
-    "Id_Sector" : 8,
+    "Id_Sector" : 25,
     "Producto" : "Artículos de grifería y órganos similares",
     "Id" : 148
   },
@@ -955,7 +955,7 @@
     "SubPartida" : "8481.80",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Los demás artículos de grifería y órganos similares para tuberías (exc. válvulas reductoras de presión y las válvulas termostáticas)",
-    "Id_Sector" : 8,
+    "Id_Sector" : 25,
     "Producto" : "Los demás artículos de grifería y órganos similares para tuberías (excluídas las válvulas)",
     "Id" : 149
   },
@@ -963,7 +963,7 @@
     "SubPartida" : "30",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Productos Farmacéuticos",
-    "Id_Sector" : 4,
+    "Id_Sector" : 19,
     "Producto" : "Productos Farmacéuticos",
     "Id" : 150
   },
@@ -971,7 +971,7 @@
     "SubPartida" : "3006",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Preparaciones y artículos farmacéuticos a que se refiere la Nota 4 de este Capítulo. ",
-    "Id_Sector" : 4,
+    "Id_Sector" : 19,
     "Producto" : "Preparaciones y artículos farmacéuticos a que se refiere la Nota 4 de este Capítulo. ",
     "Id" : 151
   },
@@ -979,7 +979,7 @@
     "SubPartida" : "3006.10",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Catguts estériles y ligaduras estériles similares, para suturas quirúrgicas.",
-    "Id_Sector" : 4,
+    "Id_Sector" : 19,
     "Producto" : "Catguts estériles y ligaduras estériles ",
     "Id" : 152
   },
@@ -987,7 +987,7 @@
     "SubPartida" : "90",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Instrumentos y aparatos; partes y accesorios ",
-    "Id_Sector" : 8,
+    "Id_Sector" : 25,
     "Producto" : "Instrumentos y aparatos; partes y accesorios ",
     "Id" : 154
   },
@@ -995,7 +995,7 @@
     "SubPartida" : "9018",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Instrumentos y aparatos de medicina, cirugía, odontología o veterinaria",
-    "Id_Sector" : 8,
+    "Id_Sector" : 25,
     "Producto" : "Instrumentos y aparatos medicoquirúrgicos",
     "Id" : 155
   },
@@ -1003,7 +1003,7 @@
     "SubPartida" : "9018.32",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Agujas tubulares de metal y agujas de sutura, para uso médico.",
-    "Id_Sector" : 8,
+    "Id_Sector" : 25,
     "Producto" : "Agujas tubulares",
     "Id" : 156
   },
@@ -1011,7 +1011,7 @@
     "SubPartida" : "08",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Frutas y frutos comestibles; cortezas de agrios (cítricos ) melones o sandías",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Frutas y frutos comestibles",
     "Id" : 157
   },
@@ -1019,7 +1019,7 @@
     "SubPartida" : "0803",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : " Bananas, incluidos los plátanos («plantains»), frescos o secos",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : " Bananas, incluidos los plátanos («plantains»), frescos o secos",
     "Id" : 158
   },
@@ -1027,7 +1027,7 @@
     "SubPartida" : "0803.10",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Plátanos (Plantains) frescos o secos",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Plátanos (Plantains) frescos o secos",
     "Id" : 159
   },
@@ -1035,7 +1035,7 @@
     "SubPartida" : "20",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Preparaciones de hortalizas, frutas u otros frutos",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Preparaciones de hortalizas, frutas u otros frutos",
     "Id" : 160
   },
@@ -1043,7 +1043,7 @@
     "SubPartida" : "2008",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Frutas u otros frutos y demás partes comestibles de plantas, preparados o conservados, con adición de azúcar u otro edulcorante o alcohol, no expresados ni comprendidos en otra parte",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Frutas u otros frutos y demás partes comestibles de plantas, preparados o conservados,no expresados ni comprendidos en otra parte",
     "Id" : 161
   },
@@ -1051,7 +1051,7 @@
     "SubPartida" : "2008.99",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Las demás frutas preparadas y conservadas",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Las demás frutas preparadas y conservadas",
     "Id" : 162
   },
@@ -1059,7 +1059,7 @@
     "SubPartida" : "2208",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Alcohol etílico sin desnaturalizar con grado alcohólico volumétrico inferior al 80 % vol.; aguardientes, licores y demás bebidas espirituosas",
-    "Id_Sector" : 3,
+    "Id_Sector" : 18,
     "Producto" : "Alcohol etílico sin desnaturalizar con grado alcohólico volumétrico inferior al 80 % vol.; aguardientes, licores y demás bebidas espirituosas",
     "Id" : 163
   },
@@ -1067,7 +1067,7 @@
     "SubPartida" : "22",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Bebidas, líquidos alcohólicos y vinagre",
-    "Id_Sector" : 3,
+    "Id_Sector" : 18,
     "Producto" : "Bebidas, líquidos alcohólicos y vinagre",
     "Id" : 164
   },
@@ -1075,7 +1075,7 @@
     "SubPartida" : "17",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Azúcares y artículos de confitería",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Azúcares y artículos de confitería",
     "Id" : 165
   },
@@ -1083,7 +1083,7 @@
     "SubPartida" : "1701",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Azúcar de caña o de remolacha y sacarosa químicamente pura, en estado sólido",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Azúcar de caña o de remolacha y sacarosa químicamente pura, en estado sólido",
     "Id" : 166
   },
@@ -1091,7 +1091,7 @@
     "SubPartida" : "1701.13",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Azúcar de caña, en estado sólido, sin adición de aromatizante ni colorante",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Azúcar de caña ",
     "Id" : 167
   },
@@ -1099,7 +1099,7 @@
     "SubPartida" : "15",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Grasas y aceites, animales, vegetales o de origen microbiano; grasas alimenticias elaborado; ceras de origen animal o vegetal",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Grasas y aceites, animales, vegetales o de origen microbiano",
     "Id" : 168
   },
@@ -1107,7 +1107,7 @@
     "SubPartida" : "1507",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Aceite de soja (soya) y sus fracciones, incluso refinado, pero sin modificar químicamente",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Aceite de soja (soya) y sus fracciones, incluso refinado",
     "Id" : 169
   },
@@ -1115,7 +1115,7 @@
     "SubPartida" : "1507.90",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Aceite de soya refinado",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Aceite de soya refinado",
     "Id" : 170
   },
@@ -1123,7 +1123,7 @@
     "SubPartida" : "11",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Producto de la molinería; malta; almidón y fécula; inulina; gluten de trigo",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Producto de la molinería; malta; almidón y fécula; inulina; gluten de trigo.",
     "Id" : 171
   },
@@ -1131,7 +1131,7 @@
     "SubPartida" : "1101",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : " Harina de trigo o de morcajo (tranquillón)",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : " Harina de trigo o de morcajo (tranquillón). ",
     "Id" : 172
   },
@@ -1139,7 +1139,7 @@
     "SubPartida" : "1101.00",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Harina de trigo",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Harina de trigo",
     "Id" : 173
   },
@@ -1147,7 +1147,7 @@
     "SubPartida" : "09",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Café, té, yerba mate y especias",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Café, té, yerba mate y especias",
     "Id" : 174
   },
@@ -1155,7 +1155,7 @@
     "SubPartida" : "0901",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Café, incluso tostado o descafeinado; cáscara y cascarilla de café; sucedáneos del café que contengan café en cualquier proporción.",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Café, incluso tostado o descafeinado; cáscara y cascarilla de café; sucedáneos del café.",
     "Id" : 175
   },
@@ -1163,7 +1163,7 @@
     "SubPartida" : "3923",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Artículos para el transporte o envasado, de plástico; tapones, tapas, cápsulas y demás dispositivos de cierre, de plástico",
-    "Id_Sector" : 4,
+    "Id_Sector" : 19,
     "Producto" : "Artículos para el transporte o envasado, de plástico; tapones y demás dispositivos de cierre, de plástico",
     "Id" : 176
   },
@@ -1171,7 +1171,7 @@
     "SubPartida" : "3923.10",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Cajas, cajones, jaulas y artículos similares para transporte o envasado, de plástico.",
-    "Id_Sector" : 4,
+    "Id_Sector" : 19,
     "Producto" : "Cajas de plástico",
     "Id" : 177
   },
@@ -1179,7 +1179,7 @@
     "SubPartida" : "9018.19",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Los demás aparatos de electrodiagnóstico, incluidos los aparatos par exploración funcional o para vigilancia de parámetros fisiológicos",
-    "Id_Sector" : 8,
+    "Id_Sector" : 25,
     "Producto" : "Los demás aparatos de electrodiagnóstico",
     "Id" : 178
   },
@@ -1187,7 +1187,7 @@
     "SubPartida" : "83",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Manufacturas diversas de metal común",
-    "Id_Sector" : 10,
+    "Id_Sector" : 27,
     "Producto" : "Manufacturas diversas de metal común",
     "Id" : 179
   },
@@ -1195,7 +1195,7 @@
     "SubPartida" : "8301",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : " Candados, cerraduras y cerrojos (de llave, combinación o eléctricos), de metal común; cierres y monturas cierre, con cerradura incorporada, de metal común; llaves de metal común para estos artículos",
-    "Id_Sector" : 10,
+    "Id_Sector" : 27,
     "Producto" : " Candados, cerraduras y cerrojos; cierres y monturas cierres; llaves de metal común",
     "Id" : 180
   },
@@ -1203,7 +1203,7 @@
     "SubPartida" : "8301.40",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Las demás cerraduras y cerrojos, de metal común (excluidos candados y cerraduras de los tipos utilizados en vehículos automoviles y muebles)",
-    "Id_Sector" : 10,
+    "Id_Sector" : 27,
     "Producto" : "Las demás cerraduras; cerrojos",
     "Id" : 181
   },
@@ -1211,7 +1211,7 @@
     "SubPartida" : "0812",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Frutas y otros frutos, conservados provisionalmente, pero todavía impropios, en este estado, para consumo inmediato",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Frutas y otros frutos, conservados provisionalmente, impropios para consumo inmediato",
     "Id" : 182
   },
@@ -1219,7 +1219,7 @@
     "SubPartida" : "9018.50",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Los demás instrumentos y aparatos de oftalmología",
-    "Id_Sector" : 8,
+    "Id_Sector" : 25,
     "Producto" : "Los demás instrumentos y aparatos de oftalmología",
     "Id" : 183
   },
@@ -1227,7 +1227,7 @@
     "SubPartida" : "6110",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : " Suéteres (jerseys),  pulóveres, cárdigan, chalecos y artículos similares, de punto",
-    "Id_Sector" : 7,
+    "Id_Sector" : 23,
     "Producto" : " Suéteres (jerseys),  pulóveres, cárdigan, chalecos y artículos similares, de punto",
     "Id" : 184
   },
@@ -1235,7 +1235,7 @@
     "SubPartida" : "6110.30",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Suéteres de fibras sintéticas o artificiales",
-    "Id_Sector" : 7,
+    "Id_Sector" : 23,
     "Producto" : "Suéteres de fibras sintéticas o artificiales",
     "Id" : 185
   },
@@ -1243,7 +1243,7 @@
     "SubPartida" : "8549",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : " Desperdicios y desechos, eléctricos y electrónicos",
-    "Id_Sector" : 8,
+    "Id_Sector" : 25,
     "Producto" : " Desperdicios y desechos, eléctricos y electrónicos",
     "Id" : 186
   },
@@ -1251,7 +1251,7 @@
     "SubPartida" : "8549.11",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Desperdicios y desechos de acumuladores de plomo y ácido; acumuladores de plomo y ácido inservibles",
-    "Id_Sector" : 8,
+    "Id_Sector" : 25,
     "Producto" : "Desperdicios de acumuladores de plomo y ácido",
     "Id" : 187
   },
@@ -1259,7 +1259,7 @@
     "SubPartida" : "25",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Productos minerales",
-    "Id_Sector" : 9,
+    "Id_Sector" : 26,
     "Producto" : "Productos minerales",
     "Id" : 188
   },
@@ -1267,7 +1267,7 @@
     "SubPartida" : "2523",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Cementos hidráulicos (comprendidos los cementos sin pulverizar o «clínker»), incluso coloreados",
-    "Id_Sector" : 9,
+    "Id_Sector" : 26,
     "Producto" : "Cementos hidráulicos, incluso coloreados",
     "Id" : 189
   },
@@ -1275,7 +1275,7 @@
     "SubPartida" : "2523.29",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Cemento Portland (excluido cemento blanco, incluso. coloreado artificialmente)",
-    "Id_Sector" : 9,
+    "Id_Sector" : 26,
     "Producto" : "Cemento portland",
     "Id" : 190
   },
@@ -1283,7 +1283,7 @@
     "SubPartida" : "63",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Los demás artículos textiles confeccionados; juegos; prendería y trapos",
-    "Id_Sector" : 7,
+    "Id_Sector" : 23,
     "Producto" : "Los demás artículos textiles confeccionados; juegos; prendería y trapos",
     "Id" : 191
   },
@@ -1291,7 +1291,7 @@
     "SubPartida" : "6302",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Ropa de cama, mesa, tocador o cocina",
-    "Id_Sector" : 7,
+    "Id_Sector" : 23,
     "Producto" : "Ropa de cama, mesa, tocador o cocina",
     "Id" : 192
   },
@@ -1299,7 +1299,7 @@
     "SubPartida" : "6203.10",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Ropa de cama, de punto, de algodón, de fibras sintéticas o artificiales y de las demás materias textiles",
-    "Id_Sector" : 7,
+    "Id_Sector" : 23,
     "Producto" : "Ropa de cama",
     "Id" : 193
   },
@@ -1307,7 +1307,7 @@
     "SubPartida" : "9018.39",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Los demás: catéteres, cánulas e instrumentos similares, para uso médico (excluyendo jeringas, agujas tubulares de metal)",
-    "Id_Sector" : 8,
+    "Id_Sector" : 25,
     "Producto" : "Los demás: Catéteres, cánulas e instrumentos similares",
     "Id" : 194
   },
@@ -1315,7 +1315,7 @@
     "SubPartida" : "7204",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Desperdicios y desechos (chatarra), de fundición, hierro o acero; lingotes de chatarra de hierro o acero",
-    "Id_Sector" : 10,
+    "Id_Sector" : 27,
     "Producto" : "Desperdicios y desechos (chatarra), de fundición, hierro o acero; lingotes de chatarra de hierro o acero",
     "Id" : 195
   },
@@ -1323,7 +1323,7 @@
     "SubPartida" : "7204.29",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Desperdicios y desechos (chatarra), de aceros aleados (excepto de acero inoxidable)",
-    "Id_Sector" : 10,
+    "Id_Sector" : 27,
     "Producto" : "Los demás desperdicios y desechos",
     "Id" : 196
   },
@@ -1331,7 +1331,7 @@
     "SubPartida" : "3004",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Medicamentos (excepto los productos de las partidas 30.02, 30.05 o 30.06) constituidos por productos mezclados o sin mezclar, preparados para usos terapéuticos o profilácticos, dosificados (incluidos los administrados por vía transdérmica) o acondicionados para la venta al por menor",
-    "Id_Sector" : 4,
+    "Id_Sector" : 19,
     "Producto" : "Medicamentos (excepto los productos de las partidas 30.02, 30.05 o 30.06), dosificados",
     "Id" : 197
   },
@@ -1339,7 +1339,7 @@
     "SubPartida" : "3923.30",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Bombonas (damajuanas) botellas, frascos y artículos similares para transporte o envasado, de plástico",
-    "Id_Sector" : 4,
+    "Id_Sector" : 19,
     "Producto" : "Bombonas, botellas y frascos de plástico",
     "Id" : 198
   },
@@ -1347,7 +1347,7 @@
     "SubPartida" : "9019",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Aparatos de mecanoterapia; aparatos para masajes; aparatos de psicotecnia; aparatos de ozonoterapia, oxigenoterapia o aerosolterapia, aparatos respiratorios de reanimación y demás aparatos de terapia respiratoria",
-    "Id_Sector" : 8,
+    "Id_Sector" : 25,
     "Producto" : "Aparatos de mecanoterapia; para masajes; psicotecnia; ozonoterapia, oxigenoterapia o aerosolterapia y demás aparatos de terapia respiratoria",
     "Id" : 199
   },
@@ -1355,7 +1355,7 @@
     "SubPartida" : "9019.10",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Aparatos de mecanoterapia; aparatos para masajes; aparatos de psicotecnia",
-    "Id_Sector" : 8,
+    "Id_Sector" : 25,
     "Producto" : "Aparatos de mecanoterapia; aparatos para masajes; aparatos de psicotecnia",
     "Id" : 200
   },
@@ -1363,7 +1363,7 @@
     "SubPartida" : "6404",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Calzado con suela de caucho, plástico, cuero natural o regenerado y parte superior de materia textil",
-    "Id_Sector" : 7,
+    "Id_Sector" : 23,
     "Producto" : "Calzado con suela de caucho, plástico, cuero natural o regenerado y parte superior de materia textil",
     "Id" : 201
   },
@@ -1371,7 +1371,7 @@
     "SubPartida" : "6404.19",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Los demás calzados con suela de caucho o plástico, parte superior textil",
-    "Id_Sector" : 7,
+    "Id_Sector" : 23,
     "Producto" : "Los demás calzados con suela de caucho o plástico, parte superior textil",
     "Id" : 202
   },
@@ -1379,7 +1379,7 @@
     "SubPartida" : "34",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Jabón, preparaciones para lavar, preparaciones lubricantes, ceras, productos de limpieza, velas, preparaciones para odontología",
-    "Id_Sector" : 2,
+    "Id_Sector" : 17,
     "Producto" : "Jabón, preparaciones para lavar, preparaciones lubricantes, ceras, productos de limpieza, velas, preparaciones para odontología",
     "Id" : 203
   },
@@ -1387,7 +1387,7 @@
     "SubPartida" : "3402",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : " Agentes de superficie orgánicos (excepto el jabón); preparaciones tensoactivas, preparaciones para lavar y preparaciones de limpieza, aunque contengan jabón, excepto las de la partida 34.01",
-    "Id_Sector" : 2,
+    "Id_Sector" : 17,
     "Producto" : " Agentes de superficie orgánicos (excepto el jabón); preparaciones tensoactivas, preparaciones para lavar y preparaciones de limpieza, aunque contengan jabón, excepto las de la partida 34.01",
     "Id" : 204
   },
@@ -1395,7 +1395,7 @@
     "SubPartida" : "3402.50",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Preparaciones tensoactivas (detergentes)",
-    "Id_Sector" : 2,
+    "Id_Sector" : 17,
     "Producto" : "Preparaciones tensoactivas (detergentes)",
     "Id" : 205
   },
@@ -1403,7 +1403,7 @@
     "SubPartida" : "42",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Manufacturas de cuero, artículos de talabartería, artículos de viaje, bolsos de mano y continentes similares; manufacturas de tripa.",
-    "Id_Sector" : 7,
+    "Id_Sector" : 23,
     "Producto" : "Manufacturas de cuero, artículos de talabartería, artículos de viaje, bolsos de mano y continentes similares; manufacturas de tripa",
     "Id" : 206
   },
@@ -1411,7 +1411,7 @@
     "SubPartida" : "4205",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Las demás manufacturas de cuero natural o cuero regenerado",
-    "Id_Sector" : 7,
+    "Id_Sector" : 23,
     "Producto" : "Las demás manufacturas de cuero natural o cuero regenerado",
     "Id" : 207
   },
@@ -1419,7 +1419,7 @@
     "SubPartida" : "4205.00",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Las demás manufacturas de cuero",
-    "Id_Sector" : 7,
+    "Id_Sector" : 23,
     "Producto" : "Las demás manufacturas de cuero",
     "Id" : 208
   },
@@ -1427,7 +1427,7 @@
     "SubPartida" : "8531",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : " Aparatos eléctricos de señalización acústica o visual (por ejemplo: timbres, sirenas, tableros indicadores, avisadores de protección contra robo o incendio), excepto los de las partidas 85.12 u 85.30",
-    "Id_Sector" : 8,
+    "Id_Sector" : 25,
     "Producto" : " Aparatos eléctricos de señalización acústica o visual (por ejemplo: timbres, sirenas, tableros indicadores, avisadores de protección contra robo o incendio), excepto los de las partidas 85.12 u 85.30",
     "Id" : 209
   },
@@ -1435,7 +1435,7 @@
     "SubPartida" : "8531.10",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Avisadores eléctricos de protección contra robo o incendio",
-    "Id_Sector" : 8,
+    "Id_Sector" : 25,
     "Producto" : "Avisadores eléctricos de protección contra robo o incendio",
     "Id" : 210
   },
@@ -1443,7 +1443,7 @@
     "SubPartida" : "52",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Algodón",
-    "Id_Sector" : 7,
+    "Id_Sector" : 23,
     "Producto" : "Algodón",
     "Id" : 211
   },
@@ -1451,7 +1451,7 @@
     "SubPartida" : "5209",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Tejidos de algodón con un contenido de algodón superior o igual al 85 % en peso, de peso superior a 200 g\/m²",
-    "Id_Sector" : 7,
+    "Id_Sector" : 23,
     "Producto" : "Tejidos de algodón con un contenido de algodón superior o igual al 85 % en peso, de peso superior a 200 g\/m²",
     "Id" : 212
   },
@@ -1459,7 +1459,7 @@
     "SubPartida" : "5209.19",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Los demás tejidos de algodón, crudos",
-    "Id_Sector" : 7,
+    "Id_Sector" : 23,
     "Producto" : "Los demás tejidos de algodón, crudos",
     "Id" : 213
   },
@@ -1467,7 +1467,7 @@
     "SubPartida" : "7216",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Perfiles de hierro o acero sin alear",
-    "Id_Sector" : 10,
+    "Id_Sector" : 27,
     "Producto" : "Perfiles de hierro o acero sin alear",
     "Id" : 214
   },
@@ -1475,7 +1475,7 @@
     "SubPartida" : "7216.69",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Los demás perfiles de hierro o acero sin alear",
-    "Id_Sector" : 10,
+    "Id_Sector" : 27,
     "Producto" : "Los demás perfiles de hierro o acero sin alear",
     "Id" : 215
   },
@@ -1483,7 +1483,7 @@
     "SubPartida" : "6101",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Abrigos, chaquetones, capas, anoraks, cazadoras y artículos similares, de punto, para hombres o niños, excepto los artículos de la partida 61.03",
-    "Id_Sector" : 7,
+    "Id_Sector" : 23,
     "Producto" : "Abrigos, chaquetones, capas, anoraks, cazadoras y artículos similares, de punto, para hombres o niños, excepto los artículos de la partida 61.03",
     "Id" : 217
   },
@@ -1491,7 +1491,7 @@
     "SubPartida" : "6101.90",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Abrigos, tejido de punto",
-    "Id_Sector" : 7,
+    "Id_Sector" : 23,
     "Producto" : "Abrigos, tejido de punto",
     "Id" : 218
   },
@@ -1499,7 +1499,7 @@
     "SubPartida" : "8541",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Dispositivos semiconductores (por ejemplo: diodos, transistores, transductores basados en semiconductores); dispositivos semiconductores fotosensibles, incluidas las células fotovoltaicas, aunque estén ensambladas en módulos o paneles; diodos emisores de luz (LED), incluso ensamblados con otros diodos emisores de luz (LED); cristales piezoeléctricos montados.",
-    "Id_Sector" : 8,
+    "Id_Sector" : 25,
     "Producto" : "Dispositivos semiconductores (por ejemplo: diodos, transistores, transductores basados en semiconductores); dispositivos semiconductores fotosensibles, incluidas las células fotovoltaicas, aunque estén ensambladas en módulos o paneles; diodos emisores de luz (LED), incluso ensamblados con otros diodos emisores de luz (LED); cristales piezoeléctricos montados",
     "Id" : 219
   },
@@ -1507,7 +1507,7 @@
     "SubPartida" : "6217",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Los demás complementos (accesorios) de vestir confeccionados; partes de prendas o de complementos (accesorios), de vestir, excepto las de la partida 62.12",
-    "Id_Sector" : 7,
+    "Id_Sector" : 23,
     "Producto" : "Los demás complementos (accesorios) de vestir confeccionados; partes de prendas o de complementos (accesorios), de vestir, excepto las de la partida 62.12",
     "Id" : 220
   },
@@ -1515,7 +1515,7 @@
     "SubPartida" : "6217.10",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Complementos (accesorios) de vestir",
-    "Id_Sector" : 7,
+    "Id_Sector" : 23,
     "Producto" : "Complementos (accesorios) de vestir",
     "Id" : 221
   },
@@ -1523,7 +1523,7 @@
     "SubPartida" : "3105",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Abonos minerales o químicos, con dos o tres de los elementos fertilizantes: nitrógeno, fósforo y potasio; los demás abonos; productos de este Capítulo en tabletas o formas similares o en envases de un peso bruto inferior o igual a 10 kg",
-    "Id_Sector" : 4,
+    "Id_Sector" : 19,
     "Producto" : "Abonos minerales o químicos, con dos o tres de los elementos fertilizantes: nitrógeno, fósforo y potasio; los demás abonos; productos de este Capítulo en tabletas o formas similares o en envases de un peso bruto inferior o igual a 10 kg",
     "Id" : 222
   },
@@ -1531,7 +1531,7 @@
     "SubPartida" : "7214.99",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Las demás barras de hierro o acero, sin alear",
-    "Id_Sector" : 10,
+    "Id_Sector" : 27,
     "Producto" : "Las demás barras de hierro o acero, sin alear",
     "Id" : 223
   },
@@ -1539,7 +1539,7 @@
     "SubPartida" : "6401",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Calzado impermeable con suela y parte superior de caucho o plástico, cuya parte superior no se haya unido a la suela por costura o por medio de remaches, clavos,  tornillos, espigas o dispositivos similares, ni se haya formado con diferentes  partes unidas de la misma manera",
-    "Id_Sector" : 7,
+    "Id_Sector" : 23,
     "Producto" : "Calzado impermeable con suela y parte superior de caucho o plástico, cuya parte superior no se haya unido a la suela por costura o por medio de remaches, clavos,  tornillos, espigas o dispositivos similares, ni se haya formado con diferentes  partes unidas de la misma manera",
     "Id" : 224
   },
@@ -1547,7 +1547,7 @@
     "SubPartida" : "6401.92",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Calzados impermeables, suela y parte superior de caucho o plástico",
-    "Id_Sector" : 7,
+    "Id_Sector" : 23,
     "Producto" : "Calzados impermeables, suela y parte superior de caucho o plástico",
     "Id" : 225
   },
@@ -1555,7 +1555,7 @@
     "SubPartida" : "1902.11",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Pastas alimenticias, sin cocer",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Pastas alimenticias, sin cocer",
     "Id" : 226
   },
@@ -1563,7 +1563,7 @@
     "SubPartida" : "19",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Preparaciones a base de cereales, harina, almidón, fécula o leche; productos de pastelería",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Preparaciones a base de cereales, harina, almidón, fécula o leche; productos de pastelería",
     "Id" : 227
   },
@@ -1571,7 +1571,7 @@
     "SubPartida" : "3907",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Poliacetales, los demás poliéteres y resinas epoxi, en formas primarias; policarbonatos, resinas alcídicas, poliésteres alílicos y demás poliésteres, en formas primarias",
-    "Id_Sector" : 4,
+    "Id_Sector" : 19,
     "Producto" : "Poliacetales, los demás poliéteres y resinas epoxi, en formas primarias; policarbonatos, resinas alcídicas, poliésteres alílicos y demás poliésteres, en formas primarias",
     "Id" : 228
   },
@@ -1579,7 +1579,7 @@
     "SubPartida" : "3907.50",
     "Date" : "2023-04-18 00:00:00 +0000",
     "Descripcion" : "Resinas alcídicas",
-    "Id_Sector" : 4,
+    "Id_Sector" : 19,
     "Producto" : "Resinas alcídicas",
     "Id" : 229
   },
@@ -1587,7 +1587,7 @@
     "SubPartida" : "0401.10",
     "Date" : "2023-04-19 00:00:00 +0000",
     "Descripcion" : "Con un contenido de materias grasas inferior o igual al 1 % en peso.",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Leche y nata (crema), sin concentrar.",
     "Id" : 230
   },
@@ -1595,7 +1595,7 @@
     "SubPartida" : "2204.22",
     "Date" : "2023-04-21 00:00:00 +0000",
     "Descripcion" : "En recipientes con capacidad superior a 2 l pero inferior o igual a 10 l",
-    "Id_Sector" : 3,
+    "Id_Sector" : 18,
     "Producto" : "Vino (recipientes + 2L)",
     "Id" : 231
   },
@@ -1603,7 +1603,7 @@
     "SubPartida" : "76",
     "Date" : "2023-04-28 00:00:00 +0000",
     "Descripcion" : "Aluminio y sus manufacturas ",
-    "Id_Sector" : 10,
+    "Id_Sector" : 27,
     "Producto" : "Aluminio y sus manufacturas ",
     "Id" : 232
   },
@@ -1611,7 +1611,7 @@
     "SubPartida" : "2523",
     "Date" : "2023-04-28 00:00:00 +0000",
     "Descripcion" : "2523 Cementos hidráulicos (comprendidos los cementos sin pulverizar o clinker), incluso coloreados.",
-    "Id_Sector" : 9,
+    "Id_Sector" : 26,
     "Producto" : "Cementos hidráulicos",
     "Id" : 233
   },
@@ -1619,7 +1619,7 @@
     "SubPartida" : "0810.90",
     "Date" : "2023-05-05 00:00:00 +0000",
     "Descripcion" : "Selenicereus undatus ",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Pitahaya (fruta del dragón)",
     "Id" : 234
   },
@@ -1627,7 +1627,7 @@
     "SubPartida" : "1201.90",
     "Date" : "2023-05-11 00:00:00 +0000",
     "Descripcion" : "- Las demás",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Soja",
     "Id" : 235
   },
@@ -1635,7 +1635,7 @@
     "SubPartida" : "0801.19",
     "Date" : "2023-05-12 00:00:00 +0000",
     "Descripcion" : "- - Los demás ",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Coco",
     "Id" : 236
   },
@@ -1643,7 +1643,7 @@
     "SubPartida" : "0803.10",
     "Date" : "2023-05-12 00:00:00 +0000",
     "Descripcion" : "- Plátanos «plantains»:  \r\n- - Frescos: ",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Plátanos",
     "Id" : 237
   },
@@ -1651,7 +1651,7 @@
     "SubPartida" : "0803.90",
     "Date" : "2023-05-12 00:00:00 +0000",
     "Descripcion" : "- - Bananas (guineos) (cavendish valery): \r\n- - -Frescos: ",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Bananas ",
     "Id" : 238
   },
@@ -1659,7 +1659,7 @@
     "SubPartida" : "0804.50",
     "Date" : "2023-05-12 00:00:00 +0000",
     "Descripcion" : "- Guayabas, mangos y mangostanes:",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Guayabas, mangos y mangostanes",
     "Id" : 239
   },
@@ -1667,7 +1667,7 @@
     "SubPartida" : "0901.11",
     "Date" : "2023-05-12 00:00:00 +0000",
     "Descripcion" : "- Café sin tostar: \r\n- - Sin descafeinar: ",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Café sin tostar y sin descafeinar ",
     "Id" : 240
   },
@@ -1675,7 +1675,7 @@
     "SubPartida" : "0901.21",
     "Date" : "2023-05-12 00:00:00 +0000",
     "Descripcion" : "- Café tostado: \r\n- - Sin descafeinar: \r\n- - - En grano: ",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Café tostado, sin descafeinar y en grano:",
     "Id" : 241
   },
@@ -1683,7 +1683,7 @@
     "SubPartida" : "1513.19",
     "Date" : "2023-05-12 00:00:00 +0000",
     "Descripcion" : "- Aceite de coco (de copra) y sus fracciones: \r\n- - Los demás: ",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Aceite de coco orgánico y sus fracciones",
     "Id" : 242
   },
@@ -1691,7 +1691,7 @@
     "SubPartida" : "0805.50",
     "Date" : "2023-05-12 00:00:00 +0000",
     "Descripcion" : "- Limones (Citrus limon, citrus limonum) y limas (Citrus aurantifolia, citrus latifolia): ",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Limones y limas ",
     "Id" : 243
   },
@@ -1699,7 +1699,7 @@
     "SubPartida" : "2103.10",
     "Date" : "2023-05-12 00:00:00 +0000",
     "Descripcion" : "Condimento producido al fermentar semillas de soya.",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Salsa de soja",
     "Id" : 244
   },
@@ -1707,7 +1707,7 @@
     "SubPartida" : "07",
     "Date" : "2023-06-09 00:00:00 +0000",
     "Descripcion" : "Hortalizas, plantas, raíces y tubérculos alimenticios  ",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Hortalizas, plantas, raíces y tubérculos alimenticios",
     "Id" : 245
   },
@@ -1715,7 +1715,7 @@
     "SubPartida" : "08",
     "Date" : "2023-06-09 00:00:00 +0000",
     "Descripcion" : "Frutas y frutos comestibles; cortezas de agrios (cítricos), melones o sandías. ",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Frutas y frutos comestibles; cortezas de agrios (cítricos), melones o sandías. ",
     "Id" : 246
   },
@@ -1723,7 +1723,7 @@
     "SubPartida" : "22.04",
     "Date" : "2023-06-09 00:00:00 +0000",
     "Descripcion" : "Vino de uva frescas, incluso encabezado; mosto de uva, excepto el de la partida 20.09",
-    "Id_Sector" : 3,
+    "Id_Sector" : 18,
     "Producto" : "Vino de uva frescas y mosto de uva",
     "Id" : 247
   },
@@ -1731,7 +1731,7 @@
     "SubPartida" : "22.05",
     "Date" : "2023-06-09 00:00:00 +0000",
     "Descripcion" : "Vermut y demás vinos de uvas frescas preparados con plantas o sustancias aromáticas",
-    "Id_Sector" : 3,
+    "Id_Sector" : 18,
     "Producto" : "Vermut y demás vinos de uvas frescas preparados con plantas o sustancias aromáticas",
     "Id" : 248
   },
@@ -1739,7 +1739,7 @@
     "SubPartida" : "1905",
     "Date" : "2023-06-23 00:00:00 +0000",
     "Descripcion" : "Productos de panadería, pastelería o galletería, incluso con adición de cacao; hostias, sellos vacíos de los tipos utilizados para medicamentos, obleas para sellar, pastas secas de harina, almidón o fécula, en hojas, y productos similares.",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Productos de panadería, pastelería o galletería",
     "Id" : 249
   },
@@ -1747,7 +1747,7 @@
     "SubPartida" : "30",
     "Date" : "2023-06-23 00:00:00 +0000",
     "Descripcion" : "Productos farmacéuticos",
-    "Id_Sector" : 4,
+    "Id_Sector" : 19,
     "Producto" : "Productos farmacéuticos",
     "Id" : 250
   },
@@ -1755,7 +1755,7 @@
     "SubPartida" : "2106.90",
     "Date" : "2023-06-30 00:00:00 +0000",
     "Descripcion" : " - Las demás:",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Preparaciones alimenticias no expresadas ni comprendidas en otra parte.",
     "Id" : 251
   },
@@ -1763,7 +1763,7 @@
     "SubPartida" : "0805.21",
     "Date" : "2023-07-07 00:00:00 +0000",
     "Descripcion" : " - - Mandarinas (incluidas las tangerinas y satsumas)",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Mandarinas",
     "Id" : 252
   },
@@ -1771,7 +1771,7 @@
     "SubPartida" : "2104",
     "Date" : "2023-07-14 00:00:00 +0000",
     "Descripcion" : "Preparaciones para sopas, potajes o caldos; sopas, potajes o caldos, preparados; preparaciones alimenticias compuestas homogeneizadas. ",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Preparaciones para sopas ",
     "Id" : 253
   },
@@ -1779,7 +1779,7 @@
     "SubPartida" : "0807.11",
     "Date" : "2023-07-27 00:00:00 +0000",
     "Descripcion" : " - - Sandías",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Sandías",
     "Id" : 254
   },
@@ -1787,7 +1787,7 @@
     "SubPartida" : "10",
     "Date" : "2023-07-27 00:00:00 +0000",
     "Descripcion" : "Cereales",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Cereales",
     "Id" : 255
   },
@@ -1795,7 +1795,7 @@
     "SubPartida" : "7113.11",
     "Date" : "2023-07-28 00:00:00 +0000",
     "Descripcion" : "Artículos de joyería y sus partes, de plata, incluso revestida o chapada de otro metal precioso ",
-    "Id_Sector" : 10,
+    "Id_Sector" : 27,
     "Producto" : "Artículos de joyería ",
     "Id" : 256
   },
@@ -1803,7 +1803,7 @@
     "SubPartida" : "710812",
     "Date" : "2023-08-04 00:00:00 +0000",
     "Descripcion" : "- - Las demás formas en bruto",
-    "Id_Sector" : 10,
+    "Id_Sector" : 27,
     "Producto" : "Oro en bruto ",
     "Id" : 257
   },
@@ -1811,7 +1811,7 @@
     "SubPartida" : "071340",
     "Date" : "2023-08-17 00:00:00 +0000",
     "Descripcion" : "Lentejas secas desvainadas, aunque estén mondadas o partidas",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Lentejas secas desvainadas",
     "Id" : 258
   },
@@ -1819,7 +1819,7 @@
     "SubPartida" : "0701.90",
     "Date" : "2023-08-18 00:00:00 +0000",
     "Descripcion" : " - Las demás",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Papas frescas o refrigeradas.",
     "Id" : 259
   },
@@ -1827,7 +1827,7 @@
     "SubPartida" : "0709.99",
     "Date" : "2023-08-18 00:00:00 +0000",
     "Descripcion" : "Zea mays var. saccharata",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Maíz dulce fresco ",
     "Id" : 260
   },
@@ -1835,7 +1835,7 @@
     "SubPartida" : "0603",
     "Date" : "2023-08-25 00:00:00 +0000",
     "Descripcion" : "Flores y capullos, cortados para ramos o adornos, frescos, secos, blanqueados, teñidos, impregnados o preparados de otra forma",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Flores y capullos, cortados para ramos o adornos",
     "Id" : 261
   },
@@ -1843,7 +1843,7 @@
     "SubPartida" : "0604",
     "Date" : "2023-08-25 00:00:00 +0000",
     "Descripcion" : "Follajes, hojas, ramas y demás partes de plantas, sin flores ni capullos, y hierbas, musgos y líquenes, para ramos o adornos, frescos, secos, blanqueados, teñidos, impregnados o preparados de otra forma.",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Follajes, hojas, ramas y demás partes de plantas,",
     "Id" : 262
   },
@@ -1851,7 +1851,7 @@
     "SubPartida" : "1516",
     "Date" : "2023-08-25 00:00:00 +0000",
     "Descripcion" : "Grasas y aceites, animales o vegetales, y sus fracciones, parcial o totalmente hidrogenados, interesterificados, reesterificados o elaidinizados, incluso refinados, pero sin preparar de otro modo.",
-    "Id_Sector" : 5,
+    "Id_Sector" : 21,
     "Producto" : "Grasas y aceites, parcial o totalmente hidrogenados",
     "Id" : 263
   },
@@ -1859,7 +1859,7 @@
     "SubPartida" : "0402.10",
     "Date" : "2023-08-25 00:00:00 +0000",
     "Descripcion" : "- En polvo, gránulos o demás formas sólidas, con un contenido  de materias grasas inferior   o igual al  1,5 %, en peso: ",
-    "Id_Sector" : 1,
+    "Id_Sector" : 15,
     "Producto" : "Leche en polvo",
     "Id" : 264
   }

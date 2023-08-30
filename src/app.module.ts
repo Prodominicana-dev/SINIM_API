@@ -8,11 +8,12 @@ import { DatamarketModule } from './datamarket/datamarket.module';
 import { ToolsModule } from './tools/tools.module';
 import { SectorModule } from './sector/sector.module';
 import { CountryModule } from './country/country.module';
+import { ProductModule } from './product/product.module';
 
 
 @Module({
   controllers: [AppController],
   providers: [AppService, PrismaService],
-  imports: [RamisModule, DatamarketModule, ReservedDomainsModule, ToolsModule, SectorModule, CountryModule],
+  imports: [RamisModule, DatamarketModule, ReservedDomainsModule, ToolsModule, SectorModule, CountryModule, ProductModule],
 })
 export class AppModule {}

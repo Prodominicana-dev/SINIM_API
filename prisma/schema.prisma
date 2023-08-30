@@ -8,12 +8,22 @@ datasource db {
 }
 
 model Ramis {
-  id        Int     @id @default(autoincrement())
-  sector    String
-  countryId Int
-  productId Int
-  country   Country @relation(fields: [countryId], references: [id])
-  product   Product @relation(fields: [productId], references: [id])
+  id          Int     @id @default(autoincrement())
+  sectorId    Int
+  countryId   Int
+  productId   Int
+  tradeAgreement String? // Acuerdo comercial
+  tariffsImposed String? // Aranceles impuestos
+  webResource String? // Recurso web
+  technicalRequirements String? // Requisitos técnicos
+  permitsCertifications String? // Permisos y certificaciones
+  labelingCertifications String? // Etiquetado y certificaciones
+  outputRequirement String? // Requisitos de salida
+  importRequirement String? // Requisitos de importación
+  date       DateTime? @default(now())
+  sector      Sector @relation(fields: [sectorId], references: [id])
+  country     Country @relation(fields: [countryId], references: [id])
+  product     Product @relation(fields: [productId], references: [id])
 }
 
 model Country {
@@ -31,6 +41,7 @@ model Sector{
   name        String  @unique
   oldID       Int     
   products    Product[]
+  ramis       Ramis[]
 }
 
 model Product {
@@ -40,6 +51,7 @@ model Product {
   description String
   sectorID    Int
   date        DateTime? @default(now())
+  oldID       Int
   sector      Sector @relation(fields: [sectorID], references: [id])
   ramis       Ramis[]
   

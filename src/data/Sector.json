@@ -1,0 +1,12 @@
+[
+    {"name":"Agropecuario", "oldID": 15},
+    {"name":"Cosmética y preparaciones capilares", "oldID": 17},
+    {"name":"Bebidas, líquidos alcohólicos y vinagre", "oldID": 18},
+    {"name":"Industria química, plásticos y cauchos", "oldID": 19},
+    {"name":"Agroindustriales", "oldID": 21},
+    {"name":"Mobiliarios y mercancías diversas", "oldID": 22},
+    {"name":"Textiles, calzados y pieles", "oldID": 23},
+    {"name":"Maquinarias, transporte, aparatos e instrumentos", "oldID": 25},
+    {"name":"Productos minerales", "oldID": 26},
+    {"name":"Joyería, piedras, metales", "oldID": 27}
+]
