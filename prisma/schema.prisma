@@ -31,7 +31,6 @@ model Country {
   continent String?
   group String?
   ramis Ramis[]
-  saim  SAIM[]
 }
 
 model Sector{
@@ -83,13 +82,15 @@ model Tools{
 
 model SAIM{
   id             Int     @id @default(autoincrement())
-  title          String 
-  description    String?
-  source        String?
-  link          String?
-  image         String?
-  date          DateTime?
-  products       Json?
-  countryAbbr    String
-  country        Country @relation(fields: [countryAbbr], references: [abbreviation])
+  title          String // Titulo
+  description    String? // Descripción
+  category        String? // Categoría
+  source          String? // Fuente
+  link            String? // Enlace
+  image           String? // Imagen
+  date            DateTime? @default(now()) // Fecha de registro
+  products        Json? // Productos
+  countries       Json? // Países (ID)
+  files           Json? // Archivos de ese SAIM
+  oldID           Int? // ID anterior
 }

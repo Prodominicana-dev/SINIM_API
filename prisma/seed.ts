@@ -6,6 +6,7 @@ const products = require('../src/data/Products.json');
 const countries = require('../src/data/Countries.json');
 const domains = require('../src/data/Domains.json');
 const tools = require('../src/data/Tools.json');
+//RAMI
 const sectors = require('../src/data/Sector.json');
 const tradeAgreement = require('../src/data/AcuerdoComercial.json');
 const tariffs = require('../src/data/ArancelesImpuestos.json');
@@ -13,6 +14,9 @@ const webResource = require('../src/data/RecursoWeb.json');
 const technicalRequirements = require('../src/data/RegulacionesTecnicas.json');
 const outputRequirement = require('../src/data/RequisitoSalida.json');
 const importRequirement = require('../src/data/RequisitosImportacion.json');
+//SAIM
+const saim = require('../src/data/SAIM.json');
+const files = require('../src/data/Archivos.json');
 const axios = require('axios');
 
 //Links
@@ -222,7 +226,76 @@ for(const input of importRequirement){
   })
 }
 
+// SAIM
+// Agregar SAIM's
+for(const s of saim){
+  // Separar productos para crear un JSON con todos los productos y codigo arancelario de c/u
+  const products = s.Productos.split(',');
+  const productsJSON = [];
+  for(const product of products){
+    const productID = await prisma.product.findFirst({
+      where: {
+        name: product
+      }
+    })
+    if(productID == null){
+      continue;
+    }
+    productsJSON.push({
+      name: productID.name,
+      code: productID.code,
+    })
+  }
+  // Separar paises y crear JSON con todos sus datos
+  const countries = s.Pais.split(',');
+  const countriesJSON = [];
+  for(const country of countries){
+    const countryID = await prisma.country.findFirst({
+      where: {
+        name: country
+      }
+    })
+    if(countryID == null){
+      continue;
+    }
+    countriesJSON.push({
+      ...countryID
+    })
+  }
+  await prisma.SAIM.create({
+    data: {
+      title: s.Titular,
+      description: s.Contenido,
+      category: s.Clasificacion,
+      source: s.Fuente,
+      link: s.Link,
+      image: s.Imagen,
+      products: productsJSON,
+      countries: countriesJSON,
+      oldID: s.Id
+    }
+  })
+}
 
+// Archivos a cada SAIM
+for(const file of files){
+  const saimID = await prisma.SAIM.findFirst({
+    where: {
+      oldID: file.Id_SAIM
+    }
+  })
+  if(saimID == null){
+    continue;
+  }
+  await prisma.SAIM.update({
+    where: {
+      id: saimID.id
+    },
+    data: {
+      files: [file.Archivo]
+    }
+  })
+}
 }
 
 async function main() {
