@@ -23,7 +23,7 @@ const axios = require('axios');
 const sectorURL = 'https://sinim-api.vercel.app/sector';
 const productURL = 'https://sinim-api.vercel.app/products';
 const countryURL = 'https://sinim-api.vercel.app/countries';
-const ramisURL = 'https://sinim-api.vercel.app/ramis';
+const ramisURL = 'https://sinim-api.vercel.app/rami';
 
 async function seedDatabase() {
   // Dominios reservados
