@@ -1,25 +1,25 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
-import { Prisma, SAIM } from '@prisma/client';
+import { Prisma, Saim } from '@prisma/client';
 
 @Injectable()
 export class SaimService {
     constructor(private prisma: PrismaService) {}
 
-    async getSAIM(): Promise<SAIM[]> {
-        return this.prisma.sAIM.findMany();
+    async getSAIM(): Promise<Saim[]> {
+        return this.prisma.saim.findMany();
     }
 
-    async getSAIMById(id: number): Promise<SAIM> {
-        return this.prisma.sAIM.findUnique({
+    async getSAIMById(id: number): Promise<Saim> {
+        return this.prisma.saim.findUnique({
             where: {
                 id: id,
             },
         });
     }
 
-    async createSAIM(data: Prisma.SAIMCreateInput): Promise<SAIM> {
-        return this.prisma.sAIM.create({
+    async createSAIM(data: Prisma.SaimCreateInput): Promise<Saim> {
+        return this.prisma.saim.create({
             data,
         });
     }

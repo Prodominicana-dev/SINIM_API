@@ -80,7 +80,7 @@ model Tools{
 }
 
 
-model SAIM{
+model Saim{
   id             Int     @id @default(autoincrement())
   title          String // Titulo
   description    String? // Descripción

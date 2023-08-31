@@ -1,6 +1,5 @@
 import { Controller, Get, Post, Param, Body } from '@nestjs/common';
 import { SaimService } from './saim.service';
-import { Prisma, SAIM } from '@prisma/client';
 
 @Controller('saim')
 export class SaimController {
@@ -8,11 +7,11 @@ export class SaimController {
 
     @Get()
     async getSAIM() {
-        this.saimService.getSAIM();
+        return this.saimService.getSAIM();
     }
 
     @Post()
-    async createSAIM(@Body() data : Prisma.SAIMCreateInput) {
-        this.saimService.createSAIM(data);
+    async createSAIM(@Body() data ) {
+        return this.saimService.createSAIM(data);
     }
 }

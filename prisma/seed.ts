@@ -15,7 +15,7 @@ const technicalRequirements = require('../src/data/RegulacionesTecnicas.json');
 const outputRequirement = require('../src/data/RequisitoSalida.json');
 const importRequirement = require('../src/data/RequisitosImportacion.json');
 //SAIM
-const saim = require('../src/data/SAIM.json');
+const saims = require('../src/data/SAIM.json');
 const files = require('../src/data/Archivos.json');
 const axios = require('axios');
 
@@ -228,7 +228,7 @@ for(const input of importRequirement){
 
 // SAIM
 // Agregar SAIM's
-for(const s of saim){
+for(const s of saims){
   // Separar productos para crear un JSON con todos los productos y codigo arancelario de c/u
   const products = s.Productos.split(',');
   const productsJSON = [];
@@ -262,7 +262,7 @@ for(const s of saim){
       ...countryID
     })
   }
-  await prisma.SAIM.create({
+  await prisma.saim.create({
     data: {
       title: s.Titular,
       description: s.Contenido,
@@ -279,7 +279,7 @@ for(const s of saim){
 
 // Archivos a cada SAIM
 for(const file of files){
-  const saimID = await prisma.SAIM.findFirst({
+  const saimID = await prisma.saim.findFirst({
     where: {
       oldID: file.Id_SAIM
     }
@@ -287,7 +287,7 @@ for(const file of files){
   if(saimID == null){
     continue;
   }
-  await prisma.SAIM.update({
+  await prisma.saim.update({
     where: {
       id: saimID.id
     },
