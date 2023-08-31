@@ -8,13 +8,18 @@ const domains = require('../src/data/Domains.json');
 const tools = require('../src/data/Tools.json');
 const sectors = require('../src/data/Sector.json');
 const tradeAgreement = require('../src/data/AcuerdoComercial.json');
+const tariffs = require('../src/data/ArancelesImpuestos.json');
+const webResource = require('../src/data/RecursoWeb.json');
+const technicalRequirements = require('../src/data/RegulacionesTecnicas.json');
+const outputRequirement = require('../src/data/RequisitoSalida.json');
+const importRequirement = require('../src/data/RequisitosImportacion.json');
 const axios = require('axios');
 
 //Links
-const sectorURL = 'https://sinim-api-git-tools-prodominicanadev.vercel.app/sector';
-const productURL = 'https://sinim-api-git-tools-prodominicanadev.vercel.app/products';
-const countryURL = 'https://sinim-api-git-tools-prodominicanadev.vercel.app/countries';
-const ramisURL = 'https://sinim-api-git-tools-prodominicanadev.vercel.app/ramis';
+const sectorURL = 'https://sinim-api.vercel.app/sector';
+const productURL = 'https://sinim-api.vercel.app/products';
+const countryURL = 'https://sinim-api.vercel.app/countries';
+const ramisURL = 'https://sinim-api.vercel.app/ramis';
 
 async function seedDatabase() {
   // Dominios reservados
@@ -116,10 +121,107 @@ for(const trade of tradeAgreement){
   })
 }
 
-
-const getRAMIId = async (id) => {
-
+let ramis;
+await axios.get(ramisURL).then((response) => {
+  ramis = response.data;
+});
+const getRAMIId = async (pid, cid) => {
+  for(const rami of ramis){
+    if(rami.productId == pid && rami.countryId == cid){
+      return rami.id;
+    }
+  }
 }
+
+// Agregar Aranceles Impuestos a cada RAMI
+for(const tariff of tariffs){
+  const productId = await getProductId(tariff.Id_Producto);
+  const ramiID = await getRAMIId(productId, tariff.IdPais);
+  if(ramiID == undefined){
+    continue;
+  }
+  await prisma.ramis.update({
+    where: {
+      id: ramiID
+    },
+    data: {
+      
+      tariffsImposed: tariff.ArancelesImpuesto,
+      
+    }
+  })
+}
+
+// Agregar Recursos Web a cada RAMI
+for(const web of webResource){
+  const productId = await getProductId(web.Id_Producto);
+  const ramiID = await getRAMIId(productId, web.IdPais);
+  if(ramiID == undefined){
+    continue;
+  }
+  await prisma.ramis.update({
+    where: {
+      id: ramiID
+    },
+    data: {
+      webResource: web.Recurso,
+    }
+  })
+}
+
+// Agregar Regulaciones Tecnicas a cada RAMI
+for(const tech of technicalRequirements){
+  const productId = await getProductId(tech.Id_Producto);
+  const ramiID = await getRAMIId(productId, tech.IdPais);
+  if(ramiID == undefined){
+    continue;
+  }
+  await prisma.ramis.update({
+    where: {
+      id: ramiID
+    },
+    data: {
+      technicalRequirements: tech.RequisitosTecnicos,
+      permitsCertifications: tech.PermisosCertificaciones,
+      labelingCertifications: tech.EtiquetadoCertificado
+    }
+  })
+}
+
+// Agregar Requisitos de Salida a cada RAMI
+for(const output of outputRequirement){
+  const productId = await getProductId(output.Id_Producto);
+  const ramiID = await getRAMIId(productId, output.IdPais);
+  if(ramiID == undefined){
+    continue;
+  }
+  await prisma.ramis.update({
+    where: {
+      id: ramiID
+    },
+    data: {
+      outputRequirement: output.ResquisitoSalida
+    }
+  })
+}
+
+// Agregar Requisitos de Importacion a cada RAMI
+for(const input of importRequirement){
+  const productId = await getProductId(input.Id_Producto);
+  const ramiID = await getRAMIId(productId, input.IdPais);
+  if(ramiID == undefined){
+    continue;
+  }
+  await prisma.ramis.update({
+    where: {
+      id: ramiID
+    },
+    data: {
+      importRequirement: input.RequisitoImportacion
+    }
+  })
+}
+
 
 }
 

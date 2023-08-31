@@ -36,13 +36,4 @@ export class RamisService {
       where: { id },
     });
   }
-
-  async getRamiByProductIDAndCountryID(idProduct: number, idCountry: number): Promise<Ramis | null> {
-    return this.prisma.ramis.findFirst({
-      where: {
-        productId: Number(idProduct),
-        countryId: Number(idCountry)
-      },
-    });
-  }
 }

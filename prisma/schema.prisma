@@ -48,7 +48,7 @@ model Product {
   description String
   sectorID    Int
   date        DateTime? @default(now())
-  oldID       Int
+  oldID       Int @unique
   sector      Sector @relation(fields: [sectorID], references: [id])
   ramis       Ramis[]
   
