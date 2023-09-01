@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Param, Body } from '@nestjs/common';
+import { Controller, Get, Post, Param, Body, Put } from '@nestjs/common';
 import { SaimService } from './saim.service';
 
 @Controller('saim')
@@ -8,6 +8,16 @@ export class SaimController {
     @Get()
     async getSAIM() {
         return this.saimService.getSAIM();
+    }
+
+    @Get(':id')
+    async getSAIMById(@Param('id') id: number) {
+        return this.saimService.getSAIMById(Number(id));
+    }
+
+    @Put(':id')
+    async updateSAIM(@Param('id') id: number, @Body() data) {
+        return this.saimService.updateSAIM(Number(id), data);
     }
 
     @Post()

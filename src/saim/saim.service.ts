@@ -18,6 +18,16 @@ export class SaimService {
         });
     }
 
+    // Update SAIM data
+    async updateSAIM(id: number, data: Prisma.SaimUpdateInput): Promise<Saim> {
+        return this.prisma.saim.update({
+            where: {
+                id: id,
+            },
+            data,
+        });
+    }
+
     async createSAIM(data: Prisma.SaimCreateInput): Promise<Saim> {
         return this.prisma.saim.create({
             data,

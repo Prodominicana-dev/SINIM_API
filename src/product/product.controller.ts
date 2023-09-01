@@ -5,8 +5,15 @@ import { ProductService } from './product.service';
 export class ProductController {
     constructor(private productService : ProductService) {}
 
+    // Product list
     @Get('products')
     async getProducts(){
         return this.productService.getProducts();
+    }
+
+    // Find product by id
+    @Get('product/:id')
+    async getProductById(id: number){
+        return this.productService.findOne(Number(id));
     }
 }

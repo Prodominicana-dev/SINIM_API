@@ -20,6 +20,16 @@ export class RamisService {
     });
   }
 
+  // Get Rami by productId and CountryId
+  async getRamisByProductIdAndCountryId(productId: number, countryId: number): Promise<Ramis | null> {
+    return this.prisma.ramis.findFirst({
+      where: {
+        productId,
+        countryId,
+      },
+    });
+  } 
+
   async editRamis(id: number, data: Prisma.RamisUpdateInput): Promise<Ramis> {
     return this.prisma.ramis.update({
       where: { id },

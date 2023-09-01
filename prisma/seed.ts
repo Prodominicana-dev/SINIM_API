@@ -1,4 +1,4 @@
-
+import { NodeHtmlMarkdown, NodeHtmlMarkdownOptions } from 'node-html-markdown'
 
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
@@ -20,10 +20,10 @@ const files = require('../src/data/Archivos.json');
 const axios = require('axios');
 
 //Links
-const sectorURL = 'https://sinim-api.vercel.app/sector';
-const productURL = 'https://sinim-api.vercel.app/products';
-const countryURL = 'https://sinim-api.vercel.app/countries';
-const ramisURL = 'https://sinim-api.vercel.app/rami';
+const sectorURL = 'https://sinim-api-git-tools-prodominicanadev.vercel.app/sector';
+const productURL = 'https://sinim-api-git-tools-prodominicanadev.vercel.app/products';
+const countryURL = 'https://sinim-api-git-tools-prodominicanadev.vercel.app/countries';
+const ramisURL = 'https://sinim-api-git-tools-prodominicanadev.vercel.app/rami';
 
 async function seedDatabase() {
   // Dominios reservados
@@ -120,7 +120,7 @@ for(const trade of tradeAgreement){
     data: {
       productId: productID,
       countryId: trade.IdPais,
-      tradeAgreement: trade.AcuerdoComercial,
+      tradeAgreement: NodeHtmlMarkdown.translate(trade.AcuerdoComercial),
     }
   })
 }
@@ -150,7 +150,7 @@ for(const tariff of tariffs){
     },
     data: {
       
-      tariffsImposed: tariff.ArancelesImpuesto,
+      tariffsImposed: NodeHtmlMarkdown.translate(tariff.ArancelesImpuesto),
       
     }
   })
@@ -168,7 +168,7 @@ for(const web of webResource){
       id: ramiID
     },
     data: {
-      webResource: web.Recurso,
+      webResource: NodeHtmlMarkdown.translate(web.Recurso),
     }
   })
 }
@@ -185,9 +185,9 @@ for(const tech of technicalRequirements){
       id: ramiID
     },
     data: {
-      technicalRequirements: tech.RequisitosTecnicos,
-      permitsCertifications: tech.PermisosCertificaciones,
-      labelingCertifications: tech.EtiquetadoCertificado
+      technicalRequirements: NodeHtmlMarkdown.translate(tech.RequisitosTecnicos),
+      permitsCertifications: NodeHtmlMarkdown.translate(tech.PermisosCertificaciones),
+      labelingCertifications: NodeHtmlMarkdown.translate(tech.EtiquetadoCertificado)
     }
   })
 }
@@ -204,7 +204,7 @@ for(const output of outputRequirement){
       id: ramiID
     },
     data: {
-      outputRequirement: output.ResquisitoSalida
+      outputRequirement: NodeHtmlMarkdown.translate(output.ResquisitoSalida)
     }
   })
 }
@@ -221,7 +221,7 @@ for(const input of importRequirement){
       id: ramiID
     },
     data: {
-      importRequirement: input.RequisitoImportacion
+      importRequirement: NodeHtmlMarkdown.translate(input.RequisitoImportacion)
     }
   })
 }
@@ -265,7 +265,7 @@ for(const s of saims){
   await prisma.saim.create({
     data: {
       title: s.Titular,
-      description: s.Contenido,
+      description: NodeHtmlMarkdown.translate(s.Contenido),
       category: s.Clasificacion,
       source: s.Fuente,
       link: s.Link,

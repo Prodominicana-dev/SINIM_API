@@ -11,6 +11,11 @@ export class RamisController {
     return this.ramiService.getAllRamis();
   }
 
+  @Get('product/:productId/country/:countryId')
+  async getRamisByProductIdAndCountryId(@Param('productId') productId: number, @Param('countryId') countryId: number) {
+    return this.ramiService.getRamisByProductIdAndCountryId(Number(productId), Number(countryId));
+  }
+
   @Get(':id')
   async getRamisById(@Param('id') id: number) {
     return this.ramiService.getRamisById(Number(id));
