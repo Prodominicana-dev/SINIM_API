@@ -2,21 +2,22 @@ import { NodeHtmlMarkdown, NodeHtmlMarkdownOptions } from 'node-html-markdown'
 
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
-const products = require('../src/data/Products.json');
-const countries = require('../src/data/Countries.json');
-const domains = require('../src/data/Domains.json');
-const tools = require('../src/data/Tools.json');
+const products = require('../public/data/Products.json');
+const countries = require('../public/data/Countries.json');
+const domains = require('../public/data/Domains.json');
+const tools = require('../public/data/Tools.json');
 //RAMI
-const sectors = require('../src/data/Sector.json');
-const tradeAgreement = require('../src/data/AcuerdoComercial.json');
-const tariffs = require('../src/data/ArancelesImpuestos.json');
-const webResource = require('../src/data/RecursoWeb.json');
-const technicalRequirements = require('../src/data/RegulacionesTecnicas.json');
-const outputRequirement = require('../src/data/RequisitoSalida.json');
-const importRequirement = require('../src/data/RequisitosImportacion.json');
+const sectors = require('../public/data/Sector.json');
+const tradeAgreement = require('../public/data/AcuerdoComercial.json');
+const tariffs = require('../public/data/ArancelesImpuestos.json');
+const webResource = require('../public/data/RecursoWeb.json');
+const technicalRequirements = require('../public/data/RegulacionesTecnicas.json');
+const outputRequirement = require('../public/data/RequisitoSalida.json');
+const importRequirement = require('../public/data/RequisitosImportacion.json');
 //SAIM
-const saims = require('../src/data/SAIM.json');
-const files = require('../src/data/Archivos.json');
+const saims = require('../data/SAIM.json');
+const files = require('../data/Archivos.json');
+
 const axios = require('axios');
 
 //Links
