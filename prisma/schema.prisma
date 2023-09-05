@@ -20,6 +20,7 @@ model Ramis {
   outputRequirement String? // Requisitos de salida
   importRequirement String? // Requisitos de importación
   date       DateTime? @default(now())
+  status     String? @default("active")
   country     Country @relation(fields: [countryId], references: [id])
   product     Product @relation(fields: [productId], references: [id])
 }
@@ -50,13 +51,14 @@ model Product {
   oldID       Int @unique
   sector      Sector @relation(fields: [sectorID], references: [id])
   ramis       Ramis[]
-  
+  status     String? @default("active")
 }
 
 model reservedDomains{
   id              Int     @id @default(autoincrement())
   name            String
   platform        String
+  status     String? @default("active")
 }
 
 model Datamarket{
@@ -64,6 +66,7 @@ model Datamarket{
   idBi           Int
   description   String
   url           String
+  status     String? @default("active")
 }
 
 model Tools{
@@ -77,6 +80,7 @@ model Tools{
   logo          String?
   boxColor      String?
   visible       Boolean?
+  status     String? @default("active")
 }
 
 
@@ -93,4 +97,5 @@ model Saim{
   countries       Json? // Países (ID)
   files           Json? // Archivos de ese SAIM
   oldID           Int? // ID anterior
+  status     String? @default("active")
 }
