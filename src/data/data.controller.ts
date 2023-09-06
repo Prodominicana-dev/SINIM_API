@@ -17,7 +17,7 @@ uploadImage(@Res() res, @Body() body): void {
     const base64Data = body.base64.replace(/^data:image\/([\w+/]+);base64,/, '');
     const fileExtension = body.base64.substring("data:image/".length, body.base64.indexOf(";base64"));
     const imageName = `${new Date().getTime()}.${fileExtension}`;
-    fs.writeFile(path.join(__dirname, '../../../../public/data/images', imageName), base64Data, 'base64', (err) => {
+    fs.writeFile(path.join(__dirname, '../../../../../public/data/images', imageName), base64Data, 'base64', (err) => {
         if (err) {
             res.status(500).json({ error: err });
         } else {
