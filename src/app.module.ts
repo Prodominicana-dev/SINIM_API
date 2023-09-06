@@ -12,11 +12,12 @@ import { ProductModule } from './product/product.module';
 import { SaimController } from './saim/saim.controller';
 import { SaimModule } from './saim/saim.module';
 import { DataModule } from './data/data.module';
+import { MailModule } from './mail/mail.module';
 
 
 @Module({
   controllers: [AppController],
   providers: [AppService, PrismaService],
-  imports: [RamisModule, DatamarketModule, ReservedDomainsModule, ToolsModule, SectorModule, CountryModule, ProductModule, SaimModule, DataModule],
+  imports: [RamisModule, DatamarketModule, ReservedDomainsModule, ToolsModule, SectorModule, CountryModule, ProductModule, SaimModule, DataModule, MailModule],
 })
 export class AppModule {}

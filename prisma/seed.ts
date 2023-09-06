@@ -122,7 +122,7 @@ for(const trade of tradeAgreement){
     data: {
       productId: productID,
       countryId: trade.IdPais,
-      tradeAgreement: NodeHtmlMarkdown.translate(trade.AcuerdoComercial),
+      tradeAgreement: trade.AcuerdoComercial,
     }
   })
 }
@@ -151,9 +151,7 @@ for(const tariff of tariffs){
       id: ramiID
     },
     data: {
-      
-      tariffsImposed: NodeHtmlMarkdown.translate(tariff.ArancelesImpuesto),
-      
+      tariffsImposed: tariff.ArancelesImpuesto,
     }
   })
 }
@@ -170,7 +168,7 @@ for(const web of webResource){
       id: ramiID
     },
     data: {
-      webResource: NodeHtmlMarkdown.translate(web.Recurso),
+      webResource: web.Recurso,
     }
   })
 }
@@ -187,9 +185,9 @@ for(const tech of technicalRequirements){
       id: ramiID
     },
     data: {
-      technicalRequirements: NodeHtmlMarkdown.translate(tech.RequisitosTecnicos),
-      permitsCertifications: NodeHtmlMarkdown.translate(tech.PermisosCertificaciones),
-      labelingCertifications: NodeHtmlMarkdown.translate(tech.EtiquetadoCertificado)
+      technicalRequirements: tech.RequisitosTecnicos,
+      permitsCertifications: tech.PermisosCertificaciones,
+      labelingCertifications: tech.EtiquetadoCertificado
     }
   })
 }
@@ -206,7 +204,7 @@ for(const output of outputRequirement){
       id: ramiID
     },
     data: {
-      outputRequirement: NodeHtmlMarkdown.translate(output.ResquisitoSalida)
+      outputRequirement: output.ResquisitoSalida
     }
   })
 }
@@ -223,7 +221,7 @@ for(const input of importRequirement){
       id: ramiID
     },
     data: {
-      importRequirement: NodeHtmlMarkdown.translate(input.RequisitoImportacion)
+      importRequirement: input.RequisitoImportacion
     }
   })
 }
@@ -267,7 +265,7 @@ for(const s of saims){
   await prisma.saim.create({
     data: {
       title: s.Titular,
-      description: NodeHtmlMarkdown.translate(s.Contenido),
+      description: s.Contenido,
       category: s.Clasificacion,
       source: s.Fuente,
       link: s.Link,
@@ -302,257 +300,7 @@ for(const file of files){
 
 async function main() {
   await prisma.$connect();
-console.log(convertHtmlToDelta(`<p>Con el objetivo de promover un mayor crecimiento en las exportaciones de cigarros desde la Rep&uacute;blica Dominicana, ProDominicana, a partir de un an&aacute;lisis de los datos de TradeMap, genera esta alerta destinada especialmente para el sector exportador&nbsp;de tabaco, identificando potenciales compradores en base a tres niveles diferentes:&nbsp;</p>
-
-<p><strong>1. Grandes compradores internacionales de cigarros&nbsp;(crecimiento en sus importaciones).</strong></p>
-
-<p>Entre los principales compradores internacionales de cigarros durante el 2022, ProDominicana identific&oacute; 3 mercados como potenciales compradores, a partir del crecimiento en sus importaciones.&nbsp;</p>
-
-<table border="1" cellpadding="1" cellspacing="1" style="width:500px">
-<tbody>
-<tr>
-<td colspan="3">
-<p><strong>Principales compradores internacionales 2022&nbsp;</strong></p>
-</td>
-</tr>
-<tr>
-<td style="text-align:center; vertical-align:middle">
-<p><strong>Pa&iacute;s</strong></p>
-</td>
-<td style="text-align:left; vertical-align:middle">
-<p><strong>Importaciones&nbsp;<br />
-(US$ Millones)&nbsp; &nbsp;&nbsp;</strong></p>
-</td>
-<td style="text-align:center; vertical-align:middle">
-<p><strong>Crecimiento Interanual</strong></p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Italia</strong></p>
-</td>
-<td style="text-align:center; vertical-align:middle">
-<p>183.3</p>
-</td>
-<td style="text-align:center; vertical-align:middle">
-<p>132%</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Reino Unido</strong></p>
-</td>
-<td style="text-align:center; vertical-align:middle">
-<p>72.1</p>
-</td>
-<td style="text-align:center; vertical-align:middle">
-<p>40%</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Hong Kong</strong></p>
-</td>
-<td style="text-align:center; vertical-align:middle">
-<p>93.4</p>
-</td>
-<td style="text-align:center; vertical-align:middle">
-<p>8%</p>
-</td>
-</tr>
-</tbody>
-</table>
-
-<p>&nbsp;</p>
-
-<p><strong>2. Potenciales compradores de cigarros (socios comerciales).</strong></p>
-
-<p>Entre todos los mercados preferenciales de la Rep&uacute;blica Dominicana, a partir de altas tasas de crecimiento en las compras internacionales de esos productos durante el 2022, ProDominicana identific&oacute; 5&nbsp;mercados como potenciales compradores:&nbsp;</p>
-
-<table border="1" cellpadding="1" cellspacing="1" style="width:500px">
-<tbody>
-<tr>
-<td colspan="3">
-<p><strong>Potenciales Compradores &nbsp;</strong><br />
-(Socios comerciales)&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Pa&iacute;s&nbsp;</strong></p>
-</td>
-<td>
-<p><strong>Importaciones&nbsp;<br />
-(US$ Millones)&nbsp;</strong></p>
-</td>
-<td>
-<p><strong>Crecimiento Interanual&nbsp;</strong></p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Italia&nbsp;</strong></p>
-</td>
-<td style="text-align:center; vertical-align:middle">
-<p>183.3&nbsp;</p>
-</td>
-<td style="text-align:center; vertical-align:middle">
-<p>132%&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Eslovaquia&nbsp;</strong></p>
-</td>
-<td style="text-align:center; vertical-align:middle">
-<p>30.3&nbsp;</p>
-</td>
-<td style="text-align:center; vertical-align:middle">
-<p>103%&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Nicaragua&nbsp;</strong></p>
-</td>
-<td style="text-align:center; vertical-align:middle">
-<p>9.6&nbsp;</p>
-</td>
-<td style="text-align:center; vertical-align:middle">
-<p>65%&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Reino Unido&nbsp;</strong></p>
-</td>
-<td style="text-align:center; vertical-align:middle">
-<p>72.1&nbsp;</p>
-</td>
-<td style="text-align:center; vertical-align:middle">
-<p>40%&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Polonia&nbsp;</strong></p>
-</td>
-<td style="text-align:center; vertical-align:middle">
-<p>9.1&nbsp;</p>
-</td>
-<td style="text-align:center; vertical-align:middle">
-<p>16%&nbsp;</p>
-</td>
-</tr>
-</tbody>
-</table>
-
-<p><strong>3. Potenciales compradores de cigarros&nbsp;(mercados extra regionales).</strong></p>
-
-<p>Entre los mercados extra regionales de la Rep&uacute;blica Dominicana, a partir de altas tasas de crecimiento en las compras internacionales durante el 2022, ProDominicana identific&oacute; 7&nbsp;mercados como potenciales compradores:&nbsp;</p>
-
-<table border="1" cellpadding="1" cellspacing="1" style="width:500px">
-<tbody>
-<tr>
-<td colspan="3">
-<p><strong>Potenciales Compradores &nbsp;</strong><br />
-(Mercados Extraregionales)&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Pa&iacute;s&nbsp;</strong></p>
-</td>
-<td>
-<p><strong>Importaciones&nbsp;<br />
-(US$ Millones)&nbsp;</strong></p>
-</td>
-<td>
-<p><strong>Crecimiento Interanual&nbsp;</strong></p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Marruecos&nbsp;</strong></p>
-</td>
-<td style="text-align:center; vertical-align:middle">
-<p>12,8&nbsp;</p>
-</td>
-<td style="text-align:center; vertical-align:middle">
-<p>227%&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Andorra&nbsp;</strong></p>
-</td>
-<td style="text-align:center; vertical-align:middle">
-<p>6.5&nbsp;</p>
-</td>
-<td style="text-align:center; vertical-align:middle">
-<p>82%&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Macao China&nbsp;</strong></p>
-</td>
-<td style="text-align:center; vertical-align:middle">
-<p>37.5&nbsp;</p>
-</td>
-<td style="text-align:center; vertical-align:middle">
-<p>59%&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>China&nbsp;</strong></p>
-</td>
-<td style="text-align:center; vertical-align:middle">
-<p>9,7&nbsp;</p>
-</td>
-<td style="text-align:center; vertical-align:middle">
-<p>25%&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Emiratos &Aacute;rabes Unidos&nbsp;</strong></p>
-</td>
-<td style="text-align:center; vertical-align:middle">
-<p>21&nbsp;</p>
-</td>
-<td style="text-align:center; vertical-align:middle">
-<p>35%&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Taipei Chino&nbsp;</strong></p>
-</td>
-<td style="text-align:center; vertical-align:middle">
-<p>9.2&nbsp;</p>
-</td>
-<td style="text-align:center; vertical-align:middle">
-<p>18%&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Australia&nbsp;</strong></p>
-</td>
-<td style="text-align:center; vertical-align:middle">
-<p>17.4&nbsp;</p>
-</td>
-<td style="text-align:center; vertical-align:middle">
-<p>16%&nbsp;</p>
-</td>
-</tr>
-</tbody>
-</table>
-
-<p>&nbsp;</p>
-`))  //await seedDatabase();
+  await seedDatabase();
   await prisma.$disconnect();
 }
 
