@@ -13,13 +13,13 @@ constructor(private readonly saimService: SaimService) {}
 
 @Get('saim/:id/img/:imageName')
 getImage(@Param('id') id: string, @Param('imageName') imageName: string, @Res() res): void {
-  const imagePath = path.join(process.cwd(), `public/data/saim/${id}/images`, imageName);
+  const imagePath = path.join(__dirname, `../../public/data/saim/images/${id}`, imageName);
   const fileStream = fs.createReadStream(imagePath);
   fileStream.pipe(res);
 }
 
-@Post('image')
-uploadImage(@Res() res, @Body() body): void {
+@Post('saim/:id/image')
+uploadImage(@Param('id') id: number, @Res() res, @Body() body): void {
     const base64Data = body.base64.replace(/^data:image\/([\w+/]+);base64,/, '');
     const fileExtension = body.base64.substring("data:image/".length, body.base64.indexOf(";base64"));
     const imageName = `${new Date().getTime()}.${fileExtension}`;
