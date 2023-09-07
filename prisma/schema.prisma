@@ -1,5 +1,5 @@
 generator client {
-  provider = "prisma-client-js"
+  provider = "prisma-client-db"
 }
 
 datasource db {
@@ -93,9 +93,9 @@ model Saim{
   link            String? // Enlace
   image           String? // Imagen
   date            DateTime? @default(now()) // Fecha de registro
-  products        Json? // Productos
-  countries       Json? // Países (ID)
-  files           Json? // Archivos de ese SAIM
+  products        Json[] // Productos
+  countries       Json[] // Países (ID)
+  files           Json[] // Archivos de ese SAIM
   oldID           Int? // ID anterior
   status     String? @default("active")
 }

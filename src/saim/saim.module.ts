@@ -5,5 +5,6 @@ import { PrismaService } from 'src/prisma/prisma.service';
 
 @Module({
   providers: [SaimService, PrismaService],
-  controllers: [SaimController]})
+  controllers: [SaimController],
+  exports: [SaimService],})
 export class SaimModule {}
