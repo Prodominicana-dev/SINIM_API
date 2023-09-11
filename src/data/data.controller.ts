@@ -1,9 +1,9 @@
 import { Controller, Get, Param, Res, Post, Body, StreamableFile, UploadedFile, UseInterceptors } from '@nestjs/common';
-import { createReadStream } from 'fs';
 import { SaimService } from 'src/saim/saim.service';
 import { mkdirp } from 'mkdirp';
-import { Express } from 'express'
+import { Express, Response } from 'express'
 import { FileInterceptor } from '@nestjs/platform-express';
+import * as mime from 'mime-types';
 
 const fs = require('fs');
 const path = require('path');
@@ -17,10 +17,16 @@ constructor(private readonly saimService: SaimService) {}
 *   Obtener las imagenes de los SAIM por su id y nombre de imagen.
 */
 @Get('saim/:id/img/:imageName')
-getImage(@Param('id') id: string, @Param('imageName') imageName: string, @Res() res): void {
+getImage(@Param('id') id: string, @Param('imageName') imageName: string, @Res({ passthrough: true }) res: Response): StreamableFile {
   const imagePath = path.join(__dirname, `../../public/data/saim/images/${id}`, imageName);
+  const mimeType = mime.lookup(imageName);
+  if (!mimeType) {
+    return undefined;
+  }
   const fileStream = fs.createReadStream(imagePath);
-  fileStream.pipe(res);
+  const streamableFile = new StreamableFile(fileStream);
+  streamableFile.options.type = mimeType 
+  return streamableFile;
 }
 
 
@@ -30,14 +36,17 @@ getImage(@Param('id') id: string, @Param('imageName') imageName: string, @Res() 
 @Post('saim/:id/img')
 @UseInterceptors(FileInterceptor('file'))
 async uploadFile(@UploadedFile() file: Express.Multer.File, @Param('id') id: string, @Res() res) {
-  const folderPath = path.join(process.cwd(), `public/data/saim/images/${id}`);
+    const saim = await this.saimService.getSAIMById(Number(id));  
+    const folderPath = path.join(process.cwd(), `public/data/saim/images/${id}`);
   await mkdirp(folderPath);
     const imageName = `${new Date().getTime()}.${file.originalname.split('.').pop()}`;
     fs.writeFile(path.join(folderPath, imageName), file.buffer, (err) => {
         if (err) {
             res.status(500).json({ error: err });
         } else {
-            res.status(200).json({ imageName });
+            saim.image = imageName;
+            this.saimService.updateSAIM(saim.id, saim);
+            res.status(200).json({ message: saim });
         }
     }
     );
