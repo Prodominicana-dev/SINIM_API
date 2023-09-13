@@ -10,6 +10,11 @@ export class SaimController {
         return this.saimService.getSAIM();
     }
 
+    @Get('page/:id')
+    async getPaginatedSaim(@Param('id') page: number) {
+        return this.saimService.getPaginatedSaim({page});
+    }
+
     @Get(':id')
     async getSAIMById(@Param('id') id: number) {
         return this.saimService.getSAIMById(Number(id));

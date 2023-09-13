@@ -18,6 +18,7 @@ constructor(private readonly saimService: SaimService) {}
 */
 @Get('saim/:id/img/:imageName')
 getImage(@Param('id') id: string, @Param('imageName') imageName: string, @Res({ passthrough: true }) res: Response): StreamableFile {
+    res.set({'Content-Type': 'image/jpeg'});
   const imagePath = path.join(__dirname, `../../public/data/saim/images/${id}`, imageName);
   const mimeType = mime.lookup(imageName);
   if (!mimeType) {
