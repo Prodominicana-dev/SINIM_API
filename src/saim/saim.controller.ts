@@ -29,8 +29,38 @@ export class SaimController {
     }
 
     @Put(':id')
-    async updateSAIM(@Param('id') id: number, @Body() data) {
-        return this.saimService.updateSAIM(Number(id), data);
+    @UseInterceptors(FileInterceptor('file'))
+    async updateSAIM(@Param('id') id: string, @Body() data, @UploadedFile() file: Express.Multer.File, @Res() res) {
+        const saim = await this.saimService.getSAIMById(Number(id));
+        // Convertir data.products y data.countries a JSON
+        if(data.products) {
+            data.products = JSON.parse(data.products);
+        }
+        if(data.countries) {
+            data.countries = JSON.parse(data.countries);
+        }
+        console.log(data)
+        // Si el file no es undefined, actualizar la imagen, borrar la foto de esa carpeta y agregar la nueva
+        if (file) {
+            const folderPath = path.join(process.cwd(), `public/data/saim/images/${id}`);
+            const imageName = `${new Date().getTime()}.${file.originalname.split('.').pop()}`;
+            fs.writeFile(path.join(folderPath, imageName), file.buffer, (err) => {
+                if (err) {
+                    res.status(500).json({ error: err });
+                } else {
+                    saim.image = imageName;
+                    this.saimService.updateSAIM(Number(id), data);
+                    res.status(200).json({ message: data });
+                }
+            });
+        }
+        await this.saimService.updateSAIM(Number(id), data).then((saim) => {
+            if(res.statusCode === 500) {
+                return res.status(500).json({ message: 'Error' });
+            }
+            return res.status(200).json({ message: saim });
+        });
+        
     }
 
     @Post()
