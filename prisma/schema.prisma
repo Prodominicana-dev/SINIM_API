@@ -89,8 +89,6 @@ model Saim{
   title          String // Titulo
   description    String? // Descripción
   category        String? // Categoría
-  source          String? // Fuente
-  link            String? // Enlace
   image           String? // Imagen
   date            DateTime? @default(now()) // Fecha de registro
   products        Json[] // Productos
