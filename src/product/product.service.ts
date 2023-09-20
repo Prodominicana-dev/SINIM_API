@@ -6,9 +6,10 @@ import { Prisma, Product } from '@prisma/client';
 export class ProductService {
     constructor(private prisma: PrismaService) {}
 
-    // Get all products
+    // Get all products. 
     async getProducts(): Promise< Product[]> {
-        return this.prisma.product.findMany();
+        return this.prisma.product.findMany({
+        });
     }
 
     // Get product by id

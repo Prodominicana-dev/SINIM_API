@@ -75,4 +75,15 @@ export class SaimService {
       data,
     });
   }
+
+  async deleteSAIM(id: number): Promise<Saim> {
+    return this.prisma.saim.update({
+      where: {
+        id: id,
+      },
+      data: {
+        status: 'deleted',
+      },
+    });
+  }
 }
