@@ -14,4 +14,9 @@ export class CountryController {
     async getCountryById(@Param() id: number){
         return this.countryService.getCountryById(id);
     }
+
+    @Get('countries/select')
+    async getCountriesLabelValue(){
+        return this.countryService.getCountriesLabelValue();
+    }
 }

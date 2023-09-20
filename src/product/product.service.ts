@@ -18,4 +18,19 @@ export class ProductService {
             where: { id },
         });
     }
+
+    // Get products with label and value
+    async getProductsLabelValue(): Promise<any[]> {
+        const products = await this.prisma.product.findMany({ 
+            where: {
+                status: "active"
+            }
+         });
+
+        const productsLabelValue = products.map((product) => {
+            return { label: `${product.name} - ${product.code}`, value: product }
+        })
+
+        return productsLabelValue;
+    }
 }

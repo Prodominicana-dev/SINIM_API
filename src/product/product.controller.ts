@@ -16,4 +16,10 @@ export class ProductController {
     async getProductById(id: number){
         return this.productService.findOne(Number(id));
     }
+
+    //Get products with label and value
+    @Get('products/select')
+    async getProductsLabelValue(){
+        return this.productService.getProductsLabelValue();
+    }
 }

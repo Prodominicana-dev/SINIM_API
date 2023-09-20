@@ -15,4 +15,15 @@ export class CountryService {
             where: { id },
         });
     }
+
+    // Get country with label and value
+    async getCountriesLabelValue(): Promise<any[]> {
+        const countries = await this.prisma.country.findMany({});
+
+        const countriesLabelValue = countries.map((country) => {
+            return { label: `${country.name}`, value: country }
+        })
+
+        return countriesLabelValue;
+    }
 }
