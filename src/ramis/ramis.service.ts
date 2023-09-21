@@ -37,9 +37,18 @@ export class RamisService {
     });
   }
 
-  async getAllRamis(): Promise<Ramis[]> {
-    return this.prisma.ramis.findMany();
-  }
+  async getAllRamis(): Promise<{ id: number; countryId: number; productId: number; }[]> {
+    return this.prisma.ramis.findMany({
+        where: {
+            status: "active"
+        },
+        select: {
+            id: true,
+            countryId: true,
+            productId: true,
+        }
+    });
+}
 
   async deleteRamiById(id: number): Promise<Ramis> {
     return this.prisma.ramis.delete({
