@@ -1,4 +1,4 @@
-import { Controller, Get, Param, Res, Post, Body, Put, StreamableFile, UploadedFile, UseInterceptors } from '@nestjs/common';
+import { Controller, Get, Param, Res, Post, Body, Put, StreamableFile, UploadedFile, UseInterceptors, Delete } from '@nestjs/common';
 import { SaimService } from './saim.service';
 import { mkdirp } from 'mkdirp';
 import { Express, Response } from 'express'
@@ -88,6 +88,17 @@ export class SaimController {
         }
     }
     );
+    }
+
+    @Delete(':id')
+    async deleteSaim(@Param('id') id: number, @Res() res: Response) {
+        const saim = await this.saimService.getSAIMById(Number(id));
+        if (saim) {
+            await this.saimService.deleteSAIM(Number(id));
+            res.status(200).json({ message: 'SAIM eliminado' });
+        } else {
+            res.status(500).json({ message: 'Error al eliminar el SAIM' });
+        }
     }
 }
 
