@@ -34,22 +34,13 @@ model Country {
   ramis Ramis[]
 }
 
-model Sector{
-  id          Int     @id @default(autoincrement())
-  name        String  @unique
-  oldID       Int     
-  products    Product[]
-}
-
 model Product {
   id          Int     @id @default(autoincrement())
   name        String
   code        String
   description String
-  sectorID    Int
   date        DateTime? @default(now())
   oldID       Int @unique
-  sector      Sector @relation(fields: [sectorID], references: [id])
   ramis       Ramis[]
   status     String? @default("active")
 }
@@ -93,7 +84,12 @@ model Saim{
   date            DateTime? @default(now()) // Fecha de registro
   products        Json[] // Productos
   countries       Json[] // Países (ID)
-  files           Json[] // Archivos de ese SAIM
   oldID           Int? // ID anterior
   status     String? @default("active")
+}
+
+model Notification{
+  id            Int     @id @default(autoincrement())
+  platform          String
+  users           Json[]
 }

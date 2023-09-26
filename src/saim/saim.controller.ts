@@ -14,11 +14,21 @@ export class SaimController {
     constructor(private readonly saimService: SaimService) {}
 
     @Get()
+    async getActiveSAIM() {
+        return this.saimService.getActiveSAIM();
+    }
+
+    @Get('page/:id')
+    async getActivePaginatedSaim(@Param('id') page: number) {
+        return this.saimService.getActivePaginatedSaim({page});
+    }
+
+    @Get('all')
     async getSAIM() {
         return this.saimService.getSAIM();
     }
 
-    @Get('page/:id')
+    @Get('page/all/:id')
     async getPaginatedSaim(@Param('id') page: number) {
         return this.saimService.getPaginatedSaim({page});
     }
