@@ -32,6 +32,7 @@ model Country {
   continent String?
   group String?
   ramis Ramis[]
+  suscriber_countries SuscriberToCountry[]
 }
 
 model Product {
@@ -42,6 +43,7 @@ model Product {
   date        DateTime? @default(now())
   oldID       Int @unique
   ramis       Ramis[]
+  suscriber_products  SuscriberToProduct[]
   status     String? @default("active")
 }
 
@@ -88,8 +90,32 @@ model Saim{
   status     String? @default("active")
 }
 
-model Notification{
-  id            Int     @id @default(autoincrement())
-  platform          String
-  users           Json[]
+model Suscriber{
+  id            Int    @id @default(autoincrement())
+  email         String         
+  name          String?         // Nombre y apellido
+  platform      String        
+  status        String?         @default("active")
+  suscriber_countries SuscriberToCountry[]
+  suscriber_products  SuscriberToProduct[]
 }
+
+model SuscriberToCountry {
+  suscriberId Int
+  countryId   Int
+  suscriber Suscriber @relation(fields: [suscriberId], references: [id])
+  country   Country   @relation(fields: [countryId] , references: [id])
+
+  @@id([suscriberId, countryId])
+}
+
+model SuscriberToProduct {
+  suscriberId Int
+  productId   Int
+
+  suscriber Suscriber @relation(fields: [suscriberId], references: [id])
+  product   Product   @relation(fields: [productId] , references: [id])
+
+  @@id([suscriberId, productId])
+}
+
