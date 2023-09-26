@@ -13,14 +13,12 @@ const outputRequirement = require('../public/data/RequisitoSalida.json');
 const importRequirement = require('../public/data/RequisitosImportacion.json');
 //SAIM
 const saims = require('../public/data/SAIM.json');
-const files = require('../public/data/Archivos.json');
-
 const axios = require('axios');
 
 //Links
-const productURL = 'http://localhost:3001/products';
-const countryURL = 'http://localhost:3001/countries';
-const ramisURL = 'http://localhost:3001/rami';
+const productURL = 'http://127.0.0.1:3001/products';
+const countryURL = 'http://127.0.0.1:3001/countries';
+const ramisURL = 'http://127.0.0.1:3001/rami';
 
 async function seedDatabase() {
   // Dominios reservados
@@ -250,30 +248,14 @@ for(const s of saims){
   })
 }
 
-// Archivos a cada SAIM
-for(const file of files){
-  const saimID = await prisma.saim.findFirst({
-    where: {
-      oldID: file.Id_SAIM
-    }
-  })
-  if(saimID == null){
-    continue;
-  }
-  await prisma.saim.update({
-    where: {
-      id: saimID.id
-    },
-    data: {
-      files: [file.Archivo]
-    }
-  })
-}
 }
 
 async function main() {
   await prisma.$connect();
   await seedDatabase();
+  await axios.get('http://127.0.0.1:3001/data/newImages').then((response) => {
+    console.log(response.data);
+  });
   await prisma.$disconnect();
 }
 

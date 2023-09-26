@@ -84,7 +84,6 @@ model Saim{
   date            DateTime? @default(now()) // Fecha de registro
   products        Json[] // Productos
   countries       Json[] // Países (ID)
-  files           Json[] // Archivos de ese SAIM
   oldID           Int? // ID anterior
   status     String? @default("active")
 }
