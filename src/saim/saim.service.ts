@@ -13,7 +13,7 @@ const paginate: PaginatorTypes.PaginateFunction = paginator({
 export class SaimService {
   constructor(private prisma: PrismaService) {}
 
-  async getSAIM(): Promise<Saim[]> {
+  async getActiveSAIM(): Promise<Saim[]> {
     return this.prisma.saim.findMany({
       where: {
         status: 'active',
@@ -24,7 +24,7 @@ export class SaimService {
     });
   }
 
-  async getPaginatedSaim({
+  async getActivePaginatedSaim({
     page,
     perPage,
     where,
@@ -43,6 +43,39 @@ export class SaimService {
         },
         orderBy: {
           date: 'desc',
+        },
+      },
+      {
+        page,
+        perPage: 8,
+      },
+    );
+  }
+
+  async getSAIM(): Promise<Saim[]> {
+    return this.prisma.saim.findMany({
+      orderBy: {
+        status: 'asc',
+      },
+    });
+  }
+
+  async getPaginatedSaim({
+    page,
+    perPage,
+    where,
+    orderBy,
+  }: {
+    page?: number;
+    perPage?: number;
+    where?: Prisma.SaimWhereInput;
+    orderBy?: Prisma.SaimOrderByWithRelationInput;
+  }): Promise<PaginatorTypes.PaginatedResult<Saim>> {
+    return paginate(
+      this.prisma.saim,
+      {
+        orderBy: {
+          status: 'asc',
         },
       },
       {

@@ -1,6 +1,3 @@
-import { NodeHtmlMarkdown, NodeHtmlMarkdownOptions } from 'node-html-markdown'
-import { convertHtmlToDelta } from 'node-quill-converter';
-
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 const products = require('../public/data/Products.json');
@@ -8,7 +5,6 @@ const countries = require('../public/data/Countries.json');
 const domains = require('../public/data/Domains.json');
 const tools = require('../public/data/Tools.json');
 //RAMI
-const sectors = require('../public/data/Sector.json');
 const tradeAgreement = require('../public/data/AcuerdoComercial.json');
 const tariffs = require('../public/data/ArancelesImpuestos.json');
 const webResource = require('../public/data/RecursoWeb.json');
@@ -22,10 +18,9 @@ const files = require('../public/data/Archivos.json');
 const axios = require('axios');
 
 //Links
-const sectorURL = 'https://sinim-api-git-tools-prodominicanadev.vercel.app/sector';
-const productURL = 'https://sinim-api-git-tools-prodominicanadev.vercel.app/products';
-const countryURL = 'https://sinim-api-git-tools-prodominicanadev.vercel.app/countries';
-const ramisURL = 'https://sinim-api-git-tools-prodominicanadev.vercel.app/rami';
+const productURL = 'http://localhost:3001/products';
+const countryURL = 'http://localhost:3001/countries';
+const ramisURL = 'http://localhost:3001/rami';
 
 async function seedDatabase() {
   // Dominios reservados
@@ -56,38 +51,18 @@ async function seedDatabase() {
     });
   }
 
-  // Sectores
-  for(const sector of sectors){
-    await prisma.sector.create({
-      data: {
-        name: sector.name,
-        oldID: sector.oldID
-      }
-    })
-  }
-  // Buscar los sectores registrados para asignarle a los productos al momento de migrar los datos a la nueva BD y de esta
-  // manera se actualicen los id de los sectores en la tabla de productos
-  let sector;
-  await axios.get(sectorURL).then((response) => {
-    sector = response.data;
-  });
-
   // Crear productos
   for(const product of products){
-    for(const s of sector){
-      if(product.Id_Sector == s.oldID){
-        await prisma.product.create({
-          data: {
-            name: product.Producto,
-            code: product.SubPartida,
-            description: product.Descripcion,
-            sectorID: s.id,
-            oldID: product.Id 
-          }
-        })
-        continue;
+    
+    await prisma.product.create({
+      data: {
+        name: product.Producto,
+        code: product.SubPartida,
+        description: product.Descripcion,
+        oldID: product.Id 
       }
-    }
+    })
+        
   }
 
 for(const country of countries){
@@ -267,8 +242,6 @@ for(const s of saims){
       title: s.Titular,
       description: s.Contenido,
       category: s.Clasificacion,
-      source: s.Fuente,
-      link: s.Link,
       image: s.Imagen,
       products: productsJSON,
       countries: countriesJSON,
