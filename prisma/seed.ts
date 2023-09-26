@@ -253,9 +253,6 @@ for(const s of saims){
 async function main() {
   await prisma.$connect();
   await seedDatabase();
-  await axios.get('http://127.0.0.1:3001/data/newImages').then((response) => {
-    console.log(response.data);
-  });
   await prisma.$disconnect();
 }
 
