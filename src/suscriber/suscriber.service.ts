@@ -41,6 +41,18 @@ export class SuscriberService {
             where: { 
                 email,
                 platform   
+            },
+            include: {
+                suscriber_countries: {
+                    include: {
+                        country: true
+                    }
+                },
+                suscriber_products: {
+                    include: {
+                        product: true
+                    }
+                }
             }
         });
     }
@@ -85,8 +97,8 @@ export class SuscriberService {
     }
 
     // // Update suscriber by email and platform
-    async  updateSubscriber(email, platform, data) {
-        const { products, countries, ...subscriberData } = data;
+    async  updateSubscriber(data) {
+        const { products, countries, email, platform, ...subscriberData } = data;
     
         // Primero, busca el suscriptor a actualizar
         const subscriber = await this.prismaService.suscriber.findFirst({
@@ -97,7 +109,8 @@ export class SuscriberService {
         });
     
         if (!subscriber) {
-            throw new Error(`No se encontró ningún suscriptor con el correo electrónico ${email} y la plataforma ${platform}`);
+            // crearlo si no existe
+            return this.createSubscriber(data);
         }
     
         // Luego, actualiza el suscriptor y sus relaciones

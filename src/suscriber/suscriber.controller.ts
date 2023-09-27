@@ -16,9 +16,9 @@ export class SuscriberController {
     }
 
     // Update suscriber by email and platform
-    @Patch(':email/:platform')
-    async updateSuscriberByEmailAndPlatform(@Param('email') email: string, @Param('platform') platform: string, @Body() data) {
-        return await this.suscriberService.updateSubscriber(email, platform, data);
+    @Patch('')
+    async updateSuscriberByEmailAndPlatform(@Body() data) {
+        return await this.suscriberService.updateSubscriber(data);
     }
 
     @Get(':email')
