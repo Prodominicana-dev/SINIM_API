@@ -20,6 +20,7 @@ model Ramis {
   outputRequirement String? // Requisitos de salida
   importRequirement String? // Requisitos de importación
   date       DateTime? @default(now())
+  status     String? @default("active")
   country     Country @relation(fields: [countryId], references: [id])
   product     Product @relation(fields: [productId], references: [id])
 }
@@ -31,14 +32,7 @@ model Country {
   continent String?
   group String?
   ramis Ramis[]
-  saim  SAIM[]
-}
-
-model Sector{
-  id          Int     @id @default(autoincrement())
-  name        String  @unique
-  oldID       Int     
-  products    Product[]
+  suscriber_countries SuscriberToCountry[]
 }
 
 model Product {
@@ -46,18 +40,18 @@ model Product {
   name        String
   code        String
   description String
-  sectorID    Int
   date        DateTime? @default(now())
-  oldID       Int
-  sector      Sector @relation(fields: [sectorID], references: [id])
+  oldID       Int @unique
   ramis       Ramis[]
-  
+  suscriber_products  SuscriberToProduct[]
+  status     String? @default("active")
 }
 
 model reservedDomains{
   id              Int     @id @default(autoincrement())
   name            String
   platform        String
+  status     String? @default("active")
 }
 
 model Datamarket{
@@ -65,6 +59,7 @@ model Datamarket{
   idBi           Int
   description   String
   url           String
+  status     String? @default("active")
 }
 
 model Tools{
@@ -78,18 +73,49 @@ model Tools{
   logo          String?
   boxColor      String?
   visible       Boolean?
+  status     String? @default("active")
 }
 
 
-model SAIM{
+model Saim{
   id             Int     @id @default(autoincrement())
-  title          String 
-  description    String?
-  source        String?
-  link          String?
-  image         String?
-  date          DateTime?
-  products       Json?
-  countryAbbr    String
-  country        Country @relation(fields: [countryAbbr], references: [abbreviation])
+  title          String // Titulo
+  description    String? // Descripción
+  category        String? // Categoría
+  image           String? // Imagen
+  date            DateTime? @default(now()) // Fecha de registro
+  products        Json[] // Productos
+  countries       Json[] // Países (ID)
+  oldID           Int? // ID anterior
+  status     String? @default("active")
 }
+
+model Suscriber{
+  id            Int    @id @default(autoincrement())
+  email         String         
+  name          String?         // Nombre y apellido
+  platform      String        
+  status        String?         @default("active")
+  suscriber_countries SuscriberToCountry[]
+  suscriber_products  SuscriberToProduct[]
+}
+
+model SuscriberToCountry {
+  suscriberId Int
+  countryId   Int
+  suscriber Suscriber @relation(fields: [suscriberId], references: [id])
+  country   Country   @relation(fields: [countryId] , references: [id])
+
+  @@id([suscriberId, countryId])
+}
+
+model SuscriberToProduct {
+  suscriberId Int
+  productId   Int
+
+  suscriber Suscriber @relation(fields: [suscriberId], references: [id])
+  product   Product   @relation(fields: [productId] , references: [id])
+
+  @@id([suscriberId, productId])
+}
+
