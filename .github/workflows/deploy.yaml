@@ -22,6 +22,7 @@ jobs:
           script: |
             # Comandos a ejecutar en el servidor remoto
             cd /var/www/SINIM_API
+            git reset --hard HEAD
             git pull
             npm install
             pm2 start ecosystem.config.js
