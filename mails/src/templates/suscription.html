@@ -1,0 +1,57 @@
+---
+title: "Suscripcion"
+bodyClass: bg-slate-200
+---
+<x-main>
+    
+    <div class="flex flex-col  w-[600px] font-mono rounded-xl bg-white overflow-hidden">
+        <!-- Imagen -->
+        <x-sinimLogo />
+        <!-- Contenido -->
+        <div class="w-full overflow-auto text-black ">
+            <div class="p-8 font-sans">
+                <p>
+                    Hola @{{name}}, 
+                </p>
+                <p>
+                    ¡Gracias por unirte a SINIM, tu compañero en el mundo de las alertas comerciales! Estamos emocionados de tenerte a bordo y esperamos que disfrutes de todas las oportunidades que te brindamos.
+                </p>
+                <p>
+                    En SINIM, nos dedicamos a proporcionarte información valiosa y relevante sobre el comercio internacional.
+                </p>
+                <p>Tus preferencias:</p>
+                <div class="w-full rounded-xl bg-navy">
+                    <div class="p-4">
+                        {{#if products}}
+                        <p class="font-sans text-xl font-semibold text-white">Productos</p>
+                        <div class="flex flex-row flex-wrap w-full gap-2">
+                            {{#each products}}
+                            <div class="center relative inline-block select-none whitespace-nowrap rounded-full bg-white/30 py-2 px-3.5 align-baseline font-sans text-xs font-bold leading-none text-white">
+                                <div class="mt-px font-normal">{{name}}</div>
+                              </div>
+                            {{/each}}
+                          </div>
+                          {{/if}}
+                          {{#if countries}}
+                        <p class="font-sans text-xl font-semibold text-white">Países</p>
+                        <div class="flex flex-row flex-wrap w-full gap-2">
+                            {{#each countries}}
+                            <div class="center relative inline-block select-none whitespace-nowrap rounded-full bg-white/30 py-2 px-3.5 align-baseline font-sans text-xs font-bold leading-none text-white">
+                                <div class="mt-px font-normal">{{name}}</div>
+                              </div>
+                            {{/each}}
+                          </div>
+                          {{/if}}
+                    </div>
+                   
+                </div>
+                <p>Atentamente,<br><span class="font-bold">SINIM Prodominicana</span></p>
+            </div>
+            
+        </div>
+        <!-- Footer -->
+        <x-footer />
+    </div>
+    
+    
+</x-main>
