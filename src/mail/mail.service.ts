@@ -8,12 +8,13 @@ export class MailService {
   async sendUserConfirmation(user, saim) {
 
     await this.mailerService.sendMail({
-      to: 'eliampimentel@prodominicana.gob.do',
+      to: ['randy140801@gmail.com', 'eliamps07@gmail.com', 'eliamps07@outlook.com, eliampimentel@prodominicana.gob.do'],
       subject: `SINIM - ${saim.title}`,
-      template: './promotional', // 👈 either change to ./transactional or rename transactional.html to confirmation.html
+      template: './suscription', // 👈 either change to ./transactional or rename transactional.html to confirmation.html
       context: { // ✏️ filling curly brackets with content
-        name: user.name,
-        url: 'probando.com',
+        name: "Eliam Pimentel",
+        products: [{name: "Oranges"}, {name: "Apples"}],
+        countries: [{name: "Spain"}, {name: "US"}, {name: "Germany"}, {name: "France"}, {name: "Italy"}, {name: "UK"}, {name: "China"}, {name: "Russia"}, {name: "Others"}, {name: "Unknown"},],
       },
     });
   }
