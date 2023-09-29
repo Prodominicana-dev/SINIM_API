@@ -38,6 +38,7 @@ import { EjsAdapter } from '@nestjs-modules/mailer/dist/adapters/ejs.adapter';
   providers: [MailService],
   exports: [MailService],
   controllers: [MailController], // 👈 export for DI
+  
 })
 export class MailModule {}
 
