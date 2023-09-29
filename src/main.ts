@@ -5,7 +5,7 @@ import * as dotenv from 'dotenv';
 async function bootstrap() {
   dotenv.config();
   const app = await NestFactory.create(AppModule, { cors: {
-    origin: 'https://sinim.prodominicana.god.do',
+    origin: ['https://sinim.prodominicana.god.do', 'http://localhost:3000'],
     methods: ['GET','HEAD','PUT','PATCH','POST','DELETE'],
     credentials: true
   } });

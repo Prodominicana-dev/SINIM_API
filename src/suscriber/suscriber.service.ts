@@ -117,7 +117,10 @@ export class SuscriberService {
            const countries = suscriptor.suscriber_countries.map(country => ({ name: country.country.name }));
             const products = suscriptor.suscriber_products.map(product => ({ name: product.product.name }));
             const title = "Suscripción a las Alertas Comerciales"
-            return await this.mailService.alertaComercialMail(title, sub.email, sub.name, products, countries)
+            return await this.mailService.alertaComercialMail(title, sub.email, sub.name, products, countries).then(async () => {
+                const title = "Nueva Suscripción a las Alertas Comerciales"
+                return await this.mailService.alertaComercialNotifyMail(title, 'inteligenciademercados@prodominicana.gob.do', sub.name, products, countries)
+            })
         }
     
         // Luego, actualiza el suscriptor y sus relaciones

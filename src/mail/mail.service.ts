@@ -18,4 +18,17 @@ export class MailService {
       },
     });
   }
+
+  async alertaComercialNotifyMail(title, email, name, products, countries) {
+      await this.mailerService.sendMail({
+        to: email,
+        subject: `SINIM - ${title}`,
+        template: './suscriptionAlert', 
+        context: { 
+          name,
+          products,
+          countries,
+        },
+      });
+  }
 }

@@ -2,7 +2,7 @@ import { Controller } from '@nestjs/common';
 import { RamisService } from './ramis.service';
 import { Get, Post, Put, Delete, Param, Body } from '@nestjs/common';
 
-@Controller('rami')
+@Controller('api/rami')
 export class RamisController {
   constructor(private ramiService: RamisService) {}
 

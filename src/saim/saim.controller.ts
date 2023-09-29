@@ -9,7 +9,7 @@ const fs = require('fs');
 const path = require('path');
 const imageBase64 = require('image-base64');
 
-@Controller('saim')
+@Controller('api/saim')
 export class SaimController {
     constructor(private readonly saimService: SaimService) {}
 
