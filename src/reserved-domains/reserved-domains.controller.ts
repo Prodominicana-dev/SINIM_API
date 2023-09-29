@@ -3,7 +3,7 @@ import { Get, Post, Put, Delete, Param, Body, UseGuards } from '@nestjs/common';
 import { ReservedDomainsService } from './reserved-domains.service';
 import { reservedDomains } from '@prisma/client';
 
-@Controller('api/reserved-domains')
+@Controller('apiv2/reserved-domains')
 export class ReservedDomainsController {
   constructor(private reservedDomainsService: ReservedDomainsService) {}
 

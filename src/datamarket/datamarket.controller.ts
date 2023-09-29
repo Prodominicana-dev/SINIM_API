@@ -1,4 +1,4 @@
 import { Controller } from '@nestjs/common';
 
-@Controller('api/datamarket')
+@Controller('apiv2/datamarket')
 export class DatamarketController {}

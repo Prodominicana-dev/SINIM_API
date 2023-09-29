@@ -2,7 +2,7 @@ import { Controller, Get, Param } from '@nestjs/common';
 import { ToolsService } from './tools.service';
 
 
-@Controller('api/tools')
+@Controller('apiv2/tools')
 export class ToolsController {
     constructor(private readonly toolsService: ToolsService) {}
 

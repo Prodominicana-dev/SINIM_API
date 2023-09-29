@@ -1,7 +1,7 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { CountryService } from './country.service';
 
-@Controller('api/')
+@Controller('apiv2/')
 export class CountryController {
     constructor(private countryService : CountryService) {}
 

@@ -18,7 +18,7 @@ import * as mime from 'mime-types';
 const fs = require('fs');
 const path = require('path');
 const imageBase64 = require('image-base64');
-@Controller('api/data')
+@Controller('apiv2/data')
 export class DataController {
   constructor(private readonly saimService: SaimService) {}
 
