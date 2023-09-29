@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { Prisma } from '@prisma/client';
+import { MailService } from 'src/mail/mail.service';
 
 interface Suscriber{
     email: string;
@@ -13,7 +14,8 @@ interface Suscriber{
 
 @Injectable()
 export class SuscriberService {
-    constructor(private readonly prismaService : PrismaService) {}
+    constructor(private readonly prismaService : PrismaService,
+        private readonly mailService : MailService) {}
 
     async createSubscriber(data) {
         const { products, countries, ...subscriberData } = data;
@@ -110,7 +112,12 @@ export class SuscriberService {
     
         if (!subscriber) {
             // crearlo si no existe
-            return this.createSubscriber(data);
+           const sub = await this.createSubscriber(data)
+           const suscriptor = await this.getSuscriberByEmailAndPlatform(sub.email, sub.platform)
+           const countries = suscriptor.suscriber_countries.map(country => ({ name: country.country.name }));
+            const products = suscriptor.suscriber_products.map(product => ({ name: product.product.name }));
+            const title = "Suscripción a las Alertas Comerciales"
+            return await this.mailService.alertaComercialMail(title, sub.email, sub.name, products, countries)
         }
     
         // Luego, actualiza el suscriptor y sus relaciones
@@ -139,6 +146,11 @@ export class SuscriberService {
                     }
                 }
             }
+        }).then(async (sub) => {
+            const countries = sub.suscriber_countries.map(country => ({ name: country.country.name }));
+            const products = sub.suscriber_products.map(product => ({ name: product.product.name }));
+            const title = "Actualización de la suscripción a las Alertas Comerciales"
+            return await this.mailService.alertaComercialMail(title, sub.email, sub.name, products, countries)
         });
     }
     

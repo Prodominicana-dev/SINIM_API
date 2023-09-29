@@ -4,6 +4,9 @@ import { join } from 'path';
 import { MailerModule } from '@nestjs-modules/mailer';
 import { MailController } from './mail.controller';
 import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handlebars.adapter';
+import { PugAdapter } from '@nestjs-modules/mailer/dist/adapters/pug.adapter';
+import { EjsAdapter } from '@nestjs-modules/mailer/dist/adapters/ejs.adapter';
+
 
 @Module({
   imports: [
@@ -35,6 +38,7 @@ import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handleba
   providers: [MailService],
   exports: [MailService],
   controllers: [MailController], // 👈 export for DI
+  
 })
 export class MailModule {}
 

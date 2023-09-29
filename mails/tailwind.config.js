@@ -119,6 +119,11 @@ module.exports = {
       minWidth: theme => ({
         ...theme('width'),
       }),
+      colors: {
+        navy: "#062381",
+        mint: "#1AD25D",
+        "sky-blue": "rgba(41,151,242, 0.7)",
+      },
     },
   },
   corePlugins: {
