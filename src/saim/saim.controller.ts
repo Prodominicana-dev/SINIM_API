@@ -110,6 +110,16 @@ export class SaimController {
             res.status(500).json({ message: 'Error al eliminar el SAIM' });
         }
     }
+
+    @Delete('d/:id')
+    async deleteDefinitiveSaim(@Param('id') id: number, @Res() res: Response) {
+        return await this.saimService.deleteDefinitiveSAIM(Number(id)).then((saim) => {
+            if (res.statusCode === 500) {
+                return res.status(500).json({ message: 'Error' });
+            }
+            return res.status(200).json({ message: saim });
+        });
+    }
 }
 
 

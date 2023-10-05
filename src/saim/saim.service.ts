@@ -119,4 +119,12 @@ export class SaimService {
       },
     });
   }
+
+  async deleteDefinitiveSAIM(id: number): Promise<Saim> {
+    return this.prisma.saim.delete({
+      where: {
+        id: id,
+      },
+    });
+  }
 }
