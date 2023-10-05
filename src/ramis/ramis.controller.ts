@@ -11,9 +11,20 @@ export class RamisController {
     return this.ramiService.getAllRamis();
   }
 
+  @Get('settings')
+  async getAllSettingsRamis() {
+    return this.ramiService.getAllSettingsRamis();
+  }
+
   @Get('product/:productId/country/:countryId')
-  async getRamisByProductIdAndCountryId(@Param('productId') productId: number, @Param('countryId') countryId: number) {
-    return this.ramiService.getRamisByProductIdAndCountryId(Number(productId), Number(countryId));
+  async getRamisByProductIdAndCountryId(
+    @Param('productId') productId: number,
+    @Param('countryId') countryId: number,
+  ) {
+    return this.ramiService.getRamisByProductIdAndCountryId(
+      Number(productId),
+      Number(countryId),
+    );
   }
 
   @Get(':id')
@@ -35,5 +46,4 @@ export class RamisController {
   async deleteRamiById(@Param('id') id: number) {
     return this.ramiService.deleteRamiById(Number(id));
   }
-
 }

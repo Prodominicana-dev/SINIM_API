@@ -6,9 +6,11 @@ import { ProductService } from 'src/product/product.service';
 
 @Injectable()
 export class RamisService {
-  constructor(private prisma: PrismaService, 
-    private countryService : CountryService,
-    private productService : ProductService) {}
+  constructor(
+    private prisma: PrismaService,
+    private countryService: CountryService,
+    private productService: ProductService,
+  ) {}
 
   async createRamis(data: Prisma.RamisCreateInput): Promise<Ramis> {
     return this.prisma.ramis.create({
@@ -24,20 +26,22 @@ export class RamisService {
       include: {
         country: true,
         product: true,
-      }
+      },
     });
-    
   }
 
   // Get Rami by productId and CountryId
-  async getRamisByProductIdAndCountryId(productId: number, countryId: number): Promise<Ramis | null> {
+  async getRamisByProductIdAndCountryId(
+    productId: number,
+    countryId: number,
+  ): Promise<Ramis | null> {
     return this.prisma.ramis.findFirst({
       where: {
         productId,
         countryId,
       },
     });
-  } 
+  }
 
   async editRamis(id: number, data: Prisma.RamisUpdateInput): Promise<Ramis> {
     return this.prisma.ramis.update({
@@ -46,18 +50,40 @@ export class RamisService {
     });
   }
 
-  async getAllRamis(): Promise<{ id: number; countryId: number; productId: number; }[]> {
+  async getAllRamis(): Promise<any[]> {
     return this.prisma.ramis.findMany({
-        where: {
-            status: "active"
-        },
-        select: {
-            id: true,
-            countryId: true,
-            productId: true,
-        }
+      where: {
+        status: 'active',
+      },
+      select: {
+        id: true,
+        countryId: true,
+        productId: true,
+      },
     });
-}
+  }
+
+  async getAllSettingsRamis(): Promise<any[]> {
+    return this.prisma.ramis.findMany({
+      where: {
+        status: 'active',
+      },
+      select: {
+        id: true,
+        country: {
+          select: {
+            name: true,
+          },
+        },
+        product: {
+          select: {
+            name: true,
+            code: true,
+          },
+        },
+      },
+    });
+  }
 
   async deleteRamiById(id: number): Promise<Ramis> {
     return this.prisma.ramis.delete({
