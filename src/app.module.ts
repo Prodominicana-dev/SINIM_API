@@ -5,7 +5,6 @@ import { PrismaService } from './prisma/prisma.service';
 import { RamisModule } from './ramis/ramis.module';
 import { ReservedDomainsModule } from './reserved-domains/reserved-domains.module';
 import { DatamarketModule } from './datamarket/datamarket.module';
-import { ToolsModule } from './tools/tools.module';
 import { CountryModule } from './country/country.module';
 import { ProductModule } from './product/product.module';
 import { SaimController } from './saim/saim.controller';
@@ -18,6 +17,6 @@ import { SuscriberModule } from './suscriber/suscriber.module';
 @Module({
   controllers: [AppController],
   providers: [AppService, PrismaService],
-  imports: [RamisModule, DatamarketModule, ReservedDomainsModule, ToolsModule, CountryModule, ProductModule, SaimModule, DataModule, MailModule, SuscriberModule],
+  imports: [RamisModule, DatamarketModule, ReservedDomainsModule, CountryModule, ProductModule, SaimModule, DataModule, MailModule, SuscriberModule],
 })
 export class AppModule {}

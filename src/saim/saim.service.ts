@@ -120,6 +120,17 @@ export class SaimService {
     });
   }
 
+  async publishSaim(id: number): Promise<Saim> {
+    return this.prisma.saim.update({
+      where: {
+        id: id,
+      },
+      data: {
+        published: true,
+      },
+    });
+  }
+
   async deleteDefinitiveSAIM(id: number): Promise<Saim> {
     return this.prisma.saim.delete({
       where: {

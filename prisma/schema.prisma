@@ -39,7 +39,6 @@ model Product {
   id          Int     @id @default(autoincrement())
   name        String
   code        String
-  description String
   date        DateTime? @default(now())
   oldID       Int @unique
   ramis       Ramis[]
@@ -62,21 +61,6 @@ model Datamarket{
   status     String? @default("active")
 }
 
-model Tools{
-  id             Int     @id @default(autoincrement())
-  title          String @unique
-  description   String?
-  color         String?
-  background    String?
-  root          String?
-  icon          String?
-  logo          String?
-  boxColor      String?
-  visible       Boolean?
-  status     String? @default("active")
-}
-
-
 model Saim{
   id             Int     @id @default(autoincrement())
   title          String // Titulo
@@ -88,6 +72,7 @@ model Saim{
   countries       Json[] // Países (ID)
   oldID           Int? // ID anterior
   status     String? @default("active")
+  published       Boolean? @default(false) // Publicado
 }
 
 model Suscriber{

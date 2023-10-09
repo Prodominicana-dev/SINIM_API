@@ -82,8 +82,13 @@ export class RamisService {
           },
         },
       },
+      orderBy:{
+        countryId: 'asc',
+      }
     });
   }
+
+  
 
   async deleteRamiById(id: number): Promise<Ramis> {
     return this.prisma.ramis.delete({

@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, ValidationPipe, Patch, Delete, Put } from '@nestjs/common';
 import { ProductService } from './product.service';
 
 @Controller('apiv2/')
@@ -22,4 +22,23 @@ export class ProductController {
     async getProductsLabelValue(){
         return this.productService.getProductsLabelValue();
     }
+
+    // Create product
+    @Post('product')
+    async createProduct(@Body() data: any){
+        return this.productService.create(data);
+    }
+
+    // Edit product
+    @Patch('product/:id')
+    async editProduct(@Param('id') id: number, @Body() data: any){
+        return this.productService.edit(Number(id), data);
+    }
+
+    // Delete product
+    @Delete('product/:id')
+    async deleteProduct(@Param('id') id: number){
+        return this.productService.delete(Number(id));
+    }
+
 }

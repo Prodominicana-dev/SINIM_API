@@ -16,9 +16,9 @@ const saims = require('../public/data/SAIM.json');
 const axios = require('axios');
 
 //Links
-const productURL = 'http://127.0.0.1:3001/products';
-const countryURL = 'http://127.0.0.1:3001/countries';
-const ramisURL = 'http://127.0.0.1:3001/rami';
+const productURL = 'http://127.0.0.1:3001/apiv2/products';
+const countryURL = 'http://127.0.0.1:3001/apiv2/countries';
+const ramisURL = 'http://127.0.0.1:3001/apiv2/rami';
 
 async function seedDatabase() {
   // Dominios reservados
@@ -32,23 +32,6 @@ async function seedDatabase() {
     });
   }
 
-  // Herramientas (RAMI, SIED, SAIM, DATAMARKET, SINIM)
-  for (const tool of tools) {
-    await prisma.tools.create({
-      data: {
-        title: tool.title,
-        description: tool.description,
-        color: tool.color,
-        boxColor: tool.boxColor,
-        background: tool.background,
-        icon: tool.icon,
-        logo: tool.logo,
-        root: tool.root,
-        visible: tool.visible,
-      },
-    });
-  }
-
   // Crear productos
   for(const product of products){
     
@@ -56,7 +39,6 @@ async function seedDatabase() {
       data: {
         name: product.Producto,
         code: product.SubPartida,
-        description: product.Descripcion,
         oldID: product.Id 
       }
     })

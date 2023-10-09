@@ -33,4 +33,30 @@ export class ProductService {
 
         return productsLabelValue;
     }
+
+    // Create product
+    async create(data: Prisma.ProductCreateInput): Promise<Product> {
+        return this.prisma.product.create({
+            data,
+        });
+    }
+
+    // Edit product
+    async edit(id: number, data: Prisma.ProductUpdateInput): Promise<Product> {
+        return this.prisma.product.update({
+            where: { id },
+            data,
+        });
+    }
+
+    // Delete product
+    async delete(id: number): Promise<Product> {
+        return this.prisma.product.update({
+            where: { id },
+            data: {
+                status: 'inactive',
+            },
+        });
+    }
+    
 }
