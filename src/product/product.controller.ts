@@ -26,7 +26,8 @@ export class ProductController {
     // Create product
     @Post('product')
     async createProduct(@Body() data: any){
-        return this.productService.create(data);
+        return this.productService.create(data).then((res) => {
+        });
     }
 
     // Edit product
