@@ -197,8 +197,7 @@ for(const s of saims){
       continue;
     }
     productsJSON.push({
-      name: productID.name,
-      code: productID.code,
+      ...productID
     })
   }
   // Separar paises y crear JSON con todos sus datos

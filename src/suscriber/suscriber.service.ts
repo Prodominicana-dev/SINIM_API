@@ -119,7 +119,7 @@ export class SuscriberService {
             const title = "Suscripción a las Alertas Comerciales"
             return await this.mailService.alertaComercialMail(title, sub.email, sub.name, products, countries).then(async () => {
                 const title = "Nueva Suscripción a las Alertas Comerciales"
-                return await this.mailService.alertaComercialNotifyMail(title, 'inteligenciademercados@prodominicana.gob.do', sub.name, products, countries)
+                return await this.mailService.alertaComercialNotifyMail(title, 'eliamps07@outlook.com', sub.name, products, countries)
             })
         }
     
@@ -156,8 +156,35 @@ export class SuscriberService {
             return await this.mailService.alertaComercialMail(title, sub.email, sub.name, products, countries)
         });
     }
-    
-    
-    
 
+    // Get all suscribers emails (no repeat) of a products or countries 
+    async getAllSuscribersEmailsByProductsOrCountries(products: number[], countries: number[]) {
+        return await this.prismaService.suscriber.findMany({
+            where: {
+                OR: [
+                    {
+                        suscriber_products: {
+                            some: {
+                                productId: {
+                                    in: products
+                                }
+                            }
+                        }
+                    },
+                    {
+                        suscriber_countries: {
+                            some: {
+                                countryId: {
+                                    in: countries
+                                }
+                            }
+                        }
+                    }
+                ]
+            },
+            select: {
+                email: true
+            }
+        });
+    }
 }

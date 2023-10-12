@@ -31,4 +31,18 @@ export class MailService {
         },
       });
   }
+
+  async newAlertaComercialMail(title, type, description, image, email) {
+    await this.mailerService.sendMail({
+      to: email,
+      subject: `SINIM - Nueva alerta comercial`,
+      template: './saim', 
+      context: { 
+        title,
+        type,
+        description,
+        imageUrl: image,
+      },
+    });
+  }
 }

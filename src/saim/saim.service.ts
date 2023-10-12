@@ -1,8 +1,13 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
-import { Prisma, Saim } from '@prisma/client';
+import { Prisma, Product, Saim } from '@prisma/client';
 import { paginator, searchPaginator } from '@nodeteam/nestjs-prisma-pagination';
 import { PaginatorTypes } from '@nodeteam/nestjs-prisma-pagination';
+import { SuscriberService } from 'src/suscriber/suscriber.service';
+import { MailService } from 'src/mail/mail.service';
+import { Queue, Worker } from 'bullmq';
+import IORedis, { Redis } from 'ioredis';
+import { QueueService } from 'src/queue/queue.service';
 
 const paginate: PaginatorTypes.PaginateFunction = paginator({
   page: 1,
@@ -11,8 +16,8 @@ const paginate: PaginatorTypes.PaginateFunction = paginator({
 
 @Injectable()
 export class SaimService {
-  constructor(private prisma: PrismaService) {}
-
+  constructor(private prisma: PrismaService, private suscriberService : SuscriberService, private queueService: QueueService,) {}
+  
   async getActiveSAIM(): Promise<Saim[]> {
     return this.prisma.saim.findMany({
       where: {
@@ -120,7 +125,18 @@ export class SaimService {
     });
   }
 
-  async publishSaim(id: number): Promise<Saim> {
+  async publishSaim(id: number): Promise<any> {
+    const saim = await this.getSAIMById(id);
+    const products = saim.products.map((p: any) => p.id);
+    const countries = saim.countries.map((c: any) => c.id);
+    const suscribers = await this.suscriberService.getAllSuscribersEmailsByProductsOrCountries(products, countries);
+    const job = {
+      saim,
+      subscribers: suscribers
+    }
+    // Usa el método addJob en lugar de llamar directamente a la cola.
+    await this.queueService.addJob(job);
+
     return this.prisma.saim.update({
       where: {
         id: id,
@@ -130,6 +146,8 @@ export class SaimService {
       },
     });
   }
+   
+  
 
   async deleteDefinitiveSAIM(id: number): Promise<Saim> {
     return this.prisma.saim.delete({
