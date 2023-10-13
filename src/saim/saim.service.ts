@@ -100,6 +100,11 @@ export class SaimService {
 
   // Update SAIM data
   async updateSAIM(id: number, data: Prisma.SaimUpdateInput): Promise<Saim> {
+    const saim = await this.getSAIMById(id);
+    data.published = Boolean(data.published);
+    if(!saim.published && data.published){
+      await this.publishSaim(id);
+    }
     return this.prisma.saim.update({
       where: {
         id: id,
@@ -109,9 +114,16 @@ export class SaimService {
   }
 
   async createSAIM(data: Prisma.SaimCreateInput): Promise<Saim> {
-    return this.prisma.saim.create({
+    data.published = Boolean(data.published);
+    const saim = await this.prisma.saim.create({
       data,
     });
+
+    if(saim.published){
+      await this.publishSaim(saim.id);
+    }
+
+    return saim;
   }
 
   async deleteSAIM(id: number): Promise<Saim> {

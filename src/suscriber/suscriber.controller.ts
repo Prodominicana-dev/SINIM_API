@@ -25,4 +25,9 @@ export class SuscriberController {
     async getSuscriberByEmail(@Param('email') email: string) {
         return await this.suscriberService.getSubscriberByEmail(email);
     }
+    
+    @Get()
+    async getAllSuscribers() {
+        return await this.suscriberService.getAllSuscribers();
+    }
 }

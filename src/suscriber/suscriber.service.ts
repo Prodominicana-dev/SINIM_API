@@ -187,4 +187,22 @@ export class SuscriberService {
             }
         });
     }
+
+    // Get all suscribers
+    async getAllSuscribers() {
+        return await this.prismaService.suscriber.findMany({
+            include: {
+                suscriber_countries: {
+                    include: {
+                        country: true
+                    }
+                },
+                suscriber_products: {
+                    include: {
+                        product: true
+                    }
+                }
+            }
+        });
+    }
 }
