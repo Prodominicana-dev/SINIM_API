@@ -55,13 +55,14 @@ model reservedDomains{
 
 model Datamarket{
   id             Int     @id @default(autoincrement())
-  idBi           Int
-  description   String
+  title         String
+  category      String
   url           String
+  date          DateTime? @default(now())
   status     String? @default("active")
 }
 
-model Saim{
+model Alerts{
   id             Int     @id @default(autoincrement())
   title          String // Titulo
   description    String? // Descripción
@@ -71,6 +72,7 @@ model Saim{
   products        Json[] // Productos
   countries       Json[] // Países (ID)
   oldID           Int? // ID anterior
+  platform      String // Plataforma
   status     String? @default("active")
   published       Boolean? @default(false) // Publicado
 }

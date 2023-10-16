@@ -88,8 +88,6 @@ export class RamisService {
     });
   }
 
-  
-
   async deleteRamiById(id: number): Promise<Ramis> {
     return this.prisma.ramis.delete({
       where: { id },

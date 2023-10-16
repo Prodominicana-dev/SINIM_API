@@ -180,7 +180,8 @@ export class SuscriberService {
                             }
                         }
                     }
-                ]
+                ],
+                platform: 'saim',
             },
             select: {
                 email: true

@@ -50,7 +50,7 @@ export class ProductService {
     }
 
     // Delete product
-    async delete(id: number): Promise<Product> {
+    async deactivate(id: number): Promise<Product> {
         return this.prisma.product.update({
             where: { id },
             data: {

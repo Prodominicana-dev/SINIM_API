@@ -1,12 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
-import { Prisma, Product, Saim } from '@prisma/client';
-import { paginator, searchPaginator } from '@nodeteam/nestjs-prisma-pagination';
+import { Prisma, Alerts } from '@prisma/client';
+import { paginator } from '@nodeteam/nestjs-prisma-pagination';
 import { PaginatorTypes } from '@nodeteam/nestjs-prisma-pagination';
 import { SuscriberService } from 'src/suscriber/suscriber.service';
-import { MailService } from 'src/mail/mail.service';
-import { Queue, Worker } from 'bullmq';
-import IORedis, { Redis } from 'ioredis';
 import { QueueService } from 'src/queue/queue.service';
 
 const paginate: PaginatorTypes.PaginateFunction = paginator({
@@ -18,10 +15,11 @@ const paginate: PaginatorTypes.PaginateFunction = paginator({
 export class SaimService {
   constructor(private prisma: PrismaService, private suscriberService : SuscriberService, private queueService: QueueService,) {}
   
-  async getActiveSAIM(): Promise<Saim[]> {
-    return this.prisma.saim.findMany({
+  async getActiveSAIMAlerts(): Promise<Alerts[]> {
+    return this.prisma.alerts.findMany({
       where: {
         status: 'active',
+        platform: 'saim',
       },
       orderBy: {
         date: 'desc',
@@ -37,14 +35,15 @@ export class SaimService {
   }: {
     page?: number;
     perPage?: number;
-    where?: Prisma.SaimWhereInput;
-    orderBy?: Prisma.SaimOrderByWithRelationInput;
-  }): Promise<PaginatorTypes.PaginatedResult<Saim>> {
+    where?: Prisma.AlertsWhereInput;
+    orderBy?: Prisma.AlertsOrderByWithRelationInput;
+  }): Promise<PaginatorTypes.PaginatedResult<Alerts>> {
     return paginate(
-      this.prisma.saim,
+      this.prisma.alerts,
       {
         where: {
           status: 'active',
+          platform: 'saim',
         },
         orderBy: {
           date: 'desc',
@@ -57,8 +56,11 @@ export class SaimService {
     );
   }
 
-  async getSAIM(): Promise<Saim[]> {
-    return this.prisma.saim.findMany({
+  async getSAIM(): Promise<Alerts[]> {
+    return this.prisma.alerts.findMany({
+      where: {
+        platform: 'saim',
+      },
       orderBy: {
         status: 'asc',
       },
@@ -73,15 +75,18 @@ export class SaimService {
   }: {
     page?: number;
     perPage?: number;
-    where?: Prisma.SaimWhereInput;
-    orderBy?: Prisma.SaimOrderByWithRelationInput;
-  }): Promise<PaginatorTypes.PaginatedResult<Saim>> {
+    where?: Prisma.AlertsWhereInput;
+    orderBy?: Prisma.AlertsOrderByWithRelationInput;
+  }): Promise<PaginatorTypes.PaginatedResult<Alerts>> {
     return paginate(
-      this.prisma.saim,
+      this.prisma.alerts,
       {
         orderBy: {
           status: 'asc',
         },
+        where: {
+          platform: 'saim',
+        }
       },
       {
         page,
@@ -90,8 +95,8 @@ export class SaimService {
     );
   }
 
-  async getSAIMById(id: number): Promise<Saim> {
-    return this.prisma.saim.findUnique({
+  async getSAIMById(id: number): Promise<Alerts> {
+    return this.prisma.alerts.findUnique({
       where: {
         id: id,
       },
@@ -99,13 +104,13 @@ export class SaimService {
   }
 
   // Update SAIM data
-  async updateSAIM(id: number, data: Prisma.SaimUpdateInput): Promise<Saim> {
+  async updateSAIM(id: number, data: Prisma.AlertsUpdateInput): Promise<Alerts> {
     const saim = await this.getSAIMById(id);
     data.published = Boolean(data.published);
     if(!saim.published && data.published){
       await this.publishSaim(id);
     }
-    return this.prisma.saim.update({
+    return this.prisma.alerts.update({
       where: {
         id: id,
       },
@@ -113,9 +118,9 @@ export class SaimService {
     });
   }
 
-  async createSAIM(data: Prisma.SaimCreateInput): Promise<Saim> {
+  async createSAIM(data: Prisma.AlertsCreateInput): Promise<Alerts> {
     data.published = Boolean(data.published);
-    const saim = await this.prisma.saim.create({
+    const saim = await this.prisma.alerts.create({
       data,
     });
 
@@ -126,8 +131,8 @@ export class SaimService {
     return saim;
   }
 
-  async deleteSAIM(id: number): Promise<Saim> {
-    return this.prisma.saim.update({
+  async deleteSAIM(id: number): Promise<Alerts> {
+    return this.prisma.alerts.update({
       where: {
         id: id,
       },
@@ -149,7 +154,7 @@ export class SaimService {
     // Usa el método addJob en lugar de llamar directamente a la cola.
     await this.queueService.addJob(job);
 
-    return this.prisma.saim.update({
+    return this.prisma.alerts.update({
       where: {
         id: id,
       },
@@ -159,13 +164,20 @@ export class SaimService {
     });
   }
    
-  
-
-  async deleteDefinitiveSAIM(id: number): Promise<Saim> {
-    return this.prisma.saim.delete({
+  async deleteDefinitiveSAIM(id: number): Promise<Alerts> {
+    return this.prisma.alerts.delete({
       where: {
         id: id,
       },
     });
+  }
+
+  async getTest(): Promise<any> {
+    return await this.prisma.alerts.groupBy({
+      by: ['platform'],
+      _count: {
+        platform: true,
+      },
+    })
   }
 }

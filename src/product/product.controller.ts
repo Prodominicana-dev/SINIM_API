@@ -39,7 +39,7 @@ export class ProductController {
     // Delete product
     @Delete('product/:id')
     async deleteProduct(@Param('id') id: number){
-        return this.productService.delete(Number(id));
+        return this.productService.deactivate(Number(id));
     }
 
 }

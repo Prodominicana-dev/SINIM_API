@@ -4,6 +4,7 @@ import { mkdirp } from 'mkdirp';
 import { Express, Response } from 'express'
 import { FileInterceptor } from '@nestjs/platform-express';
 import * as mime from 'mime-types';
+import { PrismaService } from 'src/prisma/prisma.service';
 
 const fs = require('fs');
 const path = require('path');
@@ -11,11 +12,11 @@ const imageBase64 = require('image-base64');
 
 @Controller('apiv2/saim')
 export class SaimController {
-    constructor(private readonly saimService: SaimService) {}
+    constructor(private readonly saimService: SaimService, private prisma: PrismaService) {}
 
     @Get()
     async getActiveSAIM() {
-        return this.saimService.getActiveSAIM();
+        return this.saimService.getActiveSAIMAlerts();
     }
 
     @Get('page/:id')
@@ -134,6 +135,18 @@ export class SaimController {
             return res.status(200).json({ message: saim });
         });
     }
+
+    // Get all saims but in a group by
+    @Get('t/1')
+    async getSAIMTest() {
+        return await this.prisma.alerts.groupBy({
+            by: ['platform'],
+            _count: {
+              platform: true,
+            },
+          })
+    }
+
 }
 
 

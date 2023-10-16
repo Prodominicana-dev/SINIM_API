@@ -1,0 +1,60 @@
+[
+  {
+    "IdPowerBIDash": 1,
+    "Seccion": "Exportaciones",
+    "Cat": "Comercio de bienes",
+    "Url": "https://app.powerbi.com/view?r=eyJrIjoiMTliOGI0MjgtMjI0ZS00NGI2LTliODktM2JhMjhjZDBhZjViIiwidCI6IjEwZWExNTgyLWY4NjMtNGJkNC1hZjA5LTNjNzQ1ZTczNWMwNSIsImMiOjJ9"
+  },
+  {
+    "IdPowerBIDash": 2,
+    "Seccion": "Importaciones",
+    "Cat": "Comercio de bienes",
+    "Url": "https://app.powerbi.com/view?r=eyJrIjoiYTY2ZDU4MWQtMTgzOC00NTQ3LWIwMTItZTlmM2E4MTY4NThjIiwidCI6IjEwZWExNTgyLWY4NjMtNGJkNC1hZjA5LTNjNzQ1ZTczNWMwNSIsImMiOjJ9"
+  },
+  {
+    "IdPowerBIDash": 3,
+    "Seccion": "Intercambio",
+    "Cat": "Comercio de bienes",
+    "Url": "https://app.powerbi.com/view?r=eyJrIjoiMjMxNmU3YmItNDZlMS00YTI3LWE5N2MtOGM4NzY5OWU0OGFjIiwidCI6IjEwZWExNTgyLWY4NjMtNGJkNC1hZjA5LTNjNzQ1ZTczNWMwNSIsImMiOjJ9&pageName=ReportSectiona1b6a2268472e60cd643"
+  },
+  {
+    "IdPowerBIDash": 4,
+    "Seccion": "Comercio internacional",
+    "Cat": "Comercio de bienes",
+    "Url": "https://app.powerbi.com/view?r=eyJrIjoiNjdlOWM5NzgtZTYxMy00NGUxLWE5YTEtZDQ0MGFkYjU0ZTJkIiwidCI6IjEwZWExNTgyLWY4NjMtNGJkNC1hZjA5LTNjNzQ1ZTczNWMwNSIsImMiOjJ9"
+  },
+  {
+    "IdPowerBIDash": 5,
+    "Seccion": "Perfiles provinciales",
+    "Cat": "Comercio de bienes",
+    "Url": "https://app.powerbi.com/view?r=eyJrIjoiNzExNzk0NTMtZmU4MC00N2ZhLTkwZDQtZDM5ODc2ZmU5MWFiIiwidCI6IjEwZWExNTgyLWY4NjMtNGJkNC1hZjA5LTNjNzQ1ZTczNWMwNSIsImMiOjJ9&pageName=ReportSection4fbe06cffbc380e48dba"
+  },
+  {
+    "IdPowerBIDash": 6,
+    "Seccion": "Mujeres exportadoras",
+    "Cat": "Comercio de bienes",
+    "Url": "https://app.powerbi.com/view?r=eyJrIjoiNWRkOWFlYjEtMDdjZC00ODdiLWFmYzktZjNmMTdkMDg4OGI5IiwidCI6IjEwZWExNTgyLWY4NjMtNGJkNC1hZjA5LTNjNzQ1ZTczNWMwNSIsImMiOjJ9"
+  },
+  {
+    "IdPowerBIDash": 7,
+    "Seccion": "Inversión",
+    "Url": "https://app.powerbi.com/view?r=eyJrIjoiNmMyYzAxNzEtNjhkMy00OTkwLTk5M2MtYTY0OTc5MjdhMzRlIiwidCI6IjEwZWExNTgyLWY4NjMtNGJkNC1hZjA5LTNjNzQ1ZTczNWMwNSIsImMiOjJ9"
+  },
+  {
+    "IdPowerBIDash": 8,
+    "Seccion": "Perspectivas económicas",
+    "Url": "https://app.powerbi.com/view?r=eyJrIjoiY2U0ZmUzNGEtNmRlNS00N2ZiLWI2OWYtNTQyZmJmMzk1NGM3IiwidCI6IjEwZWExNTgyLWY4NjMtNGJkNC1hZjA5LTNjNzQ1ZTczNWMwNSIsImMiOjJ9"
+  },
+  {
+    "IdPowerBIDash": 9,
+    "Seccion": "Intercambio de servicios",
+    "Cat": "Comercio de servicios",
+    "Url": "https://app.powerbi.com/view?r=eyJrIjoiNmMzZTI0ZjItNTFhNy00ZmI0LTk5MTMtM2ZkNTkzZmE3ZmZkIiwidCI6IjEwZWExNTgyLWY4NjMtNGJkNC1hZjA5LTNjNzQ1ZTczNWMwNSIsImMiOjJ9"
+  },
+  {
+    "IdPowerBIDash": 10,
+    "Seccion": "Ecosistemas FINTECH",
+    "Cat": "Comercio de servicios",
+    "Url": "https://app.powerbi.com/view?r=eyJrIjoiYjEzYTFlZmMtZDY2MS00Nzc5LWIzOTktMzQxZTkxMTM5YTYxIiwidCI6IjEwZWExNTgyLWY4NjMtNGJkNC1hZjA5LTNjNzQ1ZTczNWMwNSIsImMiOjJ9"
+  }
+]
