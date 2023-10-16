@@ -37,13 +37,23 @@ export class DatamarketService {
         });
     }
 
-    async getDatamarketByCategory(category: string): Promise<Datamarket[]> {
-        return this.prismaService.datamarket.findMany({
-            where:{
-                category: category,
-                status: 'active'
-            },
-        });
+    async getDatamarketByCategory(): Promise<Datamarket[]> {
+        let data = []
+        const categories = await this.getGroupByCategory();
+        for(const cat of categories){
+           const datamarket =  await this.prismaService.datamarket.findMany({
+                where:{
+                    category: cat.category,
+                    status: 'active'
+                },
+            });
+            const datacat = {
+                category: cat.category,
+                data: datamarket
+            }
+            data.push(datacat);
+        }
+        return data
     }
 
     async create(datamarket: Prisma.DatamarketCreateInput): Promise<Datamarket> {

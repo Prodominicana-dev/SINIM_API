@@ -31,13 +31,8 @@ export class DatamarketController {
     }
 
     @Get('group/category')
-    async getGroupByCategory() {
-        return this.datamarketService.getGroupByCategory();
-    }
-
-    @Get('category/:category')
-    async getDatamarketByCategory(@Param('category') category: string) {
-        return this.datamarketService.getDatamarketByCategory(category);
+    async getDatamarketByCategory() {
+        return this.datamarketService.getDatamarketByCategory();
     }
 
     @Delete(':id')
