@@ -7,8 +7,24 @@ export class ProductService {
     constructor(private prisma: PrismaService) {}
 
     // Get all products. 
-    async getProducts(): Promise< Product[]> {
+    async getActiveProducts(): Promise< Product[]> {
         return this.prisma.product.findMany({
+            where: {
+                status: 'active',
+            }
+        });
+    }
+
+    async getProducts(): Promise<Product[]> {
+        return this.prisma.product.findMany({
+            orderBy: [
+                {
+                    status: "desc",
+                },
+                {
+                    id: "asc",
+                },
+            ],
         });
     }
 
@@ -58,5 +74,7 @@ export class ProductService {
             },
         });
     }
+
+
     
 }

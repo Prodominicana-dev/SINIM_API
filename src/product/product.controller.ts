@@ -8,6 +8,11 @@ export class ProductController {
     // Product list
     @Get('products')
     async getProducts(){
+        return this.productService.getActiveProducts();
+    }
+
+    @Get('products/all')
+    async getAllProducts(){
         return this.productService.getProducts();
     }
 
@@ -31,7 +36,7 @@ export class ProductController {
     }
 
     // Edit product
-    @Patch('product/:id')
+    @Put('product/:id')
     async editProduct(@Param('id') id: number, @Body() data: any){
         return this.productService.edit(Number(id), data);
     }
@@ -41,5 +46,4 @@ export class ProductController {
     async deleteProduct(@Param('id') id: number){
         return this.productService.deactivate(Number(id));
     }
-
 }

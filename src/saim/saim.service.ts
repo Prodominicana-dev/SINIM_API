@@ -61,9 +61,14 @@ export class SaimService {
       where: {
         platform: 'saim',
       },
-      orderBy: {
-        status: 'asc',
-      },
+      orderBy: [
+        {
+            status: "desc",
+        },
+        {
+            id: "asc",
+        },
+    ],
     });
   }
 
@@ -81,9 +86,14 @@ export class SaimService {
     return paginate(
       this.prisma.alerts,
       {
-        orderBy: {
-          status: 'asc',
-        },
+        orderBy: [
+          {
+              status: "desc",
+          },
+          {
+              id: "asc",
+          },
+      ],
         where: {
           platform: 'saim',
         }
@@ -165,6 +175,7 @@ export class SaimService {
   }
    
   async deleteDefinitiveSAIM(id: number): Promise<Alerts> {
+    
     return this.prisma.alerts.delete({
       where: {
         id: id,

@@ -82,9 +82,10 @@ export class RamisService {
           },
         },
       },
-      orderBy:{
-        countryId: 'asc',
-      }
+      orderBy:[
+      {
+        productId: "asc",
+      }]
     });
   }
 

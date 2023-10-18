@@ -117,6 +117,8 @@ export class SaimController {
     // Delete definitive SAIM
     @Delete('d/:id')
     async deleteDefinitiveSaim(@Param('id') id: number, @Res() res: Response) {
+        // Borrar la carpeta con las fotos del saim y luego borrarlo de la base de datos
+        const folderPath = path.join(process.cwd(), `public/data/saim/images/${id}`);
         return await this.saimService.deleteDefinitiveSAIM(Number(id)).then((saim) => {
             if (res.statusCode === 500) {
                 return res.status(500).json({ message: 'Error' });

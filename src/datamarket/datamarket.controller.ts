@@ -40,3 +40,4 @@ export class DatamarketController {
         return this.datamarketService.dDelete(Number(id));
     }
 }
+   
