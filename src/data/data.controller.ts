@@ -115,4 +115,19 @@ export class DataController {
     }
     res.status(200).json({ message: 'ok' });
   }
+
+  @Get('deleteImages')
+  async deleteAllImages(@Res() res): Promise<void> {
+    const folderPathSaim = path.join(process.cwd(), `public/data/saim`);
+    if (fs.existsSync(folderPathSaim)) {
+        await fs.promises.rm(folderPathSaim, { recursive: true }); // Utilizar fs.promises.rmdir para eliminar el directorio de forma asincrónica
+    }
+
+    const folderPathSied = path.join(process.cwd(), `public/data/sied`);
+    if (fs.existsSync(folderPathSied)) {
+        await fs.promises.rm(folderPathSied, { recursive: true }); // Utilizar fs.promises.rmdir para eliminar el directorio de forma asincrónica
+    }
+
+    return res.status(200).json({ message: 'ok' });
+  }
 }

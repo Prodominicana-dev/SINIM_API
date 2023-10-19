@@ -317,7 +317,7 @@ function executeCommandAsync(command: string): Promise<{ stdout: string, stderr:
 }
 
 async function main() {
-  const execAsync = util.promisify(exec);
+  await axios.get("http://127.0.0.1:3001/apiv2/data/deleteImages")
   await prisma.$connect();
   try {
     const { stdout, stderr } = await executeCommandAsync('npx prisma db push');
