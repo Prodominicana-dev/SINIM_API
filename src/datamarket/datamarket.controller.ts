@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Patch, Delete, Body, Param } from '@nestjs/common';
+import { Controller, Get, Post, Patch, Delete, Body, Param, Put } from '@nestjs/common';
 import { DatamarketService } from './datamarket.service';
 
 @Controller('apiv2/datamarket')
@@ -33,6 +33,11 @@ export class DatamarketController {
     @Delete('deactive/:id')
     async deactiveDatamarket(@Param('id') id: number) {
         return this.datamarketService.deactive(Number(id));
+    }
+
+    @Put('active/:id')
+    async activeDatamarket(@Param('id') id: number) {
+        return this.datamarketService.activate(Number(id));
     }
 
     @Get('group/category')

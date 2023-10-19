@@ -89,6 +89,17 @@ export class DatamarketService {
         });
     }
 
+    async activate(id: number): Promise<Datamarket> {
+        return this.prismaService.datamarket.update({
+            where:{
+                id: id
+            },
+            data:{
+                status: 'active'
+            }
+        });
+    }
+
     async dDelete(id: number): Promise<Datamarket> {
         return this.prismaService.datamarket.delete({
             where:{

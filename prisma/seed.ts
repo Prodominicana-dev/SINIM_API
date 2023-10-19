@@ -1,9 +1,12 @@
+const { exec } = require('child_process');
+const util = require('util');
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 const products = require('../public/data/Products.json');
 const countries = require('../public/data/Countries.json');
 const domains = require('../public/data/Domains.json');
 const tools = require('../public/data/Tools.json');
+
 //RAMI
 const tradeAgreement = require('../public/data/AcuerdoComercial.json');
 const tariffs = require('../public/data/ArancelesImpuestos.json');
@@ -301,8 +304,30 @@ for(const data of datamarket){
 
 }
 
+function executeCommandAsync(command: string): Promise<{ stdout: string, stderr: string }> {
+  return new Promise((resolve, reject) => {
+    exec(command, (error, stdout, stderr) => {
+      if (error) {
+        reject(error);
+      } else {
+        resolve({ stdout, stderr });
+      }
+    });
+  });
+}
+
 async function main() {
+  const execAsync = util.promisify(exec);
   await prisma.$connect();
+  try {
+    const { stdout, stderr } = await executeCommandAsync('npx prisma db push');
+    console.log(`Salida: ${stdout}`);
+    if (stderr) {
+      console.error(`Error: ${stderr}`);
+    }
+  } catch (error) {
+    console.error(`Error: ${error.message}`);
+  }
   await seedDatabase();
   await axios.get("http://127.0.0.1:3001/apiv2/data/newImages");
   await prisma.$disconnect();
