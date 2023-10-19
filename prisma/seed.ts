@@ -35,6 +35,53 @@ async function seedDatabase() {
     });
   }
 
+  //Crear categorias por plataforma
+  const categories = [{
+    name: "Oportunidades",
+    platform: "saim"
+  },
+  {
+    name: "Actualizaciones",
+    platform: "saim"
+  },
+  {
+    name: "Amenazas",
+    platform: "saim"
+  },
+  {
+    name: "Obstáculos",
+    platform: "saim"
+  },
+  {
+    name: "Oportunidades",
+    platform: "sied"
+  },
+  {
+    name: "Tendencias",
+    platform: "sied"
+  },
+  {
+    name: "Normativas",
+    platform: "sied"
+  },
+  {
+    name: "Amenazas",
+    platform: "sied"
+  },
+]
+
+// crear categorias
+  for( const category of categories ){
+    await prisma.category.create({
+      data: {
+        name: category.name,
+        platform: category.platform
+      }
+    })
+  }
+
+  const categoriesSaim = await prisma.category.findMany({})
+
   // Crear productos
   for(const product of products){
     
@@ -187,6 +234,13 @@ for(const input of importRequirement){
 // SAIM
 // Agregar SAIM's
 for(const s of saims){
+  let id;
+    for(const category of categoriesSaim){
+      if(category.name == s.Clasificacion && category.platform == "saim"){
+        id = category.id;
+        continue
+      }
+    }
   // Separar productos para crear un JSON con todos los productos y codigo arancelario de c/u
   const products = s.Productos.split(',');
   const productsJSON = [];
@@ -223,7 +277,7 @@ for(const s of saims){
     data: {
       title: s.Titular,
       description: s.Contenido,
-      category: s.Clasificacion,
+      categoryId: id,
       image: s.Imagen,
       products: productsJSON,
       countries: countriesJSON,
@@ -250,6 +304,7 @@ for(const data of datamarket){
 async function main() {
   await prisma.$connect();
   await seedDatabase();
+  await axios.get("http://127.0.0.1:3001/apiv2/data/newImages");
   await prisma.$disconnect();
 }
 
@@ -257,3 +312,4 @@ main().catch((error) => {
   console.error(error);
   process.exit(1);
 });
+

@@ -66,7 +66,8 @@ model Alerts{
   id             Int     @id @default(autoincrement())
   title          String // Titulo
   description    String? // Descripción
-  category        String? // Categoría
+  categoryId      Int  // Categoría
+  category Category @relation(fields: [categoryId], references: [id])
   image           String? // Imagen
   date            DateTime? @default(now()) // Fecha de registro
   products        Json[] // Productos
@@ -95,6 +96,7 @@ model Category{
   name String
   platform String
   sied Sied[]
+  alerts Alerts[]
   suscriber_category SuscriberToCategory[]
 }
 
