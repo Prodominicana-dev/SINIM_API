@@ -13,11 +13,13 @@ import { DataModule } from './data/data.module';
 import { MailModule } from './mail/mail.module';
 import { SuscriberModule } from './suscriber/suscriber.module';
 import { QueueModule } from './queue/queue.module';
+import { SiedModule } from './sied/sied.module';
+import { CategoryModule } from './category/category.module';
 
 
 @Module({
   controllers: [AppController],
   providers: [AppService, PrismaService],
-  imports: [RamisModule, DatamarketModule, ReservedDomainsModule, CountryModule, ProductModule, SaimModule, DataModule, MailModule, SuscriberModule, QueueModule],
+  imports: [RamisModule, DatamarketModule, ReservedDomainsModule, CountryModule, ProductModule, SaimModule, DataModule, MailModule, SuscriberModule, QueueModule, SiedModule, CategoryModule],
 })
 export class AppModule {}

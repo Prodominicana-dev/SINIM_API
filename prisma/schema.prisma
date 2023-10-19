@@ -77,6 +77,27 @@ model Alerts{
   published       Boolean? @default(false) // Publicado
 }
 
+model Sied{
+  id Int @id @default(autoincrement())
+  title String
+  description String?
+  categoryId Int
+  category Category @relation(fields: [categoryId], references: [id])
+  image String?
+  date DateTime? @default(now())
+  status String? @default("active")
+  isPublic Boolean @default(false)
+  published Boolean @default(false)
+}
+
+model Category{
+  id Int @id @default(autoincrement())
+  name String
+  platform String
+  sied Sied[]
+  suscriber_category SuscriberToCategory[]
+}
+
 model Suscriber{
   id            Int    @id @default(autoincrement())
   email         String         
@@ -85,13 +106,14 @@ model Suscriber{
   status        String?         @default("active")
   suscriber_countries SuscriberToCountry[]
   suscriber_products  SuscriberToProduct[]
+  suscriber_category SuscriberToCategory[]
 }
 
 model SuscriberToCountry {
   suscriberId Int
   countryId   Int
-  suscriber Suscriber @relation(fields: [suscriberId], references: [id])
-  country   Country   @relation(fields: [countryId] , references: [id])
+  suscriber Suscriber? @relation(fields: [suscriberId], references: [id])
+  country   Country?   @relation(fields: [countryId] , references: [id])
 
   @@id([suscriberId, countryId])
 }
@@ -99,10 +121,16 @@ model SuscriberToCountry {
 model SuscriberToProduct {
   suscriberId Int
   productId   Int
-
-  suscriber Suscriber @relation(fields: [suscriberId], references: [id])
-  product   Product   @relation(fields: [productId] , references: [id])
+  suscriber Suscriber? @relation(fields: [suscriberId], references: [id])
+  product   Product?   @relation(fields: [productId] , references: [id])
 
   @@id([suscriberId, productId])
 }
 
+model SuscriberToCategory{
+  suscriberId Int
+  categoryId  Int
+  suscriber Suscriber? @relation(fields: [suscriberId], references: [id])
+  category   Category?   @relation(fields: [categoryId] , references: [id])
+  @@id([suscriberId, categoryId])
+}

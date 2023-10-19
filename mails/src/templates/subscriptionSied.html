@@ -1,5 +1,5 @@
 ---
-title: "Alerta de Suscripcion"
+title: "Suscripcion"
 bodyClass: bg-slate-200
 ---
 <x-main>
@@ -12,22 +12,28 @@ bodyClass: bg-slate-200
             <div class="w-full text-left text-black">
                 <div class="p-8 font-sans">
                     <p>
-                        Hola, <span class="font-bold">@{{name}}</span> se ha suscrito a las alertas comerciales.
+                        Hola <span class="font-bold">@{{name}}</span>, 
                     </p>
-                    <p>Sus preferencias:</p>
+                    <p>
+                        ¡Gracias por unirte a SINIM, tu compañero en el mundo de las alertas de IED! Estamos emocionados de tenerte a bordo y esperamos que disfrutes de todas las oportunidades que te brindamos.
+                    </p>
+                    <p>
+                        En SINIM, nos dedicamos a proporcionarte información valiosa y relevante sobre el comercio internacional.
+                    </p>
+                    <p>Tus preferencias:</p>
                     <div class="w-full rounded-xl bg-navy">
                         <div class="p-4">
-                            @{{#if products}}
+                            @{{#if categories}}
                             <table class="w-full">
                                 <thead>
                                     <tr>
-                                        <th class="font-sans text-xl font-semibold text-white">Productos</th>
+                                        <th class="font-sans text-xl font-semibold text-white">Categorías</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td class="font-sans text-xs font-normal text-white">
-                                            @{{#each products}}
+                                            @{{#each categories}}
                                             <div class="relative rounded-full inline-block select-none whitespace-nowrap bg-[rgba(255,255,255,.3)] py-2 px-3.5 align-middle font-sans text-xs mt-px font-normal text-center text-white m-1">
                                                 @{{name}}
                                             </div>
@@ -37,26 +43,7 @@ bodyClass: bg-slate-200
                                 </tbody>
                             </table>
                             @{{/if}}
-                            @{{#if countries}}
-                            <table class="w-full">
-                                <thead>
-                                    <tr>
-                                        <th class="font-sans text-xl font-semibold text-white">Países</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="font-sans text-xs font-normal text-white">
-                                            @{{#each countries}}
-                                            <div class="relative rounded-full inline-block select-none whitespace-nowrap bg-[rgba(255,255,255,.3)] py-2 px-3.5 align-middle font-sans text-xs mt-px font-normal text-center text-white m-1">
-                                                @{{name}} 
-                                            </div>
-                                            @{{/each}}
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            @{{/if}}
+                            
                         </div>
                     </div>
                     <p>Atentamente,<br><span class="font-bold">SINIM Prodominicana</span></p>

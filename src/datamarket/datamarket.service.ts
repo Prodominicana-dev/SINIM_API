@@ -6,12 +6,16 @@ import { PrismaService } from 'src/prisma/prisma.service';
 export class DatamarketService {
     constructor( private readonly prismaService : PrismaService){}
 
-    async getDatamarket(): Promise<Datamarket[]> {
+    async getActiveDatamarket(): Promise<Datamarket[]> {
         return this.prismaService.datamarket.findMany({
             where:{
                 status: 'active'
             }
         });
+    }
+
+    async getDatamarket(): Promise<Datamarket[]> {
+        return this.prismaService.datamarket.findMany();
     }
 
     async getDatamarketById(id: number): Promise<Datamarket> {

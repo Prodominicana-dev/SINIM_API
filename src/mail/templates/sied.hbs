@@ -19,70 +19,33 @@
     td,th,div,p,a,h1,h2,h3,h4,h5,h6 {font-family: "Segoe UI", sans-serif; mso-line-height-rule: exactly;}
   </style>
   <![endif]-->    <title>Alerta de Suscripcion</title>
-</head>
+  <style>
+.space-y-0 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0px * var(--tw-space-y-reverse))
+}</style></head>
 <body style="margin: 0; width: 100%; background-color: #e2e8f0; padding: 0; -webkit-font-smoothing: antialiased; word-break: break-word">
   <div role="article" aria-roledescription="email" aria-label="Alerta de Suscripcion" lang="es" align="center">    <table style="margin-left: auto; margin-right: auto; font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif" cellpadding="0" cellspacing="0" role="none">
         <tr>
             <td style="width: 600px; border-radius: 12px; background-color: #fff; font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif"> <div style="display: flex; height: 128px; width: 100%; align-items: center; justify-content: center; border-top-left-radius: 12px; border-top-right-radius: 12px; background-color: #062381">
     <img src="https://sinim.prodominicana.gob.do/svg/sinim.svg" alt style="max-width: 100%; vertical-align: middle; line-height: 1; border: 0; height: 80px; width: 100%">
 </div> <div style="width: 100%; text-align: left; color: #000">
-                <div style="padding: 32px; font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif">
-                    <p>
-                        Hola, <span style="font-weight: 700">{{name}}</span> se ha suscrito a las alertas comerciales.
-                    </p>
-                    <p>Sus preferencias:</p>
-                    <div style="width: 100%; border-radius: 12px; background-color: #062381;">
-                        <div style="padding: 16px">
-                            {{#if products}}
-                            <table style="width: 100%;" cellpadding="0" cellspacing="0" role="none">
-                                <thead>
-                                    <tr>
-                                        <th style="font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 20px; font-weight: 600; color: #fff">Productos</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td style="font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 400; color: #fff">
-                                            {{#each products}}
-                                            <div style="position: relative; margin: 4px; margin-top: 1px; display: inline-block; user-select: none; white-space: nowrap; border-radius: 9999px; background-color: rgba(255,255,255,.3); padding-left: 14px; padding-right: 14px; padding-top: 8px; padding-bottom: 8px; text-align: center; vertical-align: middle; font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 400; color: #fff">
-                                                {{name}}
-                                            </div>
-                                            {{/each}}
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            {{/if}}
-                            {{#if countries}}
-                            <table style="width: 100%;" cellpadding="0" cellspacing="0" role="none">
-                                <thead>
-                                    <tr>
-                                        <th style="font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 20px; font-weight: 600; color: #fff;">Países</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td style="font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 400; color: #fff;">
-                                            {{#each countries}}
-                                            <div style="position: relative; margin: 4px; margin-top: 1px; display: inline-block; user-select: none; white-space: nowrap; border-radius: 9999px; background-color: rgba(255,255,255,.3); padding-left: 14px; padding-right: 14px; padding-top: 8px; padding-bottom: 8px; text-align: center; vertical-align: middle; font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 400; color: #fff;">
-                                                {{name}}
-                                            </div>
-                                            {{/each}}
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            {{/if}}
-                        </div>
+                <div class="space-y-0" style="padding: 32px; font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif">
+                    <div style="font-size: 16px; color: #6b7280">{{type}}</div>
+                    <h2 style="font-size: 24px; font-weight: 700; --tw-space-y-reverse: 0; margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse))); margin-bottom: calc(0px * var(--tw-space-y-reverse))">{{title}}</h2>
+                    <img src="{{imageUrl}}" alt="Imagen" width="600" height="480" style="max-width: 100%; vertical-align: middle; line-height: 1; border: 0; object-fit: cover; --tw-space-y-reverse: 0; margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse))); margin-bottom: calc(0px * var(--tw-space-y-reverse))">
+                    <div style="padding-top: 12px; padding-bottom: 12px; font-size: 16px; color: #000; --tw-space-y-reverse: 0; margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse))); margin-bottom: calc(0px * var(--tw-space-y-reverse))">{{description}}</div>
+                    <div style="padding-bottom: 8px; font-size: 16px; color: #000; --tw-space-y-reverse: 0; margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse))); margin-bottom: calc(0px * var(--tw-space-y-reverse))">Para enterarte de más alertas de IED: <a href="https://sinim.prodominicana.gob.do/dashboard/sied">Click aquí</a></div>
+                    <div style="--tw-space-y-reverse: 0; margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse))); margin-bottom: calc(0px * var(--tw-space-y-reverse));">Atentamente,<br><span style="font-weight: 700;">SINIM Prodominicana</span></div>
                     </div>
-                    <p>Atentamente,<br><span style="font-weight: 700;">SINIM Prodominicana</span></p>
-                    </div>                </div> <div style="width: 100%; background-color: #e5e5e5">
+                </div> <div style="width: 100%; background-color: #e5e5e5">
     <div align="center" style="padding: 32px;">
         <img src="https://images-ext-2.discordapp.net/external/Admw6Eu-gL2rVU1L06pT8D9Ldb6Ouxpw6O3SPdwUeOo/https/prodominicana.gob.do/Imagenes/PD-Logo-RGB-CEI.png?width=1200&height=457" alt style="max-width: 100%; vertical-align: middle; line-height: 1; border: 0; width: 208px">
         <div style="width: 100%;">
             <table style="width: 100%;" cellpadding="0" cellspacing="0" role="none">
                 <tr>
-                    <td style="width: 100%; padding: 16px; text-align: center; font-size: 12px; color: #000;">
+                    <td style="width: 100%; padding: 16px; text-align: center; font-size: 12px; color: #000">
                         <p>Centro de Exportación e Inversión de la República Dominicana</p>
                         <p>Av. 27 de Febrero esq. Av. Gregorio Luperón, Santo Domingo, República Dominicana</p>
                         <p>Tel: +1 809-530-5505</p>

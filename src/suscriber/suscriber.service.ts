@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { Prisma } from '@prisma/client';
 import { MailService } from 'src/mail/mail.service';
+import { CategoryService } from 'src/category/category.service';
 
 interface Suscriber{
     email: string;
@@ -15,7 +16,8 @@ interface Suscriber{
 @Injectable()
 export class SuscriberService {
     constructor(private readonly prismaService : PrismaService,
-        private readonly mailService : MailService) {}
+        private readonly mailService : MailService,
+        private readonly categoryService : CategoryService) {}
 
     async createSubscriber(data) {
         const { products, countries, ...subscriberData } = data;
@@ -32,7 +34,22 @@ export class SuscriberService {
                     create: products.map(productId => ({
                         productId
                     }))
-                }
+                },
+            }
+        });
+    }
+
+    async createSiedSubscriber(data) {
+        const {categories, ...subscriberData } = data;
+    
+        return await this.prismaService.suscriber.create({
+            data: {
+                ...subscriberData,
+                suscriber_category: {
+                    create: categories.map(categoryId => ({
+                        categoryId
+                    }))
+                },
             }
         });
     }
@@ -53,6 +70,11 @@ export class SuscriberService {
                 suscriber_products: {
                     include: {
                         product: true
+                    }
+                },
+                suscriber_category: {
+                    include: {
+                        category: true
                     }
                 }
             }
@@ -99,7 +121,7 @@ export class SuscriberService {
     }
 
     // // Update suscriber by email and platform
-    async  updateSubscriber(data) {
+    async  updateSaimSubscriber(data) {
         const { products, countries, email, platform, ...subscriberData } = data;
     
         // Primero, busca el suscriptor a actualizar
@@ -157,6 +179,55 @@ export class SuscriberService {
         });
     }
 
+    async  updateSiedSubscriber(data) {
+        const { email, platform, categories, ...subscriberData } = data;
+    
+        // Primero, busca el suscriptor a actualizar
+        const subscriber = await this.prismaService.suscriber.findFirst({
+            where: {
+                email: email,
+                platform: platform
+            }
+        });
+    
+        if (!subscriber) {
+            // crearlo si no existe
+           const sub = await this.createSiedSubscriber(data)
+           const suscriptor = await this.getSuscriberByEmailAndPlatform(sub.email, sub.platform)
+
+          const categories = suscriptor.suscriber_category.map(category => ({ name: category.category.name }));
+            const title = "Suscripción a las Alertas de IED"
+            return await this.mailService.alertaIEDMail(title, sub.email, sub.name, categories).then(async () => {
+                const title = "Nueva Suscripción a las Alertas de IED"
+                return await this.mailService.alertaIEDNotifyMail(title, 'eliamps07@outlook.com', sub.name, categories)
+            })
+        }
+        // Luego, actualiza el suscriptor y sus relaciones
+        return await this.prismaService.suscriber.update({
+            where: { id: subscriber.id },
+            data: {
+                ...subscriberData,
+                suscriber_category: {
+                    deleteMany: {}, // Borrará todas las relaciones existentes
+                    create: categories.map(categoryId => ({ categoryId }))
+            } 
+        },
+        include: {
+            suscriber_category: {
+                include: {
+                    category: true
+                }
+            }
+        }
+        })
+        .then(async (sub) => {
+            const categories = sub.suscriber_category.map(category => ({ name: category.category.name }));
+            const title = "Actualización de la suscripción a las Alertas de IED"
+            return await this.mailService.alertaIEDMail(title, sub.email, sub.name, categories)
+        });
+        
+    }
+
     // Get all suscribers emails (no repeat) of a products or countries 
     async getAllSuscribersEmailsByProductsOrCountries(products: number[], countries: number[]) {
         return await this.prismaService.suscriber.findMany({
@@ -203,6 +274,25 @@ export class SuscriberService {
                         product: true
                     }
                 }
+            }
+        });
+    }
+
+    // Get all suscribers emails (no repeat) of a categories
+    async getAllSuscribersEmailsByCategories(categories: number[]) {
+        return await this.prismaService.suscriber.findMany({
+            where: {
+                suscriber_category: {
+                    some: {
+                        categoryId: {
+                            in: categories
+                        }
+                    }
+                },
+                platform: 'sied',
+            },
+            select: {
+                email: true
             }
         });
     }

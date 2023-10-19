@@ -10,6 +10,11 @@ export class DatamarketController {
         return this.datamarketService.getDatamarket();
     }
 
+    @Get('active')
+    async getActiveDatamarket() {
+        return this.datamarketService.getActiveDatamarket();
+    }
+
     @Post()
     async createDatamarket(@Body() data) {
         return this.datamarketService.create(data);

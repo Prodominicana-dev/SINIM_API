@@ -41,10 +41,33 @@ export class QueueService implements OnModuleInit {
     worker.on('completed', job => {
       console.log(`Job with id ${job.id} has been completed`);
     });
+
+    const sendSiedEmail = async (job: Job) => {
+      const { sied, subscribers } = job.data;
+      for (const suscriber of subscribers){
+        await this.mailService.newSiedMail(
+          sied.title,
+          sied.category,
+          sied.description,
+          `https://sinim.prodominicana.gob.do/apiv2/data/sied/${sied.id}/img/${sied.image}`,
+          suscriber.email
+        );
+      }
+    }
+
+    const siedWorker = new Worker('sied', sendSiedEmail, EMAIL_QUEUE_OPTIONS);
+    siedWorker.on('completed', job => {
+      console.log(`Job with id ${job.id} has been completed`);
+    });
   }
 
   async addJob(jobData: any): Promise<void> {
     // Usar el método add de la cola directamente
     await this.emailQueue.add('emails', jobData);
+  }
+
+  async siedJob(jobData: any): Promise<void> {
+    // Usar el método add de la cola directamente
+    await this.emailQueue.add('sied', jobData);
   }
 }
