@@ -24,6 +24,9 @@ export class SaimService {
       orderBy: {
         date: 'desc',
       },
+      include: {
+        category: true,
+      }
     });
   }
 
@@ -48,6 +51,9 @@ export class SaimService {
         orderBy: {
           date: 'desc',
         },
+        include: {
+          category: true,
+        }
       },
       {
         page,
@@ -63,12 +69,15 @@ export class SaimService {
       },
       orderBy: [
         {
-            status: "desc",
+          status: "desc",
         },
         {
-            id: "asc",
+          id: "asc",
         },
-    ],
+      ],
+      include: {
+        category: true,
+      }
     });
   }
 
@@ -96,6 +105,9 @@ export class SaimService {
       ],
         where: {
           platform: 'saim',
+        }, 
+        include: {
+          category: true,
         }
       },
       {
@@ -110,6 +122,9 @@ export class SaimService {
       where: {
         id: id,
       },
+      include: {
+        category: true,
+      }
     });
   }
 

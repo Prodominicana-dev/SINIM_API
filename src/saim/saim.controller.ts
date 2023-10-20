@@ -51,6 +51,9 @@ export class SaimController {
         if (data.countries) {
             data.countries = JSON.parse(data.countries);
         }
+        if(data.countryId){
+            data.countryId = Number(data.countryId);
+        }
         // Si el file no es undefined, actualizar la imagen, borrar la foto de esa carpeta y agregar la nueva
         if (file) {
             const folderPath = path.join(process.cwd(), `public/data/saim/images/${id}`);
@@ -85,6 +88,7 @@ export class SaimController {
         // Convertir data.products y data.countries a JSON
         data.products = JSON.parse(data.products);
         data.countries = JSON.parse(data.countries);
+        data.countryId = Number(data.countryId);
         // Crear el SAIM
         const saim = await this.saimService.createSAIM(data); 
         const folderPath = path.join(process.cwd(), `public/data/saim/images/${saim.id}`);

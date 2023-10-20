@@ -22,6 +22,9 @@ export class SiedService {
           orderBy: {
             date: 'desc',
           },
+          include: {
+            category: true,
+          }
         });
       }
     
@@ -45,6 +48,9 @@ export class SiedService {
             orderBy: {
               date: 'desc',
             },
+            include: {
+              category: true,
+            }
           },
           {
             page,
@@ -62,7 +68,11 @@ export class SiedService {
             {
                 id: "asc",
             },
+            
         ],
+        include: {
+          category: true,
+        }
         });
       }
     
@@ -87,7 +97,10 @@ export class SiedService {
               {
                   id: "asc",
               },
-          ]
+          ],
+          include: {
+            category: true,
+          }
           },
           {
             page,
@@ -101,6 +114,9 @@ export class SiedService {
           where: {
             id: id,
           },
+          include: {
+            category: true,
+          }
         });
       }
     

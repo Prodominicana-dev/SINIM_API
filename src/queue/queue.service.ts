@@ -29,7 +29,7 @@ export class QueueService implements OnModuleInit {
       for (const suscriber of subscribers){
         await this.mailService.newAlertaComercialMail(
           saim.title,
-          saim.category,
+          saim.category.name,
           saim.description,
           `https://sinim.prodominicana.gob.do/apiv2/data/saim/${saim.id}/img/${saim.image}`,
           suscriber.email
@@ -47,7 +47,7 @@ export class QueueService implements OnModuleInit {
       for (const suscriber of subscribers){
         await this.mailService.newSiedMail(
           sied.title,
-          sied.category,
+          sied.category.name,
           sied.description,
           `https://sinim.prodominicana.gob.do/apiv2/data/sied/${sied.id}/img/${sied.image}`,
           suscriber.email

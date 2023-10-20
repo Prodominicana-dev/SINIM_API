@@ -45,6 +45,9 @@ export class SiedController {
     @UseInterceptors(FileInterceptor('file'))
     async updateSied(@Param('id') id: string, @Body() data, @UploadedFile() file: Express.Multer.File, @Res() res) {
         const saim = await this.siedService.getSiedById(Number(id));
+        if(data.countryId){
+            data.countryId = Number(data.countryId);
+        }
         if (file) {
             const folderPath = path.join(process.cwd(), `public/data/sied/images/${id}`);
             if (fs.existsSync(folderPath)) {
@@ -75,9 +78,7 @@ export class SiedController {
     @Post()
     @UseInterceptors(FileInterceptor('file'))
     async createSied(@Body() data, @UploadedFile() file: Express.Multer.File, @Res() res) {
-        // Convertir data.products y data.countries a JSON
-        data.products = JSON.parse(data.products);
-        data.countries = JSON.parse(data.countries);
+        data.countryId = Number(data.countryId);
         // Crear el SAIM
         const saim = await this.siedService.createSAIM(data); 
         const folderPath = path.join(process.cwd(), `public/data/sied/images/${saim.id}`);
