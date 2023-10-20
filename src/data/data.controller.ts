@@ -47,6 +47,28 @@ export class DataController {
     return streamableFile;
   }
 
+  @Get('sied/:id/img/:imageName')
+  getSiedImage(
+    @Param('id') id: string,
+    @Param('imageName') imageName: string,
+    @Res({ passthrough: true }) res: Response,
+  ): StreamableFile {
+    res.set({ 'Content-Type': 'image/jpeg' });
+    const imagePath = path.join(
+      __dirname,
+      `../../public/data/sied/images/${id}`,
+      imageName,
+    );
+    //   const mimeType = mime.lookup(imageName);
+    //   if (!mimeType) {
+    //     return undefined;
+    //   }
+    const fileStream = fs.createReadStream(imagePath);
+    const streamableFile = new StreamableFile(fileStream);
+    //   streamableFile.options.type = mimeType
+    return streamableFile;
+  }
+
   /*
    *   Subir imagenes de los SAIM por su id.
    */
