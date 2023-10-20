@@ -55,8 +55,8 @@ export class DataController {
   ): StreamableFile {
     res.set({ 'Content-Type': 'image/jpeg' });
     const imagePath = path.join(
-      __dirname,
-      `../../public/data/sied/images/${id}`,
+      process.cwd(),
+      `public/data/sied/images/${id}`,
       imageName,
     );
     //   const mimeType = mime.lookup(imageName);
