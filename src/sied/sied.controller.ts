@@ -81,7 +81,7 @@ export class SiedController {
         data.categoryId = Number(data.categoryId);
         // Crear el SAIM
         const saim = await this.siedService.createSAIM(data); 
-        if (file) {
+      
             const folderPath = path.join(process.cwd(), `public/data/sied/images/${saim.id}`);
         await mkdirp(folderPath);
     const imageName = `${new Date().getTime()}.${file.originalname.split('.').pop()}`;
@@ -95,8 +95,8 @@ export class SiedController {
         }
     }
     );
-        }
-        return res.status(200).json({ message: saim });
+        
+
         
     }
 

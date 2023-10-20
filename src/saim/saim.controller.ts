@@ -89,6 +89,7 @@ export class SaimController {
         data.products = JSON.parse(data.products);
         data.countries = JSON.parse(data.countries);
         data.categoryId = Number(data.categoryId);
+        data.platform = "saim"
         // Crear el SAIM
         const saim = await this.saimService.createSAIM(data); 
         const folderPath = path.join(process.cwd(), `public/data/saim/images/${saim.id}`);
