@@ -45,8 +45,8 @@ export class SiedController {
     @UseInterceptors(FileInterceptor('file'))
     async updateSied(@Param('id') id: string, @Body() data, @UploadedFile() file: Express.Multer.File, @Res() res) {
         const saim = await this.siedService.getSiedById(Number(id));
-        if(data.countryId){
-            data.countryId = Number(data.countryId);
+        if(data.categoryId){
+            data.categoryId = Number(data.categoryId);
         }
         if (file) {
             const folderPath = path.join(process.cwd(), `public/data/sied/images/${id}`);
@@ -78,10 +78,11 @@ export class SiedController {
     @Post()
     @UseInterceptors(FileInterceptor('file'))
     async createSied(@Body() data, @UploadedFile() file: Express.Multer.File, @Res() res) {
-        data.countryId = Number(data.countryId);
+        data.categoryId = Number(data.categoryId);
         // Crear el SAIM
         const saim = await this.siedService.createSAIM(data); 
-        const folderPath = path.join(process.cwd(), `public/data/sied/images/${saim.id}`);
+        if (file) {
+            const folderPath = path.join(process.cwd(), `public/data/sied/images/${saim.id}`);
         await mkdirp(folderPath);
     const imageName = `${new Date().getTime()}.${file.originalname.split('.').pop()}`;
     fs.writeFile(path.join(folderPath, imageName), file.buffer, (err) => {
@@ -94,6 +95,9 @@ export class SiedController {
         }
     }
     );
+        }
+        return res.status(200).json({ message: saim });
+        
     }
 
     // Delete SAIM (soft delete)
