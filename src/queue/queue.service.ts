@@ -10,6 +10,7 @@ const connection = new IORedis({
 
 // Crear constantes para la inyección de dependencias
 export const EMAIL_QUEUE = 'EMAIL_QUEUE';
+export const SIED_QUEUE = 'SIED_QUEUE';
 export const EMAIL_QUEUE_OPTIONS = {
   connection,
   defaultJobOptions: { removeOnComplete: true },
@@ -20,6 +21,7 @@ export const EMAIL_WORKER = 'EMAIL_WORKER';
 export class QueueService implements OnModuleInit {
   constructor (
     @Inject(EMAIL_QUEUE) private emailQueue: Queue,
+    @Inject(SIED_QUEUE) private siedQueue: Queue,
     private mailService: MailService,
   ) {}
 
@@ -68,6 +70,6 @@ export class QueueService implements OnModuleInit {
 
   async siedJob(jobData: any): Promise<void> {
     // Usar el método add de la cola directamente
-    await this.emailQueue.add('sied', jobData);
+    await this.siedQueue.add('sied', jobData);
   }
 }

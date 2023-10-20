@@ -160,13 +160,17 @@ export class SiedService {
       }
     
       async publishSied(id: number): Promise<any> {
+        let siedCategories = []
         const sied = await this.getSiedById(id);
-        const suscribers = await this.suscriberService.getAllSuscribersEmailsByProductsOrCountries(products, countries);
+        siedCategories.push(sied.categoryId);
+        const suscribers = await this.suscriberService.getAllSuscribersEmailsByCategory(siedCategories);
         const job = {
           sied,
           subscribers: suscribers
         }
-        // Usa el método addJob en lugar de llamar directamente a la cola.
+        console.log(suscribers)
+        
+        //Usa el método addJob en lugar de llamar directamente a la cola.
         await this.queueService.siedJob(job);
     
         return this.prisma.sied.update({

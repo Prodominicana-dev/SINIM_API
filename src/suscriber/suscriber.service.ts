@@ -279,21 +279,25 @@ export class SuscriberService {
     }
 
     // Get all suscribers emails (no repeat) of a categories
-    async getAllSuscribersEmailsByCategories(categories: number[]) {
+    async getAllSuscribersEmailsByCategory(categories: number | number[]) {
+        console.log(categories)
+        if (!Array.isArray(categories)) {
+          categories = [categories]; // convierte categories a un array si no lo es
+        }
         return await this.prismaService.suscriber.findMany({
-            where: {
-                suscriber_category: {
-                    some: {
-                        categoryId: {
-                            in: categories
-                        }
-                    }
-                },
-                platform: 'sied',
+          where: {
+            suscriber_category: {
+              some: {
+                categoryId: {
+                  in: categories
+                }
+              }
             },
-            select: {
-                email: true
-            }
+            platform: 'sied',
+          },
+          select: {
+            email: true
+          }
         });
-    }
+      }
 }
