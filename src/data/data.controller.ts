@@ -33,8 +33,8 @@ export class DataController {
   ): StreamableFile {
     res.set({ 'Content-Type': 'image/jpeg' });
     const imagePath = path.join(
-      __dirname,
-      `../../public/data/saim/images/${id}`,
+      process.cwd(),
+      `public/data/saim/images/${id}`,
       imageName,
     );
     //   const mimeType = mime.lookup(imageName);
@@ -120,12 +120,12 @@ export class DataController {
   async deleteAllImages(@Res() res): Promise<void> {
     const folderPathSaim = path.join(process.cwd(), `public/data/saim`);
     if (fs.existsSync(folderPathSaim)) {
-        await fs.promises.rm(folderPathSaim, { recursive: true }); // Utilizar fs.promises.rmdir para eliminar el directorio de forma asincrónica
+      await fs.promises.rm(folderPathSaim, { recursive: true }); // Utilizar fs.promises.rmdir para eliminar el directorio de forma asincrónica
     }
 
     const folderPathSied = path.join(process.cwd(), `public/data/sied`);
     if (fs.existsSync(folderPathSied)) {
-        await fs.promises.rm(folderPathSied, { recursive: true }); // Utilizar fs.promises.rmdir para eliminar el directorio de forma asincrónica
+      await fs.promises.rm(folderPathSied, { recursive: true }); // Utilizar fs.promises.rmdir para eliminar el directorio de forma asincrónica
     }
 
     return res.status(200).json({ message: 'ok' });
