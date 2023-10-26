@@ -29,6 +29,15 @@ export class CategoryService {
         });
     }
 
+    async getSelectSiedCategories() {
+        // Crear un objeto que tenga value (id) y label (nombre) de las categorias
+        const categories = await this.getSiedCategories()
+        const selectCategories = categories.map((category) => {
+            return {label: category.name, value: category.id}
+        })
+        return selectCategories
+    }
+
     async createCategory(data) {
         return await this.prisma.category.create({
             data

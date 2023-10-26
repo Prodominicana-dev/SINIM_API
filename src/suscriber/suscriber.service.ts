@@ -273,6 +273,11 @@ export class SuscriberService {
                     include: {
                         product: true
                     }
+                },
+                suscriber_category: {
+                    include: {
+                        category: true
+                    }
                 }
             }
         });
@@ -297,7 +302,7 @@ export class SuscriberService {
           },
           select: {
             email: true
-          }
+          },
         });
       }
 }

@@ -19,4 +19,9 @@ export class CategoryController {
     async createCategory(@Body() data) {
         return await this.categoryService.createCategory(data);
     }
+
+    @Get('select/sied')
+    async getSelectSiedCategories() {
+        return await this.categoryService.getSelectSiedCategories();
+    }
 }
