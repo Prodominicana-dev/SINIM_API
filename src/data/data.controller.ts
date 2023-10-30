@@ -104,7 +104,7 @@ export class DataController {
     const saim = await this.saimService.getSAIM();
     for await (const s of saim) {
       const saimImg64 = await imageBase64.local(
-        path.join(__dirname, '../../public/data/images', s.image),
+        path.join(process.cwd(), '/public/data/images', s.image),
       );
       const base64Data = saimImg64.replace(
         /^data:image\/([\w+/]+);base64,/,
@@ -130,8 +130,20 @@ export class DataController {
           if (err) {
             res.status(500).json({ error: err });
           }
-          s.image = imageName;
-          this.saimService.updateSAIM(s.id, s);
+          const _saim = {
+            description: s.description,
+            title: s.title,
+            categoryId: s.categoryId,
+            date: s.date,
+            oldID: s.oldID,
+            products: s.products,
+            countries: s.countries,
+            status: s.status,
+            published: s.published,
+            platform: s.platform,
+            image: imageName,
+          };
+          this.saimService.updateSAIM(s.id, _saim);
         },
       );
     }
