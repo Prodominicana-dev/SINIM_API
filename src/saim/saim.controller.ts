@@ -3,7 +3,6 @@ import { SaimService } from './saim.service';
 import { mkdirp } from 'mkdirp';
 import { Express, Response } from 'express'
 import { FileInterceptor } from '@nestjs/platform-express';
-import * as mime from 'mime-types';
 import { PrismaService } from 'src/prisma/prisma.service';
 
 const fs = require('fs');

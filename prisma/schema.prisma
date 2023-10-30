@@ -136,3 +136,12 @@ model SuscriberToCategory{
   category   Category?   @relation(fields: [categoryId] , references: [id])
   @@id([suscriberId, categoryId])
 }
+
+model Partner{
+  id            Int    @id @default(autoincrement())
+  title         String
+  type          String
+  description   String?
+  image         String?
+  url           String?
+}
