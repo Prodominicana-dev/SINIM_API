@@ -69,6 +69,24 @@ export class DataController {
     return streamableFile;
   }
 
+  @Get('partner/:id/img/:imageName')
+  getPartnerImage(
+    @Param('id') id: string,
+    @Param('imageName') imageName: string,
+    @Res({ passthrough: true }) res: Response,
+  ): StreamableFile {
+    res.set({ 'Content-Type': 'image/jpeg' });
+    const imagePath = path.join(
+      process.cwd(),
+      `public/data/partner/images/${id}`,
+      imageName,
+    );
+    const fileStream = fs.createReadStream(imagePath);
+    const streamableFile = new StreamableFile(fileStream);
+    //   streamableFile.options.type = mimeType
+    return streamableFile;
+  }
+
   /*
    *   Subir imagenes de los SAIM por su id.
    */
