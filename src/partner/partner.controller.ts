@@ -6,7 +6,7 @@ import { mkdirp } from 'mkdirp';
 const fs = require('fs');
 const path = require('path');
 
-@Controller('partner')
+@Controller('apiv2/partner')
 export class PartnerController {
     constructor(private readonly partnerService: PartnerService) {}
 
