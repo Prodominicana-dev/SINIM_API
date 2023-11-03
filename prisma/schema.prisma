@@ -153,5 +153,15 @@ model Post{
   type String?
   pdf String?
   language String?
+  status String? @default("active")
+  date DateTime? @default(now())
+}
+
+model Log{
+  id Int @id @default(autoincrement())
+  username String?
+  email String?
+  action String?
+  platform String?
   date DateTime? @default(now())
 }
