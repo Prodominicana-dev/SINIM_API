@@ -87,6 +87,23 @@ export class DataController {
     return streamableFile;
   }
 
+  @Get('post/:id/pdf/:pdfName')
+  getPostPdf(
+    @Param('id') id: string,
+    @Param('pdfName') pdfName: string,
+    @Res({ passthrough: true }) res: Response,
+  ): StreamableFile {
+    res.set({ 'Content-Type': 'application/pdf' });
+    const pdfPath = path.join(
+      process.cwd(),
+      `public/data/post/pdf/${id}`,
+      pdfName,
+    );
+    const fileStream = fs.createReadStream(pdfPath);
+    const streamableFile = new StreamableFile(fileStream);
+    return streamableFile;
+  }
+
   /*
    *   Subir imagenes de los SAIM por su id.
    */

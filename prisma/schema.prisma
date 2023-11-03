@@ -145,3 +145,13 @@ model Partner{
   image         String?
   url           String?
 }
+
+model Post{
+  id Int @id @default(autoincrement())
+  title String
+  category String?
+  type String?
+  pdf String?
+  language String?
+  date DateTime? @default(now())
+}
