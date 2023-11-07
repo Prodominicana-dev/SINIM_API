@@ -60,21 +60,28 @@ export class PartnerController {
       process.cwd(),
       `public/data/partner/images/${id}`,
     );
-    if (fs.existsSync(folderPath)) {
-      await fs.promises.rm(folderPath, { recursive: true }); // Utilizar fs.promises.rmdir para eliminar el directorio de forma asincrónica
-    }
-    await mkdirp(folderPath);
-    const imageName = `${new Date().getTime()}.${file.originalname
-      .split('.')
-      .pop()}`;
-    fs.writeFile(path.join(folderPath, imageName), file.buffer, async (err) => {
-      if (err) {
-        return res.status(500).json({ error: err });
+
+    try {
+      if (fs.existsSync(folderPath)) {
+        await fs.promises.rm(folderPath, { recursive: true });
       }
+      await mkdirp(folderPath);
+
+      const timestamp = new Date().getTime();
+      const fileExtension = file.originalname.split('.').pop();
+      const imageName = `${timestamp}.${fileExtension}`;
+
+      const imagePath = path.join(folderPath, imageName);
+
+      await fs.promises.writeFile(imagePath, file.buffer);
+
       data.image = imageName;
       await this.partnerService.update(id, data);
-      return res.status(200).json({ message: data });
-    });
+
+      res.status(200).json({ message: data });
+    } catch (err) {
+      res.status(500).json({ error: err });
+    }
   }
 
   // Borrar partner

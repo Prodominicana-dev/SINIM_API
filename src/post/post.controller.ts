@@ -56,19 +56,22 @@ export class PostController {
       return res.status(200).json({ message: post });
     }
     const folderPath = path.join(process.cwd(), `public/data/post/pdf/${id}`);
-    if (fs.existsSync(folderPath)) {
-      await fs.promises.rm(folderPath, { recursive: true }); // Utilizar fs.promises.rmdir para eliminar el directorio de forma asincrónica
-    }
-    await mkdirp(folderPath);
-    const pdfName = `${file.originalname}`;
-    fs.writeFile(path.join(folderPath, pdfName), file.buffer, async (err) => {
-      if (err) {
-        return res.status(500).json({ error: err });
+    try {
+      if (fs.existsSync(folderPath)) {
+        await fs.promises.rm(folderPath, { recursive: true });
       }
-      data.pdf = pdfName;
+      await mkdirp(folderPath);
+
+      const pdfPath = path.join(folderPath, file.originalname);
+      await fs.promises.writeFile(pdfPath, file.buffer);
+
+      data.pdf = file.originalname;
       await this.postService.updatePost(id, data);
-      return res.status(200).json({ message: data });
-    });
+
+      res.status(200).json({ message: data });
+    } catch (err) {
+      res.status(500).json({ error: err });
+    }
   }
 
   // Borrar post
