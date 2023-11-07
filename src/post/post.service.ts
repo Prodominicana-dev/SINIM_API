@@ -40,7 +40,7 @@ export class PostService {
     async updatePost(postId: number, data: Prisma.PostUpdateInput): Promise<Post> {
         return this.prisma.post.update({
             where: {
-                id: postId,
+                id: Number(postId),
             },
             data,
         });
