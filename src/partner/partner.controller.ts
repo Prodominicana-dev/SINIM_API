@@ -32,24 +32,28 @@ export class PartnerController {
     @Patch(':id')
     @UseInterceptors(FileInterceptor('file'))
     async update(@Param('id') id: number, @Body() data: any, @UploadedFile() file: Express.Multer.File, @Res() res) {
-        // Si el file no es undefined, actualizar la imagen, borrar la foto de esa carpeta y agregar la nueva
-        if (file) {
-            const folderPath = path.join(process.cwd(), `public/data/partner/images/${id}`);
-            if (fs.existsSync(folderPath)) {
-                await fs.promises.rm(folderPath, { recursive: true }); // Utilizar fs.promises.rmdir para eliminar el directorio de forma asincrónica
+        
+        if(file === undefined){
+            const partner = await this.partnerService.update(id, data);
+            if(res.statusCode === 500){
+                return res.status(500).json({message: 'Error'});
             }
-            await mkdirp(folderPath);
-            const imageName = `${new Date().getTime()}.${file.originalname.split('.').pop()}`;
-            fs.writeFile(path.join(folderPath, imageName), file.buffer, async (err) => {
-                if (err) {
-                    return res.status(500).json({ error: err });
-                }
-                data.image = imageName;
-                await this.partnerService.update(id, data);
-                res.status(200).json({ message: data });
-            });
-        } else
-        return this.partnerService.update(id, data);
+            return res.status(200).json({message: partner});
+        }
+        const folderPath = path.join(process.cwd(), `public/data/partner/images/${id}`);
+        if (fs.existsSync(folderPath)) {
+            await fs.promises.rm(folderPath, { recursive: true }); // Utilizar fs.promises.rmdir para eliminar el directorio de forma asincrónica
+        }
+        await mkdirp(folderPath);
+        const imageName = `${new Date().getTime()}.${file.originalname.split('.').pop()}`;
+        fs.writeFile(path.join(folderPath, imageName), file.buffer, async (err) => {
+            if (err) {
+                return res.status(500).json({ error: err });
+            }
+            data.image = imageName;
+            await this.partnerService.update(id, data);
+            return res.status(200).json({ message: data });
+        });
     }
 
     // Borrar partner
