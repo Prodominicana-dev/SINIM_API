@@ -31,7 +31,7 @@ export class PostController {
     // Editar post
     @Patch(':id')
     @UseInterceptors(FileInterceptor('file'))
-    async update(@Param('id') id: string, @Body() data: any, @UploadedFile() file: Express.Multer.File, @Res() res) {
+    async update(@Param('id') id: number, @Body() data: any, @UploadedFile() file: Express.Multer.File, @Res() res) {
         // Si el file no es undefined, actualizar la imagen, borrar la foto de esa carpeta y agregar la nueva
         if (file) {
             const folderPath = path.join(process.cwd(), `public/data/post/pdf/${id}`);
@@ -45,11 +45,11 @@ export class PostController {
                     return res.status(500).json({ error: err });
                 }
                 data.pdf = pdfName;
-                await this.postService.updatePost(Number(id), data);
+                await this.postService.updatePost(id, data);
                 res.status(200).json({ message: data });
             });
         } else
-        return this.postService.updatePost(+id, data);
+        return this.postService.updatePost(id, data);
     }
 
     // Borrar post

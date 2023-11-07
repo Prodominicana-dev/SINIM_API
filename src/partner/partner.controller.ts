@@ -31,7 +31,7 @@ export class PartnerController {
     // Editar partner
     @Patch(':id')
     @UseInterceptors(FileInterceptor('file'))
-    async update(@Param('id') id: string, @Body() data: any, @UploadedFile() file: Express.Multer.File, @Res() res) {
+    async update(@Param('id') id: number, @Body() data: any, @UploadedFile() file: Express.Multer.File, @Res() res) {
         // Si el file no es undefined, actualizar la imagen, borrar la foto de esa carpeta y agregar la nueva
         if (file) {
             const folderPath = path.join(process.cwd(), `public/data/partner/images/${id}`);
@@ -45,11 +45,11 @@ export class PartnerController {
                     return res.status(500).json({ error: err });
                 }
                 data.image = imageName;
-                await this.partnerService.update(Number(id), data);
+                await this.partnerService.update(id, data);
                 res.status(200).json({ message: data });
             });
         } else
-        return this.partnerService.update(+id, data);
+        return this.partnerService.update(id, data);
     }
 
     // Borrar partner
