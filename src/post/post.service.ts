@@ -14,8 +14,40 @@ export class PostService {
   }
 
   // Obtener todos los posts
-  async getAll(): Promise<Post[]> {
-    return this.prisma.post.findMany();
+  async getAll(): Promise<any[]> {
+    // Obtener todas las categorias distintas
+    const posts = await this.prisma.post.findMany();
+
+    // Obtener categorias distintas a raiz de posts
+    const categories = posts.map((post) => post.category);
+    const uniqueCategories = categories.filter((category, index) => {
+      // La condición es cierta solo si la categoría actual aparece por primera vez en la lista
+      return categories.indexOf(category) === index;
+    });
+
+    // Obtener todos los idiomas distintos
+    const languages = posts.map((post) => post.language);
+    const uniqueLanguages = languages.filter((language, index) => {
+      // La condición es cierta solo si la categoría actual aparece por primera vez en la lista
+      return languages.indexOf(language) === index;
+    });
+
+    // Obtener todos los tipos distintos
+    const types = posts.map((post) => post.type);
+    const uniqueTypes = types.filter((type, index) => {
+      // La condición es cierta solo si la categoría actual aparece por primera vez en la lista
+      return types.indexOf(type) === index;
+    });
+
+    // Devolver todo junto
+    return [
+      {
+        categories: uniqueCategories,
+        languages: uniqueLanguages,
+        types: uniqueTypes,
+        posts,
+      },
+    ];
   }
 
   // Obtener un post por id
