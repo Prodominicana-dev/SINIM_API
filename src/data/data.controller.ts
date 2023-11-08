@@ -87,6 +87,24 @@ export class DataController {
     return streamableFile;
   }
 
+  @Get('post/:id/img/:imageName')
+  getPostImage(
+    @Param('id') id: string,
+    @Param('imageName') imageName: string,
+    @Res({ passthrough: true }) res: Response,
+  ): StreamableFile {
+    res.set({ 'Content-Type': 'image/jpeg' });
+    const imagePath = path.join(
+      process.cwd(),
+      `public/data/post/images/${id}`,
+      imageName,
+    );
+    const fileStream = fs.createReadStream(imagePath);
+    const streamableFile = new StreamableFile(fileStream);
+    //   streamableFile.options.type = mimeType
+    return streamableFile;
+  }
+
   @Get('post/:id/pdf/:pdfName')
   getPostPdf(
     @Param('id') id: string,
