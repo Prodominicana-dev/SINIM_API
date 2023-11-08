@@ -16,6 +16,7 @@ import { FileInterceptor } from '@nestjs/platform-express';
 import { mkdirp } from 'mkdirp';
 const fs = require('fs');
 const path = require('path');
+const { Poppler } = require('node-poppler');
 
 @Controller('apiv2/post')
 export class PostController {
@@ -56,16 +57,35 @@ export class PostController {
       return res.status(200).json({ message: post });
     }
     const folderPath = path.join(process.cwd(), `public/data/post/pdf/${id}`);
+    const imagePath = path.join(process.cwd(), `public/data/post/images/${id}`);
     try {
       if (fs.existsSync(folderPath)) {
         await fs.promises.rm(folderPath, { recursive: true });
       }
+      if (fs.existsSync(imagePath)) {
+        await fs.promises.rm(imagePath, { recursive: true });
+      }
       await mkdirp(folderPath);
+      await mkdirp(imagePath);
+
+      const poppler = new Poppler();
+      const options = {
+        firstPageToConvert: 1,
+        lastPageToConvert: 1,
+        pngFile: true,
+      };
 
       const pdfPath = path.join(folderPath, file.originalname);
       await fs.promises.writeFile(pdfPath, file.buffer);
 
       data.pdf = file.originalname;
+
+      const firstPageName = `${imagePath}/${file.originalname.split('.')[0]}`;
+      await poppler.pdfToCairo(
+        `${folderPath}/${data.pdf}`,
+        firstPageName,
+        options,
+      );
       await this.postService.updatePost(id, data);
 
       res.status(200).json({ message: data });
@@ -97,13 +117,31 @@ export class PostController {
       process.cwd(),
       `public/data/post/pdf/${post.id}`,
     );
+    const imagePath = path.join(
+      process.cwd(),
+      `public/data/post/images/${post.id}`,
+    );
     await mkdirp(folderPath);
+    await mkdirp(imagePath);
     const pdfName = `${file.originalname}`;
-    fs.writeFile(path.join(folderPath, pdfName), file.buffer, (err) => {
+
+    fs.writeFile(path.join(folderPath, pdfName), file.buffer, async (err) => {
       if (err) {
         res.status(500).json({ error: err });
       } else {
+        const poppler = new Poppler();
+        const options = {
+          firstPageToConvert: 1,
+          lastPageToConvert: 1,
+          pngFile: true,
+        };
         post.pdf = pdfName;
+        const firstPageName = `${imagePath}/${file.originalname.split('.')[0]}`;
+        await poppler.pdfToCairo(
+          `${folderPath}/${pdfName}`,
+          firstPageName,
+          options,
+        );
         this.postService.updatePost(post.id, post).then((post) => {
           if (res.statusCode === 500) {
             return res.status(500).json({ message: 'Error' });
