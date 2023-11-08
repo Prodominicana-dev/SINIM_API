@@ -14,7 +14,7 @@ export class PostService {
   }
 
   // Obtener todos los posts
-  async getAll(): Promise<any[]> {
+  async getAll(): Promise<any> {
     // Obtener todas las categorias distintas
     const posts = await this.prisma.post.findMany();
 
@@ -39,15 +39,14 @@ export class PostService {
       return types.indexOf(type) === index;
     });
 
+    const data = {
+      categories: uniqueCategories,
+      languages: uniqueLanguages,
+      types: uniqueTypes,
+      posts,
+    };
     // Devolver todo junto
-    return [
-      {
-        categories: uniqueCategories,
-        languages: uniqueLanguages,
-        types: uniqueTypes,
-        posts,
-      },
-    ];
+    return data;
   }
 
   // Obtener un post por id
