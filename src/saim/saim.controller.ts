@@ -34,6 +34,11 @@ export class SaimController {
     return this.saimService.getActiveSAIMAlerts();
   }
 
+  @Get('page/public/:id')
+  async getActivePaginatedPublicSaim(@Param('id') page: number) {
+    return this.saimService.getPublicPaginated({ page });
+  }
+
   @Get('page/:id')
   async getActivePaginatedSaim(@Param('id') page: number) {
     return this.saimService.getActivePaginatedSaim({ page });

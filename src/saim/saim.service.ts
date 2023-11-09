@@ -13,8 +13,12 @@ const paginate: PaginatorTypes.PaginateFunction = paginator({
 
 @Injectable()
 export class SaimService {
-  constructor(private prisma: PrismaService, private suscriberService : SuscriberService, private queueService: QueueService,) {}
-  
+  constructor(
+    private prisma: PrismaService,
+    private suscriberService: SuscriberService,
+    private queueService: QueueService,
+  ) {}
+
   async getActiveSAIMAlerts(): Promise<Alerts[]> {
     return this.prisma.alerts.findMany({
       where: {
@@ -26,7 +30,7 @@ export class SaimService {
       },
       include: {
         category: true,
-      }
+      },
     });
   }
 
@@ -53,7 +57,40 @@ export class SaimService {
         },
         include: {
           category: true,
-        }
+        },
+      },
+      {
+        page,
+        perPage: 8,
+      },
+    );
+  }
+
+  async getPublicPaginated({
+    page,
+    perPage,
+    where,
+    orderBy,
+  }: {
+    page?: number;
+    perPage?: number;
+    where?: Prisma.AlertsWhereInput;
+    orderBy?: Prisma.AlertsOrderByWithRelationInput;
+  }): Promise<PaginatorTypes.PaginatedResult<Alerts>> {
+    return paginate(
+      this.prisma.alerts,
+      {
+        where: {
+          status: 'active',
+          platform: 'saim',
+          isPublic: true,
+        },
+        orderBy: {
+          date: 'desc',
+        },
+        include: {
+          category: true,
+        },
       },
       {
         page,
@@ -69,15 +106,15 @@ export class SaimService {
       },
       orderBy: [
         {
-          status: "desc",
+          status: 'desc',
         },
         {
-          id: "asc",
+          id: 'asc',
         },
       ],
       include: {
         category: true,
-      }
+      },
     });
   }
 
@@ -97,18 +134,18 @@ export class SaimService {
       {
         orderBy: [
           {
-              status: "desc",
+            status: 'desc',
           },
           {
-              id: "asc",
+            id: 'asc',
           },
-      ],
+        ],
         where: {
           platform: 'saim',
-        }, 
+        },
         include: {
           category: true,
-        }
+        },
       },
       {
         page,
@@ -124,15 +161,18 @@ export class SaimService {
       },
       include: {
         category: true,
-      }
+      },
     });
   }
 
   // Update SAIM data
-  async updateSAIM(id: number, data: Prisma.AlertsUpdateInput): Promise<Alerts> {
+  async updateSAIM(
+    id: number,
+    data: Prisma.AlertsUpdateInput,
+  ): Promise<Alerts> {
     const saim = await this.getSAIMById(id);
     data.published = Boolean(data.published);
-    if(!saim.published && data.published){
+    if (!saim.published && data.published) {
       await this.publishSaim(id);
     }
     return this.prisma.alerts.update({
@@ -149,7 +189,7 @@ export class SaimService {
       data,
     });
 
-    if(saim.published){
+    if (saim.published) {
       await this.publishSaim(saim.id);
     }
 
@@ -171,11 +211,15 @@ export class SaimService {
     const saim = await this.getSAIMById(id);
     const products = saim.products.map((p: any) => p.id);
     const countries = saim.countries.map((c: any) => c.id);
-    const suscribers = await this.suscriberService.getAllSuscribersEmailsByProductsOrCountries(products, countries);
+    const suscribers =
+      await this.suscriberService.getAllSuscribersEmailsByProductsOrCountries(
+        products,
+        countries,
+      );
     const job = {
       saim,
-      subscribers: suscribers
-    }
+      subscribers: suscribers,
+    };
     // Usa el método addJob en lugar de llamar directamente a la cola.
     await this.queueService.addJob(job);
 
@@ -188,9 +232,8 @@ export class SaimService {
       },
     });
   }
-   
+
   async deleteDefinitiveSAIM(id: number): Promise<Alerts> {
-    
     return this.prisma.alerts.delete({
       where: {
         id: id,
@@ -204,6 +247,6 @@ export class SaimService {
       _count: {
         platform: true,
       },
-    })
+    });
   }
 }

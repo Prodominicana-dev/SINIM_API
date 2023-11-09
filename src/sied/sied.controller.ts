@@ -41,6 +41,11 @@ export class SiedController {
     return this.siedService.getActivePaginatedSied({ page });
   }
 
+  @Get('page/public/:id')
+  async getPublicPaginated(@Param('id') page: number) {
+    return this.siedService.getPublicPaginated({ page });
+  }
+
   @Get('all')
   async getSied() {
     return this.siedService.getSied();
