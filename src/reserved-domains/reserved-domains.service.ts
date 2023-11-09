@@ -40,8 +40,17 @@ export class ReservedDomainsService {
     });
   }
 
-  async getAllReservedDomains(): Promise<reservedDomains[]> {
-    return this.prisma.reservedDomains.findMany();
+  async getAllReservedDomains(): Promise<any> {
+    // Hacer un arreglo de strings con los dominios reservados de SAIM y SIED
+    const saimDomains = await this.getReservedDomainsByPlatform('saim');
+    const siedDomains = await this.getReservedDomainsByPlatform('sied');
+    const saimDomainsArray = saimDomains.map((domain) => domain.name);
+    const siedDomainsArray = siedDomains.map((domain) => domain.name);
+    const data = {
+      saim: saimDomainsArray,
+      sied: siedDomainsArray,
+    };
+    return data;
   }
 
   async deleteReservedDomainsById(id: number): Promise<reservedDomains> {
