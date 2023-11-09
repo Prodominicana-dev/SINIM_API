@@ -73,6 +73,9 @@ export class SaimController {
     if (data.categoryId) {
       data.categoryId = Number(data.categoryId);
     }
+    if (data.isPublic) {
+      data.isPublic = Boolean(data.isPublic);
+    }
     if (file === undefined) {
       const saim = await this.saimService.updateSAIM(Number(id), data);
       if (res.statusCode === 500) {
@@ -114,6 +117,7 @@ export class SaimController {
     data.products = JSON.parse(data.products);
     data.countries = JSON.parse(data.countries);
     data.categoryId = Number(data.categoryId);
+    data.isPublic = Boolean(data.isPublic);
     data.platform = 'saim';
     // Crear el SAIM
     const saim = await this.saimService.createSAIM(data);

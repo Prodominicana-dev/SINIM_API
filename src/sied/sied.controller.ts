@@ -68,6 +68,12 @@ export class SiedController {
     if (data.categoryId) {
       data.categoryId = Number(data.categoryId);
     }
+    if (data.published) {
+      data.published = Boolean(data.published);
+    }
+    if (data.isPublic) {
+      data.isPublic = Boolean(data.isPublic);
+    }
     if (file === undefined) {
       const sied = await this.siedService.updateSied(Number(id), data);
       if (res.statusCode === 500) {
@@ -106,6 +112,8 @@ export class SiedController {
     @Res() res,
   ) {
     data.categoryId = Number(data.categoryId);
+    data.published = Boolean(data.published);
+    data.isPublic = Boolean(data.isPublic);
     // Crear el SAIM
     const saim = await this.siedService.createSAIM(data);
 
