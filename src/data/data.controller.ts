@@ -87,22 +87,28 @@ export class DataController {
     return streamableFile;
   }
 
-  @Get('post/:id/img/:imageName')
-  getPostImage(
+  @Get('post/:id')
+  async getPostImage(
     @Param('id') id: string,
-    @Param('imageName') imageName: string,
     @Res({ passthrough: true }) res: Response,
-  ): StreamableFile {
+  ): Promise<StreamableFile> {
     res.set({ 'Content-Type': 'image/jpeg' });
-    const imagePath = path.join(
-      process.cwd(),
-      `public/data/post/images/${id}`,
-      imageName,
-    );
-    const fileStream = fs.createReadStream(imagePath);
-    const streamableFile = new StreamableFile(fileStream);
-    //   streamableFile.options.type = mimeType
-    return streamableFile;
+    const imagePath = path.join(process.cwd(), `public/data/post/images/${id}`);
+
+    return new Promise((resolve, reject) => {
+      fs.readdir(imagePath, (err, files) => {
+        if (err) {
+          console.log(err);
+          reject(err);
+        } else {
+          const fileStreams = files.map((file) => {
+            const fileStream = fs.createReadStream(path.join(imagePath, file));
+            return new StreamableFile(fileStream);
+          });
+          resolve(fileStreams[0]); // En este ejemplo, retornamos solo el primer archivo encontrado
+        }
+      });
+    });
   }
 
   @Get('post/:id/pdf/:pdfName')

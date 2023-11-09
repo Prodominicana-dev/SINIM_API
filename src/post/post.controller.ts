@@ -17,6 +17,7 @@ import { mkdirp } from 'mkdirp';
 const fs = require('fs');
 const path = require('path');
 const { Poppler } = require('node-poppler');
+const poppler = new Poppler(process.env.POPPLER_PATH);
 
 @Controller('apiv2/post')
 export class PostController {
@@ -67,8 +68,6 @@ export class PostController {
       }
       await mkdirp(folderPath);
       await mkdirp(imagePath);
-
-      const poppler = new Poppler();
       const options = {
         firstPageToConvert: 1,
         lastPageToConvert: 1,
@@ -129,7 +128,6 @@ export class PostController {
       if (err) {
         res.status(500).json({ error: err });
       } else {
-        const poppler = new Poppler();
         const options = {
           firstPageToConvert: 1,
           lastPageToConvert: 1,

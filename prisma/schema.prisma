@@ -75,6 +75,7 @@ model Alerts{
   oldID           Int? // ID anterior
   platform      String // Plataforma
   status     String? @default("active")
+  isPublic        Boolean? @default(false) // Publicado
   published       Boolean? @default(false) // Publicado
 }
 
