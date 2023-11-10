@@ -103,7 +103,7 @@ export class SiedService {
           status: 'desc',
         },
         {
-          id: 'asc',
+          id: 'desc',
         },
       ],
       include: {

@@ -51,7 +51,7 @@ export class SaimService {
         where: {
           status: 'active',
           platform: 'saim',
-          isPublic: false
+          isPublic: false,
         },
         orderBy: {
           date: 'desc',
@@ -110,7 +110,7 @@ export class SaimService {
           status: 'desc',
         },
         {
-          id: 'asc',
+          id: 'desc',
         },
       ],
       include: {
@@ -138,7 +138,7 @@ export class SaimService {
             status: 'desc',
           },
           {
-            id: 'asc',
+            id: 'desc',
           },
         ],
         where: {
