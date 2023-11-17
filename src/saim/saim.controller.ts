@@ -69,18 +69,10 @@ export class SaimController {
     @Res() res,
   ) {
     // Convertir data.products y data.countries a JSON
-    if (data.products) {
-      data.products = JSON.parse(data.products);
-    }
-    if (data.countries) {
-      data.countries = JSON.parse(data.countries);
-    }
-    if (data.categoryId) {
-      data.categoryId = Number(data.categoryId);
-    }
-    if (data.isPublic) {
-      data.isPublic = Boolean(data.isPublic);
-    }
+    data.products = JSON.parse(data.products);
+    data.countries = JSON.parse(data.countries);
+    data.categoryId = Number(data.categoryId);
+    data.isPublic = data.isPublic === 'true';
     if (file === undefined) {
       const saim = await this.saimService.updateSAIM(Number(id), data);
       if (res.statusCode === 500) {
@@ -122,7 +114,7 @@ export class SaimController {
     data.products = JSON.parse(data.products);
     data.countries = JSON.parse(data.countries);
     data.categoryId = Number(data.categoryId);
-    data.isPublic = Boolean(data.isPublic);
+    data.isPublic = data.isPublic === 'true';
     data.platform = 'saim';
     // Crear el SAIM
     const saim = await this.saimService.createSAIM(data);

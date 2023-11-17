@@ -70,15 +70,10 @@ export class SiedController {
     @UploadedFile() file: Express.Multer.File,
     @Res() res,
   ) {
-    if (data.categoryId) {
-      data.categoryId = Number(data.categoryId);
-    }
-    if (data.published) {
-      data.published = Boolean(data.published);
-    }
-    if (data.isPublic) {
-      data.isPublic = Boolean(data.isPublic);
-    }
+    data.categoryId = Number(data.categoryId);
+    data.published = Boolean(data.published);
+    data.isPublic = data.isPublic === 'true';
+
     if (file === undefined) {
       const sied = await this.siedService.updateSied(Number(id), data);
       if (res.statusCode === 500) {
@@ -118,7 +113,7 @@ export class SiedController {
   ) {
     data.categoryId = Number(data.categoryId);
     data.published = Boolean(data.published);
-    data.isPublic = Boolean(data.isPublic);
+    data.isPublic = data.isPublic === 'true';
     // Crear el SAIM
     const saim = await this.siedService.createSAIM(data);
 
