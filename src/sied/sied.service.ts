@@ -48,7 +48,6 @@ export class SiedService {
       {
         where: {
           status: 'active',
-          isPublic: false,
         },
         orderBy: {
           date: 'desc',

@@ -51,7 +51,6 @@ export class SaimService {
         where: {
           status: 'active',
           platform: 'saim',
-          isPublic: false,
         },
         orderBy: {
           date: 'desc',
