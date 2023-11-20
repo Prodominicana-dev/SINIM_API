@@ -136,18 +136,6 @@ export class SiedController {
     });
   }
 
-  // Delete SAIM (soft delete)
-  @Delete(':id')
-  async deleteSied(@Param('id') id: number, @Res() res: Response) {
-    const saim = await this.siedService.getSiedById(Number(id));
-    if (saim) {
-      await this.siedService.deleteSAIM(Number(id));
-      return res.status(200).json({ message: 'SAIM eliminado' });
-    } else {
-      return res.status(500).json({ message: 'Error al eliminar el SAIM' });
-    }
-  }
-
   // Delete definitive SAIM
   @Delete('d/:id')
   async deleteDefinitiveSied(@Param('id') id: number, @Res() res: Response) {
