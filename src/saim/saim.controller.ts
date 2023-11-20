@@ -137,20 +137,6 @@ export class SaimController {
     });
   }
 
-  // Delete SAIM (soft delete)
-  @Delete(':id')
-  async deleteSaim(@Param('id') id: number, @Res() res: Response) {
-    const saim = await this.saimService.getSAIMById(Number(id));
-    if (!saim) {
-      return res.status(404).json({ message: 'No se encontró el SAIM' });
-    }
-    const isDeleted = await this.saimService.deleteSAIM(Number(id));
-    if (!isDeleted) {
-      return res.status(500).json({ message: 'Error al eliminar el SAIM' });
-    }
-    return res.status(200).json({ message: isDeleted });
-  }
-
   // Delete definitive SAIM
   @Delete('d/:id')
   async deleteDefinitiveSaim(@Param('id') id: number, @Res() res: Response) {

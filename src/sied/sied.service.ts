@@ -183,17 +183,6 @@ export class SiedService {
     return saim;
   }
 
-  async deleteSAIM(id: number): Promise<Sied> {
-    return this.prisma.sied.update({
-      where: {
-        id: id,
-      },
-      data: {
-        status: 'deleted',
-      },
-    });
-  }
-
   async publishSied(id: number): Promise<any> {
     let siedCategories = [];
     const sied = await this.getSiedById(id);

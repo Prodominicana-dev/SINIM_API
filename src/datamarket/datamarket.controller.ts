@@ -39,7 +39,7 @@ export class DatamarketController {
     return this.datamarketService.edit(Number(id), data);
   }
 
-  @Delete('deactive/:id')
+  @Patch('deactive/:id')
   async deactiveDatamarket(@Param('id') id: number) {
     return this.datamarketService.deactive(Number(id));
   }
