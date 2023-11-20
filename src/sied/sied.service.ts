@@ -228,4 +228,26 @@ export class SiedService {
       },
     });
   }
+
+  async enable(id: number): Promise<Sied> {
+    return this.prisma.sied.update({
+      where: {
+        id: id,
+      },
+      data: {
+        status: 'active',
+      },
+    });
+  }
+
+  async disable(id: number): Promise<Sied> {
+    return this.prisma.sied.update({
+      where: {
+        id: id,
+      },
+      data: {
+        status: 'inactive',
+      },
+    });
+  }
 }

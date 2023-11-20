@@ -189,4 +189,22 @@ export class SaimController {
       },
     });
   }
+
+  @Patch('enable/:id')
+  async enable(@Param('id') id: number, @Res() res: Response) {
+    const enable = await this.saimService.enable(Number(id));
+    if (!enable) {
+      return res.status(500).json({ message: 'Error al habilitar el SAIM' });
+    }
+    return res.status(200).json({ message: enable });
+  }
+
+  @Patch('disable/:id')
+  async disable(@Param('id') id: number, @Res() res: Response) {
+    const disable = await this.saimService.disable(Number(id));
+    if (!disable) {
+      return res.status(500).json({ message: 'Error al deshabilitar el SAIM' });
+    }
+    return res.status(200).json({ message: disable });
+  }
 }

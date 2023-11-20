@@ -176,6 +176,24 @@ export class SiedController {
     return res.status(200).json({ message: published });
   }
 
+  @Patch('enable/:id')
+  async enable(@Param('id') id: number, @Res() res: Response) {
+    const enabled = await this.siedService.enable(Number(id));
+    if (!enabled) {
+      return res.status(500).json({ message: 'Error al activar el SAIM' });
+    }
+    return res.status(200).json({ message: enabled });
+  }
+
+  @Patch('disable/:id')
+  async disable(@Param('id') id: number, @Res() res: Response) {
+    const disabled = await this.siedService.disable(Number(id));
+    if (!disabled) {
+      return res.status(500).json({ message: 'Error al desactivar el SAIM' });
+    }
+    return res.status(200).json({ message: disabled });
+  }
+
   // Get all saims but in a group by
   @Get('t/1')
   async getSAIMTest() {

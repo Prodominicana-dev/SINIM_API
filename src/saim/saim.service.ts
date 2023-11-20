@@ -233,6 +233,28 @@ export class SaimService {
     });
   }
 
+  async enable(id: number): Promise<Alerts> {
+    return this.prisma.alerts.update({
+      where: {
+        id: id,
+      },
+      data: {
+        status: 'active',
+      },
+    });
+  }
+
+  async disable(id: number): Promise<Alerts> {
+    return this.prisma.alerts.update({
+      where: {
+        id: id,
+      },
+      data: {
+        status: 'inactive',
+      },
+    });
+  }
+
   async deleteDefinitiveSAIM(id: number): Promise<Alerts> {
     return this.prisma.alerts.delete({
       where: {
