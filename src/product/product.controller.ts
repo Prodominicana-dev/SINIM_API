@@ -51,8 +51,14 @@ export class ProductController {
   }
 
   // Delete product
-  @Patch('product/:id')
+  @Patch('product/disable/:id')
   async deleteProduct(@Param('id') id: number) {
     return this.productService.deactivate(Number(id));
+  }
+
+  // Activate product
+  @Patch('product/enable/:id')
+  async activateProduct(@Param('id') id: number) {
+    return this.productService.activate(Number(id));
   }
 }

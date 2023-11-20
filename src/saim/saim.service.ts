@@ -196,17 +196,6 @@ export class SaimService {
     return saim;
   }
 
-  async deleteSAIM(id: number): Promise<Alerts> {
-    return this.prisma.alerts.update({
-      where: {
-        id: id,
-      },
-      data: {
-        status: 'deleted',
-      },
-    });
-  }
-
   async publishSaim(id: number): Promise<any> {
     const saim = await this.getSAIMById(id);
     const products = saim.products.map((p: any) => p.id);
