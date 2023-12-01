@@ -58,4 +58,12 @@ export class DatamarketController {
   async deleteDatamarket(@Param('id') id: number) {
     return this.datamarketService.dDelete(Number(id));
   }
+
+  @Patch('priority/:category/:priority')
+  async changePriority(
+    @Param('category') category: string,
+    @Param('priority') priority: number,
+  ) {
+    return this.datamarketService.changePriority(category, priority);
+  }
 }
