@@ -58,6 +58,7 @@ model Datamarket{
   title         String
   category      String
   url           String
+  categoryPriority Int? @default(1)
   date          DateTime? @default(now())
   status     String? @default("active")
 }
