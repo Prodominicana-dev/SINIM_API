@@ -58,4 +58,21 @@ export class DatamarketController {
   async deleteDatamarket(@Param('id') id: number) {
     return this.datamarketService.dDelete(Number(id));
   }
+
+  @Get('only/category')
+  async getCategories() {
+    return this.datamarketService.onlyCategories();
+  }
+
+  @Patch('update/categories')
+  async updateCategories(@Body() data) {
+    const dataMarket = {
+      categoryPriority: data.categoryPriority,
+    };
+    const category = data.category;
+    return this.datamarketService.updateDatamarketByCategory(
+      category,
+      dataMarket,
+    );
+  }
 }
