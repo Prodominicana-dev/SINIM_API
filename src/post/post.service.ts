@@ -16,13 +16,7 @@ export class PostService {
   // Obtener todos los posts
   async getAll(): Promise<any> {
     // Obtener todas las categorias distintas
-    const posts = await this.prisma.post.findMany({
-      orderBy: [
-        {
-          date: 'desc',
-        },
-      ],
-    });
+    const posts = await this.prisma.post.findMany();
 
     // Obtener categorias distintas a raiz de posts
     const categories = posts.map((post) => post.category);
