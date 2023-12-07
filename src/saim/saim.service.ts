@@ -199,7 +199,9 @@ export class SaimService {
   async publishSaim(id: number): Promise<any> {
     const saim = await this.getSAIMById(id);
     const products = saim.products.map((p: any) => p.id);
+    console.log(saim);
     const countries = saim.countries.map((c: any) => c.id);
+    console.log(countries);
     const suscribers =
       await this.suscriberService.getAllSuscribersEmailsByProductsOrCountries(
         products,
