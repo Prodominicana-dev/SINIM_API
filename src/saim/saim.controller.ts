@@ -126,7 +126,10 @@ export class SaimController {
     const imageName = `${new Date().getTime()}.${file.originalname
       .split('.')
       .pop()}`;
-    fs.writeFile(path.join(folderPath, imageName), file.buffer, (err) => {
+    fs.writeFile(path.join(folderPath, imageName), file.buffer, async (err) => {
+      if (saim.published) {
+        await this.saimService.publishSaim(saim.id);
+      }
       if (err) {
         res.status(500).json({ error: err });
       } else {

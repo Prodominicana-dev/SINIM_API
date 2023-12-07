@@ -189,10 +189,6 @@ export class SaimService {
       data,
     });
 
-    if (saim.published) {
-      await this.publishSaim(saim.id);
-    }
-
     return saim;
   }
 
