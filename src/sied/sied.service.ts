@@ -176,10 +176,6 @@ export class SiedService {
       data,
     });
 
-    if (saim.published) {
-      await this.publishSied(saim.id);
-    }
-
     return saim;
   }
 

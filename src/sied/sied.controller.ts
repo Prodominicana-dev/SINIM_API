@@ -125,12 +125,15 @@ export class SiedController {
     const imageName = `${new Date().getTime()}.${file.originalname
       .split('.')
       .pop()}`;
-    fs.writeFile(path.join(folderPath, imageName), file.buffer, (err) => {
+    fs.writeFile(path.join(folderPath, imageName), file.buffer, async (err) => {
       if (err) {
         res.status(500).json({ error: err });
       } else {
         saim.image = imageName;
         this.siedService.updateSied(saim.id, saim);
+        if (saim.published) {
+          await this.siedService.publishSied(saim.id);
+        }
         res.status(200).json({ message: saim });
       }
     });
